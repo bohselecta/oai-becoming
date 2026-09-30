@@ -14,7 +14,7 @@ An evidence-backed comparative development instrument: your standing, the people
 
 *Screenshot of the running product. The demo calculates this starting fixture: 597/1000, 48th percentile, 100% evidence coverage. These describe authored synthetic data, not the visitor.*
 
-**Release:** complete local product demonstration · **Verified locally:** 90 domain tests and 203 Chromium assertions · **Offering:** original source, assets and documentation free to use under MIT, including by OpenAI.
+**Release:** complete comparative product demonstration · **Verified:** 90 domain tests and 207 hosted-browser assertions · **Offering:** original source, assets and documentation free to use under MIT, including by OpenAI.
 
 [Product thesis](docs/PROPOSAL.md) · [Measurement & architecture](docs/ARCHITECTURE.md) · [Executed verification](docs/QA.md) · [Permission for OpenAI](docs/PERMISSION.md)
 
@@ -103,7 +103,7 @@ python tests/browser_smoke.py     # complete offline-product acceptance
 python tests/browser_smoke.py --url http://127.0.0.1:4173
 ```
 
-The local browser run passed **203 assertions** across nine routes, four principal widths, keyboard operation, downloads and the complete comparative flow. Its browser policy blocked local HTTP navigation; therefore local hosted-origin persistence, modular loading and CSP were **not verified** by that run. The `--url` form and GitHub workflow test those separately. Read the actual CI run and [QA record](docs/QA.md), not just a badge, before making a deployment claim.
+The local offline run passed **203 assertions**. The subsequent [GitHub hosted-origin run](https://github.com/bohselecta/oai-becoming/actions/runs/36762047466) passed **207 assertions**, including modular loading, served CSP and origin-localStorage reload behavior. Both exercised nine routes, responsive widths, keyboard operation, downloads and the complete comparative flow. See the [hosted receipt](docs/verification/HOSTED.md), its [machine-readable result](docs/verification/hosted-browser-results.json), and the historical [QA record](docs/QA.md). This verifies the served product on the runner, not a live Vercel deployment, measurement calibration or a screen-reader audit.
 
 | Document | Purpose |
 |---|---|
