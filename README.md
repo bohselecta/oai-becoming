@@ -125,7 +125,7 @@ Try the full evidence loop: choose a comparison, create a project, complete its 
 
 [Measurement architecture](docs/ARCHITECTURE.md) · [Data contracts](docs/DATA-CONTRACTS.md) · [Acceptance walkthrough](docs/ACCEPTANCE.md)
 
-All four images above are captures of the running interface, not mockups. The example record was entered by browser tests. They match the verified implementation at [`91b145ad`](https://github.com/bohselecta/oai-becoming/commit/91b145adb675ee170270f59c9ab4b6f27d7b22d8).
+All four images above are captures of the running 0.3.1 interface, not mockups. The example record was entered by browser tests. They were regenerated from the served application after the new mark and ChatGPT/OpenAI ecosystem treatment landed.
 
 ## Advanced configuration
 
@@ -158,7 +158,7 @@ python tests/browser_smoke.py --url http://127.0.0.1:4173
 python tests/discovery_browser.py --url http://127.0.0.1:4173
 ```
 
-The [verified implementation run](https://github.com/bohselecta/oai-becoming/actions/runs/36776489243) at `91b145ad` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. Check the workflow for the current commit's result; a historical receipt does not verify later changes.
+The [0.3.1 branding verification run](https://github.com/bohselecta/oai-becoming/actions/runs/36791387277) at `21f75f14` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. The committed screenshots come from the same branded implementation. Check the workflow for the exact current commit; a historical receipt does not verify later documentation-only changes.
 
 Coverage includes context on return, contradictory outcomes, corrections, preserved attempts, backup validation, recovery, storage failures, keyboard/focus behavior and desktop/phone layouts. Human first-use studies, a screen-reader audit and real-device Safari testing remain outstanding. See [QA and execution limits](docs/QA.md).
 
