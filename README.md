@@ -15,21 +15,23 @@
 
 <p align="center">
   <a href="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml"><img alt="Product verification" src="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml/badge.svg"></a>
-  <img alt="Release 0.2.1" src="https://img.shields.io/badge/release-0.2.1-254d3b">
+  <img alt="Release 0.3.0" src="https://img.shields.io/badge/release-0.3.0-254d3b">
   <img alt="Node 22+" src="https://img.shields.io/badge/node-22%2B-254d3b">
   <img alt="Runtime dependencies 0" src="https://img.shields.io/badge/runtime_dependencies-0-254d3b">
   <a href="LICENSE"><img alt="OpenAI-only new material license" src="https://img.shields.io/badge/new_material-OpenAI_only-254d3b"></a>
 </p>
 
 <p align="center">
-  <img src="public/becoming-preview.png" alt="Becoming running interface showing a 597 out of 1000 index, 48th percentile, evidence coverage, and a person just ahead" width="1180">
+  <img src="public/becoming-preview.png" alt="Retained fictional comparison demo, before the interest-led opening: index 597, 48th percentile and inspectable evidence" width="1180">
 </p>
 
-> **Where am I among other people—and what would it actually take to move?**
+**Start with what matters. Keep an honest record. Find a next step.**
 
-**Becoming is an evidence-backed comparative development instrument.** It turns demonstrated capability into an intelligible place in a named population, identifies people just ahead, explains the measurable gap, and turns that difference into a project capable of producing new evidence.
+Becoming starts with something you already care about: a game, music, a fandom, making things, or a question you keep coming back to. Describe a real example, notice what you actually did, and choose something small you want to try. You choose the reward and the constraints. There is no profile survey, talent prerequisite or assigned life goal.
 
-It is deliberately direct about rank and deliberately conservative about whether a rank is deserved. Standing, evidence coverage, and movement are separate measurements. Unknown stays unknown. Completing a task does not automatically prove competence. Only accepted, eligible evidence can change capability estimates—and only changed estimates can move placement.
+The simple surface rests on two explicit records: your own correctable browser-local context, and a separate, inspectable **synthetic comparative instrument**. That instrument retains every evidence gate, honest low score, comparison condition and revocation path. Unknown stays unknown. A task, a self-description or a completed checklist never awards competence.
+
+**This version uses authored guided prompts, not a live language model.** It makes no model calls, diagnoses nothing and does not assess the visitor. It can remember your saved answers in this browser, export/restore them, and use them in the next prompt. The detailed demo shows how evidence-backed comparison could work with legitimately assessed data.
 
 <p align="center">
   <a href="docs/PROPOSAL.md"><strong>Product thesis</strong></a> ·
@@ -43,9 +45,17 @@ It is deliberately direct about rank and deliberately conservative about whether
 
 ## 1. What Becoming does
 
-Most AI tools help a person finish work. Becoming asks what that work demonstrates about the person—and how that evidence places them relative to legitimate reference populations.
+The first-use loop is **interest → real example → user-confirmed actions → wanted activity → meaningful reward → constraints → small next step → what happened**. One question is shown at a time. You can stop after any saved answer and return without retelling it.
 
-The product loop is simple:
+### Three places, two layers
+
+- **Today:** the next question or the step you chose, using your saved context
+- **Your record:** inspect and correct the actual answers, selected actions, uncertainty, outcomes and change history; export, restore or erase locally
+- **Explore demo:** the complete fictional measurement instrument, with all its detail on demand
+
+Planning a game strategy, coordinating people, persisting through an encounter or adapting a build can exercise real skills in that setting. Becoming records only the actions you explicitly confirm in a concrete account. That is self-report, not independently observed proficiency. Transfer to another setting remains a separate, untested question. An outcome can support your account, contradict it or remain uncertain; no score moves.
+
+The comparative loop inside the explicit demo remains:
 
 ```mermaid
 flowchart LR
@@ -64,7 +74,7 @@ The intended emotional sequence is equally simple:
 
 **truth → understanding → attainable comparator → action → evidence → movement**
 
-### Core surfaces
+### Retained surfaces inside Explore demo
 
 | Surface | Purpose |
 |---|---|
@@ -87,7 +97,7 @@ Becoming is the **first-person instrument**. A separate product such as Emergenc
   <img src="public/becoming-hero.svg" alt="Illustrated Becoming product flow from a 597 index and 48th percentile to Sage Sato, a synthetic comparator 2.1 research points ahead" width="1180">
 </p>
 
-The public demo begins with a fully synthetic fixture:
+Opening **Explore demo** shows a fully synthetic fixture, separate from your record:
 
 - **Becoming Index:** 597 / 1000
 - **Composite placement:** 48th percentile
@@ -98,9 +108,9 @@ The public demo begins with a fully synthetic fixture:
 
 Those numbers are not claims about the visitor or about real people. They exist to make the complete measurement and interaction model inspectable.
 
-### What a user can do now
+### What you can inspect in the fictional demo
 
-1. See placement immediately.
+1. See the synthetic participant’s placement immediately.
 2. Inspect the evidence behind a capability.
 3. Change the comparison population without changing underlying ability.
 4. Switch independent and AI-assisted conditions.
@@ -233,29 +243,21 @@ python -m playwright install chromium
 
 # Portable/offline acceptance
 python tests/browser_smoke.py
+python tests/discovery_browser.py
 
 # Served-origin acceptance, with preview running separately
 python tests/browser_smoke.py --url http://127.0.0.1:4173
+python tests/discovery_browser.py --url http://127.0.0.1:4173
 ```
 
-### Current 0.2.1 evidence
+### Current review evidence
 
-| Verification | Result |
-|---|---:|
-| Domain/package tests | **100 passed** |
-| Local offline Chromium assertions | **232 passed** |
-| Served-browser assertions | **238 passed** |
-| Production build | **passed** |
-| Portable single-file build | **passed** |
-
-The served run exercises modular loading, security headers, origin persistence, current and legacy legal downloads, responsive layouts, keyboard operation, comparison, Surpass Project creation, evidence review, movement, and revocation.
-
-See:
+The interest-led branch currently passes **140 Node domain/presentation/package tests** and both production builds. Browser acceptance is being run in GitHub CI because this authoring environment blocks browser process sockets and loopback navigation. Check the exact draft-PR head and its receipts before claiming a browser pass. Prior 0.2.1 receipts are historical, not evidence for this revision.
 
 - [Current status](docs/STATUS.md)
 - [QA record](docs/QA.md)
-- [0.2.1 hosted browser receipt](docs/verification/0.2.1-hosted.json)
-- [Acceptance criteria](docs/ACCEPTANCE.md)
+- [Frozen discovery contract](docs/DISCOVERY-CONTRACT.md)
+- [Preserved measurement acceptance](docs/ACCEPTANCE.md)
 
 ### Repository layout
 
@@ -263,7 +265,10 @@ See:
 oai-becoming/
 ├── src/
 │   ├── app.js               # product UI and interactions
-│   ├── domain.js            # measurement and state model
+│   ├── journey.js           # validated personal record and storage boundaries
+│   ├── discovery.js         # authored conversational presentation
+│   ├── discovery.css        # interest-led visual hierarchy
+│   ├── domain.js            # unchanged measurement and synthetic state model
 │   ├── participants.js      # synthetic comparator fixtures
 │   ├── styles.css           # retained Becoming design system
 │   └── comparative.css      # comparative-product additions
@@ -283,16 +288,19 @@ oai-becoming/
 └── vercel.json
 ```
 
-The next production step is not another mockup: it is an authorized real-participant/evidence adapter plus empirical measurement validation.
+The next work is human first-use testing of this interest-led flow. Real assessment would additionally require an authorized participant/evidence adapter and empirical measurement validation.
 
 ---
 
 ## 6. Product status and limits
 
-Becoming 0.2.1 is a **complete comparative demonstration**, not a calibrated real-world assessment service.
+Becoming 0.3.0 combines a **working local interest-led experience** with the complete comparative demonstration. It is not a calibrated real-world assessment service or a live AI companion.
 
 ### Implemented
 
+- guided interest-led journey and chosen next step
+- correctable local context, uncertainty and outcomes
+- private backup export/restore, recovery and explicit erase
 - evidence-backed capability estimates
 - decomposable Becoming Index
 - contextual percentile placement

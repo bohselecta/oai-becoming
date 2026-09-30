@@ -74,6 +74,7 @@ with sync_playwright() as pw:
         else:
             page.set_content(offline, wait_until='load')
         page.wait_for_selector('h1')
+        route('board')  # Discovery is now the default; measure the unchanged explicit demo.
         check(index() == '597', 'starting composite is calculated as 597, not a mockup number')
         check(page.get_by_test_id('index-percentile').inner_text() == '48th percentile', 'starting relative rank is explicit')
         check(page.get_by_test_id('index-coverage').inner_text() == '100%', 'evidence coverage has a separate display')
@@ -248,6 +249,8 @@ with sync_playwright() as pw:
             check(marker in offline, 'test fixture initialization boundary exists')
             variant.set_content(offline.replace(marker, 'let state=' + json.dumps(fixture) + ", storageNotice='';", 1), wait_until='load')
             variant.wait_for_selector('h1')
+            variant.evaluate("location.hash='board'")
+            variant.wait_for_selector('[data-testid="index-value"]')
             if name == 'low':
                 check(variant.get_by_test_id('index-value').inner_text() == '0', 'observed all-zero fixture renders a real zero index')
                 check(variant.get_by_test_id('index-percentile').inner_text() == '0th percentile', 'very low valid percentile renders explicitly')

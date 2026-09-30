@@ -1,6 +1,24 @@
-# Architecture — the comparative instrument
+# Architecture — interest-led surface, steady evidence protocol
 
-Contract `becoming-product/2` · App `0.2.1` · September 30, 2026.
+Contract `becoming-discovery/1` + preserved `becoming-product/2` · App `0.3.0`.
+
+## New local discovery layer
+
+`src/journey.js` owns pure validated state transitions, backup parsing and storage boundary functions. `src/discovery.js` renders deterministic prompts and the inspectable record. `src/discovery.css` gives this layer a restrained, readable layout. `src/app.js` coordinates the shared shell, validated user actions and dialogs. No model/provider/backend dependency is introduced.
+
+The default route is `#today`; `#record` exposes the same saved context. `#board` and all previous hashes still open the unchanged synthetic measurement engine. Three primary destinations replace eight first-use menu items. Within Explore demo, the original routes remain explicit secondary navigation, with the fictional-data boundary visible.
+
+The local record is version 1 under `becoming-journey-v1`. The existing synthetic version 2 remains under `becoming-comparative-v2`, unchanged. Loading a prior demo profile does not populate the real record and does not assign its score to the visitor. Interest answers never feed `estimate`, `becomingIndex`, percentile, or review evidence.
+
+Each submitted answer commits a validated state transition. Unsaved form text is not persisted. A returning visit resumes the next saved stage. Corrections are atomic; changing the example, selected actions, direction or next step clears dependent outcome conclusions. Change history retains field names, dates and revision metadata, not the replaced private text. Choosing a new step after reflection explicitly archives the completed attempt with its original context and uncertainty, separate from the metadata-only correction log. Up to 20 attempts are retained, inspectable and removable; reaching the limit asks for export/removal and never silently prunes. Changing a current action is a correction and does not manufacture a completed attempt. Record deletion affects only the named key; exported copies remain outside app control.
+
+LocalStorage is unencrypted and unauthenticated. Invalid/future-version saved data triggers recovery before normal writes; original bytes can be downloaded, then explicitly replaced with a validated backup or erased. Write failures leave a usable session with a persistent warning. File restore validates before showing a replacement confirmation. No export is uploaded or automatically shared.
+
+The current-setting actions are user-confirmed self-report. They are not independently observed performance and carry no numeric score. Reflection explicitly records supports/contradicts/uncertain; transfer elsewhere remains untested. The UI does not infer health, personality, worth, proficiency or motivation from text.
+
+## Preserved comparative architecture
+
+The remaining sections describe the explicitly fictional instrument. The old placement-first navigation is now secondary; its domain semantics are unchanged.
 
 ## 1. Shipped system
 
