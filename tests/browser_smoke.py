@@ -316,7 +316,8 @@ with sync_playwright() as pw:
             page.set_viewport_size({'width': width, 'height': 1000})
             route('board')
             check(page.locator('.ecosystem-context').is_visible(), f'independent ecosystem descriptor visible at {width}px')
-            ecosystem = page.locator('.ecosystem-context').inner_text()\n        check('Independent concept for' in ecosystem and 'ChatGPT' in ecosystem and 'OpenAI' in ecosystem, f'ecosystem relationship is unambiguous at {width}px')
+            ecosystem = page.locator('.ecosystem-context').inner_text()
+            check('Independent concept for' in ecosystem and 'ChatGPT' in ecosystem and 'OpenAI' in ecosystem, f'ecosystem relationship is unambiguous at {width}px')
             check(page.locator('.brand-author').is_visible(), f'author attribution visible at {width}px')
             check(page.evaluate('document.documentElement.scrollWidth <= innerWidth'), f'brand chrome has no horizontal overflow at {width}px')
         if args.url:
