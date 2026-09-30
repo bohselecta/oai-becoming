@@ -308,7 +308,7 @@ with sync_playwright() as pw:
                 docs_page.locator(f'a[href="./docs/{doc}.md"]').first.click()
             event.value.save_as(out / f'{doc}.md')
             check((out / f'{doc}.md').read_text() == Path(f'docs/{doc}.md').read_text(), f'portable {doc} document downloads offline')
-        check('Offered to OpenAI. Free to build on.' in docs_page.locator('.principle-card').inner_text(), 'offering identifies the intended licensee')
+        check('Offered to OpenAI. Proposed for the ChatGPT ecosystem.' in docs_page.locator('.principle-card').inner_text(), 'offering identifies OpenAI and the intended ChatGPT ecosystem')
         check('Earlier MIT rights remain intact' in docs_page.locator('.principle-card').inner_text(), 'offering preserves previously released rights visibly')
         check('MIT licensed' not in docs_page.locator('.page-footer').inner_text(), 'footer does not mislabel the current grant as MIT')
         docs_page.close()
