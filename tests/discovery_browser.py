@@ -213,6 +213,9 @@ def exercise(browser):
     for width in [320, 390, 768, 1440]:
         page.set_viewport_size({'width': width, 'height': 1000})
         layout(page, f'fresh entry at {width}px')
+        if width == 390:
+            page.set_viewport_size({'width': 390, 'height': 844})
+            check(page.locator('#journey-form button[type="submit"]').evaluate('(el) => el.getBoundingClientRect().bottom <= innerHeight'), 'fresh phone Continue is visible without scrolling at 390×844')
         if width in [390, 1440]:
             capture(page, f'fresh-{width}.png', 'Actual fresh discovery UI; ' + ('real served origin' if args.url else 'offline build with test-only Storage environment'))
     page.set_viewport_size({'width': 1440, 'height': 1000})

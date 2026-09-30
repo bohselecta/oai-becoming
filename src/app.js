@@ -174,7 +174,7 @@ if(el.dataset.step!==undefined){const p=state.projects.find(p=>p.id===el.dataset
 document.addEventListener('input',event=>{if(event.target.id==='reflection'){const p=state.projects.find(p=>p.id===event.target.dataset.project);if(p){p.reflection=event.target.value.slice(0,4000);save();}}});
 document.addEventListener('submit',event=>{if(!['project-form','perspective-form'].includes(event.target.id))return;event.preventDefault();try{const data=new FormData(event.target);let p;if(event.target.id==='project-form'){p=createProject(state,{skill:data.get('skill'),title:data.get('title'),minutes:data.get('minutes'),personId:event.target.dataset.person||null});}else p=adopt(state,event.target.dataset.perspective,data.getAll('practice').map(Number),perspectivePerson);save();close();projectFilter='All';navigate('projects');projectDialog(p.id);toast('Surpass Project created. Scores and rank are unchanged.');}catch(error){toast(error.message);}});
 window.addEventListener('hashchange',()=>{render();window.scrollTo({top:0,behavior:'instant'});if(!$('#dialog').open)$('#main').focus({preventScroll:true});});
-$('#dialog').addEventListener('close',()=>{if(!$('#dialog').open)restoreActionFocus(returnFocus);});
+$('#dialog').addEventListener('close',()=>{if(!$('#dialog').open){$('#dialog').replaceChildren();restoreActionFocus(returnFocus);}});
 // Keep keyboard traversal inside the current modal, including dynamic replacements.
 $('#dialog').addEventListener('keydown',event=>{
   if(event.key!=='Tab')return;
