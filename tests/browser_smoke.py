@@ -289,7 +289,37 @@ with sync_playwright() as pw:
             docs_page.locator('a[href="./docs/ARCHITECTURE.md"]').click()
         event.value.save_as(out / 'architecture.md')
         check('Architecture' in (out / 'architecture.md').read_text(), 'portable build includes downloadable architecture documentation')
+        for filename, href, expected in [
+            ('current-license.txt', './LICENSE', 'Becoming OpenAI-Only License 1.0'),
+            ('legacy-license.txt', './licenses/MIT-legacy.txt', 'MIT License'),
+        ]:
+            with docs_page.expect_download() as event:
+                docs_page.locator(f'.offering-license-links a[href="{href}"]').click()
+            event.value.save_as(out / filename)
+            received = (out / filename).read_text()
+            source = Path('LICENSE' if filename.startswith('current') else 'licenses/MIT-legacy.txt').read_text()
+            check(received == source, f'portable download retains complete {filename} verbatim')
+            check(received.startswith(expected), f'portable download identifies {filename} accurately')
+        for doc in ['BRAND', 'LICENSE-HISTORY']:
+            with docs_page.expect_download() as event:
+                docs_page.locator(f'a[href="./docs/{doc}.md"]').first.click()
+            event.value.save_as(out / f'{doc}.md')
+            check((out / f'{doc}.md').read_text() == Path(f'docs/{doc}.md').read_text(), f'portable {doc} document downloads offline')
+        check('Offered to OpenAI. Free to build on.' in docs_page.locator('.principle-card').inner_text(), 'offering identifies the intended licensee')
+        check('Earlier MIT rights remain intact' in docs_page.locator('.principle-card').inner_text(), 'offering preserves previously released rights visibly')
+        check('MIT licensed' not in docs_page.locator('.page-footer').inner_text(), 'footer does not mislabel the current grant as MIT')
         docs_page.close()
+        for width in [320, 390, 768, 1440, 1600]:
+            page.set_viewport_size({'width': width, 'height': 1000})
+            route('board')
+            check(page.locator('.ecosystem-context').is_visible(), f'independent ecosystem descriptor visible at {width}px')
+            check('An independent concept for the OpenAI ecosystem.' in page.locator('.ecosystem-context').inner_text(), f'ecosystem relationship is unambiguous at {width}px')
+            check(page.locator('.brand-author').is_visible(), f'author attribution visible at {width}px')
+            check(page.evaluate('document.documentElement.scrollWidth <= innerWidth'), f'brand chrome has no horizontal overflow at {width}px')
+        if args.url:
+            for url_path, source_file in [('LICENSE', 'LICENSE'), ('licenses/MIT-legacy.txt', 'licenses/MIT-legacy.txt')]:
+                legal_response = page.request.get(args.url.rstrip('/') + '/' + url_path)
+                check(legal_response.ok and legal_response.text() == Path(source_file).read_text(), f'served {url_path} preserves full legal text')
         check(not errors, f'no JavaScript runtime errors: {errors}')
         external = [r for r in requests if r.startswith(('http:', 'https:')) and not (args.url and r.startswith(args.url.rstrip('/') + '/'))]
         check(not external, f'no external model, analytics or asset requests: {external}')

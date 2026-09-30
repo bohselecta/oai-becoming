@@ -1,6 +1,6 @@
 # Architecture — the comparative instrument
 
-Contract `becoming-product/2` · App `0.2.0` · September 30, 2026.
+Contract `becoming-product/2` · App `0.2.1` · September 30, 2026.
 
 ## 1. Shipped system
 
@@ -98,3 +98,7 @@ The build copies a static modular site to `dist` and also creates `dist/becoming
 A real service needs an authenticated subject/evidence vault, scoped participant grants, assessment and reviewer identities, authenticated reference snapshots, deletion/revocation propagation, correction and appeal workflows, and validated cohort construction. Protect all derived disclosures, caches and history that can reveal withdrawn source material; retaining a local synthetic audit trail here is not a production erasure design.
 
 Introduce those services behind explicit participant/evidence adapters. Keep the measurement functions testable, the observed basket stable, and the product independent of Emergence. Do not describe a future adapter as a shipped integration.
+
+## 0.2.1 packaging and branding boundary
+
+The measurement contract, state version and browser-local storage key are unchanged. Branding is confined to presentation, metadata and documentation. The build carries both the root OpenAI-only license and `licenses/MIT-legacy.txt`; the portable HTML embeds their full text for offline downloads. Earlier MIT material remains separately licensed as recorded in `LICENSE-HISTORY.md`. `BRAND.md` defines the independent ecosystem descriptor; no OpenAI account or model integration is implied.

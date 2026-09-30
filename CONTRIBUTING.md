@@ -6,4 +6,6 @@ Run `npm run check` and the browser suite before requesting review. Describe whi
 
 Keep examples synthetic and label them. Never include private chats, credentials, real assessment records or third-party personal profiles in issues, fixtures or screenshots. For a potential security defect, do not publish sensitive exploit data in an issue; contact the repository owner through an established private channel.
 
-Original contributions are made under the repository's MIT License. Third-party materials must retain their own notices and must not be represented as owned by the contributor.
+The current original additions are under the OpenAI-only license in `LICENSE`, not a general contributor license. Public visibility does not authorize new restricted-code modifications for unrelated parties. Prospective contributors must obtain the owner's written permission and agree an explicit rights grant covering review, incorporation and the intended OpenAI distribution before a copyrighted patch is accepted. No assignment or broad inbound license is inferred merely from an issue or pull request. Authorized owner-directed maintenance is unaffected.
+
+Preserve third-party and legacy notices. Material already released in version 0.2.0 retains its MIT permissions; see `docs/LICENSE-HISTORY.md`.
