@@ -109,7 +109,7 @@ After trying it, record what happened and whether it supports your account, cont
   <a href="public/becoming-record.png"><img src="public/becoming-record.png" alt="Actual record screen showing saved answers, user-confirmed actions, untested transfer and controls to correct the record" width="1180"></a>
 </p>
 
-Correcting an example clears its old skill confirmations until you reconfirm them. Correcting a current step clears its dependent result. Earlier completed attempts remain tied to their original accounts and can be inspected or removed. Up to 20 attempts are retained; the app asks you to export or remove one before adding another, without silently pruning history.
+Correcting an example clears its old skill confirmations until you reconfirm them. Correcting a current step clears its dependent result. Earlier completed attempts remain tied to their original accounts and can be inspected or removed. Up to 20 attempts are retained without silently pruning history. At the limit, export a copy if you want to keep it, then explicitly remove an earlier attempt before adding another.
 
 Use **Your data & privacy** to download a full backup, validate and restore a backup, or explicitly erase the local record. Backups include your private text and are not uploaded. Corrupt or incompatible saved data stays recoverable before replacement. Erasing the local record cannot remove copies you already downloaded.
 
