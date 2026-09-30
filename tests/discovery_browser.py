@@ -207,9 +207,9 @@ def exercise(browser):
     check(page.get_by_test_id('index-value').count() == 0, 'fresh entry does not invent a visitor score')
     check('no live ai' in page.locator('.discovery-footnote').inner_text().lower(), 'fresh entry explicitly discloses authored prompts, no live AI')
     check('this browser' in page.locator('.discovery-footnote').inner_text(), 'fresh entry explains local data boundary')
-    check('An independent concept for the OpenAI ecosystem.' in page.locator('.ecosystem-context').inner_text(), 'independent ecosystem attribution is retained')
+    check('Independent concept for ChatGPT + OpenAI' in page.locator('.ecosystem-context').inner_text(), 'ChatGPT and OpenAI ecosystem attribution is explicit')
     check('Hayden Lindley' in page.locator('.page-footer').inner_text(), 'author attribution is retained')
-    check('No OpenAI affiliation' in page.locator('.page-footer').inner_text(), 'no OpenAI affiliation is implied')
+    check('No affiliation or endorsement' in page.locator('.page-footer').inner_text(), 'no OpenAI affiliation or endorsement is implied')
     for example in ['Games', 'Music', 'Stories & fandom']:
         check(page.get_by_role('button', name=example, exact=True).count() == 1, f'interest example includes {example}')
     for width in [320, 390, 768, 1440]:
