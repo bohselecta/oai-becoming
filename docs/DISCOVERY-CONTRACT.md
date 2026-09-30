@@ -8,6 +8,10 @@ Help a person start with something that matters to them, describe one real examp
 
 This is authored, deterministic conversation logic, not a connected language model, assessment, diagnosis, therapist, credential or promise of success. No server, tracking, provider, account, new dependency, paid integration or production deployment is added. Publish a draft PR for review; never merge it. Keep Becoming's identity, author, licenses and Emergence's independence.
 
+## Delivery amendment — September 30, 2026
+
+After reviewing PR #4, the owner explicitly requested merging the changes to main and refreshing the README with the new images and text. That later instruction supersedes the initial draft-only and unmerged delivery restriction above and in D8. All product, evidence, branding and license requirements remain in force. No production deployment is included.
+
 ## Two layers
 
 - The presentation defaults to Today, Your record, and Explore demo. Today asks the next missing question or shows the chosen action. Plain speech, optional examples, editable answers, no imposed coach persona.
