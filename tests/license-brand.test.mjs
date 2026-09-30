@@ -78,6 +78,6 @@ test('both complete legal notices are included in the build and the offline down
 test('license scope and brand source records ship beside the code',()=>{
   for(const p of ['docs/BRAND.md','docs/LICENSE-HISTORY.md','docs/PERMISSION.md','docs/STATUS.md']) assert.ok(existsSync(new URL(`../${p}`,import.meta.url)),p);
   assert.match(text('docs/BRAND.md'),/https:\/\/openai\.com\/brand\//);
-  assert.match(text('docs/BRAND.md'),/No brand permission has been requested or obtained/);
+  assert.match(text('docs/BRAND.md'),/No brand partnership or logo-use approval has been requested or obtained/);
   assert.match(text('docs/PERMISSION.md'),/not.*general.*open source/);
 });
