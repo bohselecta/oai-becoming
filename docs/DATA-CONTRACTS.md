@@ -1,6 +1,6 @@
 # Data contracts and real-participant boundary
 
-These are the implemented in-memory contracts, not public network endpoints. The browser accepts no real participant uploads. All runtime records in this release are synthetic.
+These are the implemented in-memory contracts, not public network endpoints. The comparative browser accepts no real assessed-participant uploads. Its measurement records remain synthetic. A separate personal discovery record now stores the visitor’s own unassessed words. These records never cross into the measurement engine.
 
 ## Subject state — version 2
 
@@ -74,3 +74,15 @@ Authenticate participants and reviewers. Verify identity only to the extent nece
 Carry source locators, assessment instances, dates, assistance/model/tool conditions, adjudication and rubric versions. Use independently assessed, multiple demonstrations. Reject incompatible or unsupported claims instead of inventing a score. Establish reference-snapshot integrity and a documented inclusion policy; explain participating samples without calling them entire populations.
 
 Propagate withdrawal through source-derived scores, caches, public profiles, exported credentials and appropriate retained records. Define correction and appeal handling and evaluate the actual measurement before representing ranks as population facts. See `EVALUATION.md`.
+
+## Local discovery record — version 1
+
+Key `becoming-journey-v1`: `version`, `revision`, `stage`, `interest`, `story`, `skills[]`, `direction`, `reward`, `constraints`, `nextStep`, `outcome`, `evidenceStatus`, `attempts[]`, `decisions[]`, `updatedAt`.
+
+Stages: interest, story, skills, direction, reward, constraints, action, ready, reflection. Text is bounded and escaped at every HTML boundary. Required earlier answers gate later stages. Selected actions are restricted to planning, coordination, persistence and adaptation; none maps automatically to a rubric, score or rank. `evidenceStatus` is unreviewed, supports, contradicts or uncertain, attached to the person’s own account and reflection. It is not an assessor judgment.
+
+Decision events retain revision, timestamp, kind and changed field names only; at most 50 recent entries. A full backup uses `becoming-local-record/1` with the validated record and a notice. Bare version-1 records also restore. Unknown schema versions, malformed dates, nested shapes, fields and oversized input are rejected before replacement. Original synthetic keys/versions are not migrated or rewritten by discovery.
+
+Changing story, skills, direction or nextStep invalidates the previous outcome. No correction silently creates an independent observation or proves transfer. Privacy controls download full private context only when chosen, validate restore before a confirmation, and erase just this local record.
+
+A completed attempt is archived only when the person chooses a new next step. Each snapshot holds an ID, timestamp, original interest/story/actions/direction/reward/constraints, the tried action, outcome and uncertainty. It remains self-report about its original setting. At 20 attempts, continuation requires exporting/removing an old attempt; nothing is silently discarded. The exact earlier version-1 record without `attempts` can load with an empty array, without rewriting stored bytes until a later explicit save.

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — September 30, 2026
+
+- Interest-led, one-question-at-a-time opening and Today / Your record / Explore demo navigation
+- Separate validated local record for interests, examples, confirmed actions, chosen direction/reward, constraints, next steps, uncertainty and outcomes
+- Inspect/correct, explicit private backup export/restore, recovery for corrupt or future data, and explicit local erase
+- Authored prompts are disclosed as such; no live model, visitor score, diagnosis or transfer claim
+- Existing synthetic measurement engine, evidence gates, negative comparisons, grants, review, history, original identity and license preserved
+
+
 ## 0.2.1 — September 30, 2026
 
 - Owner-directed OpenAI-only royalty-free grant for new original material; preserved the full earlier MIT notice and explicit historical boundary.

@@ -28,7 +28,7 @@ test('original MIT notice is preserved byte for byte, not repurposed as the new 
 test('package labels its custom license correctly and prevents accidental registry publication',()=>{
   const pkg=JSON.parse(text('package.json'));
   assert.equal(pkg.license,'SEE LICENSE IN LICENSE');
-  assert.equal(pkg.version,'0.2.1');
+  assert.equal(pkg.version,'0.3.0'); // Interest-led product revision; license invariants are unchanged.
   assert.equal(pkg.private,true);
 });
 test('current offering no longer promises general MIT or unrestricted public reuse',()=>{

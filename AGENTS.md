@@ -1,6 +1,10 @@
 # Becoming — frozen comparative product contract
 
-Contract: `becoming-product/2` · Release: `0.2.1` · September 30, 2026.
+Contract: `becoming-product/2` · Release: `0.3.0` · September 30, 2026.
+
+## Interest-led entry amendment — `becoming-discovery/1`
+
+Read `docs/DISCOVERY-CONTRACT.md` before edits. The default experience starts with the visitor’s interests and their own correctable local record. Its authored prompts are not a live model or an assessment. Keep that record separate from the unchanged synthetic comparative state. Today, Your record and Explore demo replace the dashboard-first navigation requirement. No visitor inherits a fictional score. All comparative functions and unfavorable results remain directly accessible in the explicitly labeled demo.
 
 ## Product invariant
 
@@ -12,7 +16,7 @@ This replaces the predecessor's anti-ranking contract. Do not restore a prohibit
 
 ## Build and acceptance boundary
 
-This release is a complete, browser-local, synthetic-data product demonstration. It is not a validated assessment, a real participant service, an OpenAI integration, or a credentialing system. No real visitor is scored. Synthetic profiles must remain visibly synthetic everywhere they appear.
+The comparative instrument is a complete, browser-local, synthetic-data product demonstration. The separate interest-led layer saves the visitor’s own answers locally; those answers never become assessed evidence or enter the synthetic scores. It is not a validated assessment, a real participant service, an OpenAI integration, or a credentialing system. No real visitor is scored. Synthetic profiles must remain visibly synthetic everywhere they appear.
 
 Preserve the original Becoming identity: restrained editorial typography, generous spacing, forest green, quiet geometric art, reflective language and clear hierarchy. Preserve the original six capabilities and useful evidence machinery. Becoming is the first-person instrument; Emergence is a separate world-facing landscape. Neither requires the other to run.
 
@@ -33,7 +37,7 @@ Preserve the original Becoming identity: restrained editorial typography, genero
 
 Work on a reviewable branch. Inspect the current tree and preserve unrelated work. Read `README.md`, `docs/ARCHITECTURE.md`, `docs/DATA-CONTRACTS.md`, `docs/ACCEPTANCE.md` and `docs/QA.md` before editing.
 
-Run `npm run check` before and after changes. Run `python tests/browser_smoke.py` against the production build. When hosted-origin testing is available, serve `dist` and also run `python tests/browser_smoke.py --url http://127.0.0.1:4173`. Never alter browser or network restrictions to make a test pass.
+Run `npm run check` before and after changes. Run `python tests/browser_smoke.py` and `python tests/discovery_browser.py` against the production build. When hosted-origin testing is available, serve `dist` and also run `python tests/browser_smoke.py --url http://127.0.0.1:4173`. Never alter browser or network restrictions to make a test pass.
 
 The app and build have zero npm dependencies. Browser tests are development-only. Keep the static GitHub → Vercel deployment path. Do not add API calls, tracking, paid services or a backend simply to polish the demonstration. Do not add debug APIs to bypass evidence gates. The test-only fixture loader modifies its own offline document, not production state.
 

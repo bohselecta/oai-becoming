@@ -1,4 +1,10 @@
-# Acceptance — comparative vertical slice
+# Acceptance — interest-led experience and retained measurement
+
+Release 0.3.0 is governed by [the frozen discovery contract](DISCOVERY-CONTRACT.md), requirements D1–D8. The default screen now asks about the visitor’s interest. No fictional score is assigned to them. This intentionally supersedes the older “home immediately shows index” presentation requirement below; all measurement promises and negative assertions remain in force inside Explore demo.
+
+Required discovery walkthrough: save an interest and concrete example, select only exercised actions, choose activity/reward/constraints and a manageable step, reload and resume, record an uncertain or contradictory outcome, inspect the same state, correct a fact and verify dependent conclusions reset. Export, restore after confirmation, cancel/complete erase, recover corrupt/future data without overwrite, and test blocked/full storage. No step changes the synthetic index. Check keyboard, narrow screens, reduced motion and hostile text.
+
+The original comparative walkthrough below is entered through **Explore demo** or `#board`.
 
 Release 0.2.1 preserves the following product paths. The verification record is `QA.md`; this document defines what must remain true.
 

@@ -5,376 +5,184 @@
 <h1 align="center">Becoming</h1>
 
 <p align="center">
-  <strong>Know your place. Change it.</strong><br>
-  An independent concept for the OpenAI ecosystem.
+  <strong>Start with what matters. Find a next step.</strong><br>
+  A simple, interest-led experience with an honest record underneath.
 </p>
 
 <p align="center">
-  Created by <strong>Hayden Lindley</strong> · Not affiliated with, sponsored by, or endorsed by OpenAI
+  An independent concept for the OpenAI ecosystem.<br>
+  Created by <strong>Hayden Lindley</strong> · No OpenAI affiliation or endorsement
 </p>
 
 <p align="center">
-  <a href="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml"><img alt="Product verification" src="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml/badge.svg"></a>
-  <img alt="Release 0.2.1" src="https://img.shields.io/badge/release-0.2.1-254d3b">
+  <a href="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml"><img alt="Product verification" src="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml/badge.svg?branch=main"></a>
+  <img alt="Version 0.3.0" src="https://img.shields.io/badge/version-0.3.0-254d3b">
   <img alt="Node 22+" src="https://img.shields.io/badge/node-22%2B-254d3b">
   <img alt="Runtime dependencies 0" src="https://img.shields.io/badge/runtime_dependencies-0-254d3b">
   <a href="LICENSE"><img alt="OpenAI-only new material license" src="https://img.shields.io/badge/new_material-OpenAI_only-254d3b"></a>
 </p>
 
 <p align="center">
-  <img src="public/becoming-preview.png" alt="Becoming running interface showing a 597 out of 1000 index, 48th percentile, evidence coverage, and a person just ahead" width="1180">
+  <a href="public/becoming-preview.png"><img src="public/becoming-preview.png" alt="Actual Becoming desktop opening: one question, What has your attention lately?, with Today, Your record and Explore demo navigation" width="1180"></a>
 </p>
-
-> **Where am I among other people—and what would it actually take to move?**
-
-**Becoming is an evidence-backed comparative development instrument.** It turns demonstrated capability into an intelligible place in a named population, identifies people just ahead, explains the measurable gap, and turns that difference into a project capable of producing new evidence.
-
-It is deliberately direct about rank and deliberately conservative about whether a rank is deserved. Standing, evidence coverage, and movement are separate measurements. Unknown stays unknown. Completing a task does not automatically prove competence. Only accepted, eligible evidence can change capability estimates—and only changed estimates can move placement.
 
 <p align="center">
-  <a href="docs/PROPOSAL.md"><strong>Product thesis</strong></a> ·
-  <a href="docs/ARCHITECTURE.md"><strong>Measurement & architecture</strong></a> ·
-  <a href="docs/ACCEPTANCE.md"><strong>Acceptance contract</strong></a> ·
-  <a href="docs/QA.md"><strong>Verification</strong></a> ·
-  <a href="docs/BRAND.md"><strong>Brand standard</strong></a>
+  <a href="#install">Run locally</a> ·
+  <a href="#core-usage">Walk through it</a> ·
+  <a href="docs/PROPOSAL.md">Product thesis</a> ·
+  <a href="docs/QA.md">Verification</a>
 </p>
 
----
+## Value
 
-## 1. What Becoming does
+You don't need to arrive with a talent or a plan. Start with a game, a song, a fandom, something you make, or a question you keep returning to. Describe one real example. Notice the skills you used there. Choose something you want to try, a reward that matters to you, and a step that fits your circumstances.
 
-Most AI tools help a person finish work. Becoming asks what that work demonstrates about the person—and how that evidence places them relative to legitimate reference populations.
+Becoming keeps two layers clear:
 
-The product loop is simple:
+- **A simple everyday experience.** One question at a time, then one chosen next step. Your saved answers carry forward when you return.
+- **An inspectable record and evidence protocol.** Your own words, decisions and outcomes stay correctable. A separate fictional demo exposes the full comparison and measurement system.
 
-```mermaid
-flowchart LR
-    A["Accepted evidence"] --> B["Capability estimates"]
-    B --> C["Becoming Index + percentile"]
-    C --> D["Person just ahead"]
-    D --> E["Compare measurable gaps"]
-    E --> F["Surpass Project"]
-    F --> G["New demonstration"]
-    G --> H["Human evidence review"]
-    H -->|accepted| A
-    H -->|rejected| F
-```
+The three destinations are **Today**, **Your record**, and **Explore demo**. Details appear when you ask for them; the first screen never assigns you a fictional score.
 
-The intended emotional sequence is equally simple:
-
-**truth → understanding → attainable comparator → action → evidence → movement**
-
-### Core surfaces
-
-| Surface | Purpose |
-|---|---|
-| **Your standing** | Shows the 0–1000 Becoming Index, contextual percentile, evidence coverage, observed envelope, movement, date, and assistance condition. |
-| **Capability standings** | Breaks placement into the six capabilities the demo can currently support without inventing unsupported life measurements. |
-| **Compare us** | Compares two people on the same evidence basis and explains only differences the measurements justify. |
-| **Who is just ahead?** | Finds the smallest compatible positive gap in a selected capability rather than defaulting to an unreachable #1. |
-| **Surpass Projects** | Freezes the comparator, cohort, rubric, condition, current evidence, target, and demonstration required to cross a measurable threshold. |
-| **Movement** | Separates current placement from trajectory and records actual score, percentile, coverage, and evidence changes over time. |
-| **Evidence & methodology** | Exposes the provenance and review state behind every score. |
-| **Data & consent** | Supports source revocation, comparison pause, selective export, and local-state reset. |
-
-Becoming is the **first-person instrument**. A separate product such as Emergence can map populations and exceptional people, but Becoming does not depend on that product to function.
-
----
-
-## 2. The product in one view
+**Version 0.3.0 uses authored guided prompts.** It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
 
 <p align="center">
-  <img src="public/becoming-hero.svg" alt="Illustrated Becoming product flow from a 597 index and 48th percentile to Sage Sato, a synthetic comparator 2.1 research points ahead" width="1180">
+  <a href="public/becoming-phone.png"><img src="public/becoming-phone.png" alt="Actual 390-pixel phone view: interest prompt, optional examples, answer field and Continue button" width="330"></a>
 </p>
 
-The public demo begins with a fully synthetic fixture:
+<p align="center"><em>Actual phone layout. Continue is visible within a 390 × 844 viewport.</em></p>
 
-- **Becoming Index:** 597 / 1000
-- **Composite placement:** 48th percentile
-- **Evidence coverage:** 100%
-- **Reference population:** 120 comparable synthetic participants
-- **Nearest-ahead research comparator:** Sage Sato, 60.4 vs. 58.3
-- **Demonstrated movement path:** 597 → reviewed evidence → 615
+## Requirements
 
-Those numbers are not claims about the visitor or about real people. They exist to make the complete measurement and interaction model inspectable.
+- **Node.js 22+** to run checks, build or serve the project
+- **Git** for the clone instructions below
+- A modern browser with ES modules, native dialogs and local storage
+- No API key, database, account connection or runtime npm dependencies
 
-### What a user can do now
+Python and Playwright are needed only for the optional browser tests. If browser storage is blocked or full, Becoming remains usable for that session and shows a persistent warning. Local storage is unencrypted and tied to the browser and origin; it does not sync between devices.
 
-1. See placement immediately.
-2. Inspect the evidence behind a capability.
-3. Change the comparison population without changing underlying ability.
-4. Switch independent and AI-assisted conditions.
-5. Find a synthetic person just ahead.
-6. Compare the measurable differences.
-7. Create a Surpass Project from that exact gap.
-8. Complete a synthetic demonstration.
-9. Review the resulting evidence.
-10. Accept it and observe legitimate score/rank movement.
-11. Revoke evidence and watch the dependent measurements correct themselves.
+This is a source-visible project with a recipient-limited license. See [Project & license](#project--license) for the current grant and preserved earlier MIT rights.
 
----
-
-## 3. Why the measurement is inspectable
-
-The point of ranking is not to manufacture certainty. It is to make **valid comparison useful**.
-
-### Becoming preserves these invariants
-
-- **Unknown is not zero.** Missing evidence lowers coverage; it does not fabricate a poor score.
-- **Coverage is not ability.** A 24% observed profile cannot present itself as a complete human measurement.
-- **Conditions stay separate.** Independent and AI-assisted performance are never silently blended.
-- **Rubrics are versioned.** Comparable evidence must share a defined assessment basis.
-- **Provenance survives scoring.** Every estimate can be traced back to eligible demonstrations and sources.
-- **Human review gates movement.** Pending evidence cannot change placement.
-- **Project completion is not competence.** Checking every box in a Surpass Project awards nothing by itself.
-- **Perspective adoption is not skill transfer.** Trying another person's practice does not copy their score, identity, credentials, or reputation.
-- **Invalid comparisons are rejected.** The product does not invent a friendlier population when a legitimate comparison is unavailable.
-- **Synthetic people stay synthetic.** The current comparator records are fixtures designed for later replacement by authorized real-participant data.
-- **No personality inference.** Output differences do not become claims about confidence, discipline, motives, intelligence, or worth.
-- **The composite is decomposable.**
-
-```text
-Becoming Index
-└── supported capabilities
-    └── condition-specific estimates
-        └── assessments
-            └── accepted evidence
-                └── source + rubric + provenance
-```
-
-The index is a composite of the dimensions the system can currently evaluate—not a score of intrinsic human worth.
-
-For the exact arithmetic, eligibility rules, recency window, cohort compatibility, and frozen Surpass Project contracts, read **[Architecture](docs/ARCHITECTURE.md)** and **[Data contracts](docs/DATA-CONTRACTS.md)**.
-
----
-
-## 4. Run Becoming locally
-
-### Requirements
-
-- **Node.js 22+**
-- A modern browser with ES modules and native `<dialog>`
-- No API key
-- No database
-- No account connection
-- No runtime npm dependencies
-
-The optional browser suite uses Python + Playwright as development-only tooling.
-
-### Install
+## Install
 
 ```bash
 git clone https://github.com/bohselecta/oai-becoming.git
 cd oai-becoming
-
 npm run check
 npm run dev
 ```
 
-Open:
+Open **http://127.0.0.1:4173**. No `npm install` step is needed: the app and build use Node's standard library. The development server listens on loopback only.
 
-```text
-http://127.0.0.1:4173
-```
-
-The development server binds to loopback only.
-
-### Build the portable product
+For the production build:
 
 ```bash
-npm run build
-```
-
-The build produces:
-
-```text
-dist/
-├── index.html          # modular hosted entry
-├── becoming.html       # single-file portable product
-├── src/
-├── public/
-├── docs/
-├── licenses/
-└── LICENSE
-```
-
-`dist/becoming.html` contains the application, fixture data, styles, current legal notice, legacy MIT notice, and documentation needed to run the demonstration without network or model calls.
-
-### Deploy through GitHub → Vercel
-
-The repository already includes `vercel.json`.
-
-| Setting | Value |
-|---|---|
-| Root directory | `.` |
-| Build command | `npm run build` |
-| Output directory | `dist` |
-| Environment variables | none required |
-
-Source publication is **not** a deployment. This repository does not claim a live Vercel release until one has actually been connected and verified.
-
----
-
-## 5. Verify the product
-
-### Automated checks
-
-```bash
-npm test
 npm run build
 npm run preview
 ```
 
-Optional browser verification:
+This creates a modular static site at `dist/index.html` and a self-contained file at `dist/becoming.html`. The portable file includes the app, fictional data, styles, documentation and both legal notices; it runs without network or model calls. Browser policies for saving data from local files vary, so use a served origin for dependable return visits and export backups when moving between them.
+
+## Core usage
+
+### 1. Start with your attention
+
+In **Today**, describe something that interests you, then give one concrete example of what you did. You can use the optional prompts if you don't know what you have to offer. Saved answers resume where you left off; unsent text is not saved.
+
+Confirm only the actions you actually used: planning, coordination, persistence or adaptation. Coordinating a raid is coordination in that setting. The record identifies this as your account, without assigning proficiency or claiming that it transfers to a different setting.
+
+### 2. Choose a step on your terms
+
+Choose an activity you want to pursue, a reward you care about and any constraints or accommodations. Make the next action small enough to try. You can change it, make it smaller, stop and return.
+
+<p align="center">
+  <a href="public/becoming-next-step.png"><img src="public/becoming-next-step.png" alt="Actual next-step screen: a user chooses to write three steps of a raid guide and ask a friend to try them, with their own reward and constraints underneath" width="1180"></a>
+</p>
+
+After trying it, record what happened and whether it supports your account, contradicts it or leaves you uncertain. Choosing a new step preserves the completed attempt with its original context. Nothing awards a score or guarantees success.
+
+### 3. Inspect and correct your record
+
+**Your record** shows the answers behind the prompts: interests, examples, confirmed actions, direction, reward, constraints, next step and outcomes.
+
+<p align="center">
+  <a href="public/becoming-record.png"><img src="public/becoming-record.png" alt="Actual record screen showing saved answers, user-confirmed actions, untested transfer and controls to correct the record" width="1180"></a>
+</p>
+
+Correcting an example clears its old skill confirmations until you reconfirm them. Correcting a current step clears its dependent result. Earlier completed attempts remain tied to their original accounts and can be inspected or removed. Up to 20 attempts are retained without silently pruning history. At the limit, export a copy if you want to keep it, then explicitly remove an earlier attempt before adding another.
+
+Use **Your data & privacy** to download a full backup, validate and restore a backup, or explicitly erase the local record. Backups include your private text and are not uploaded. Corrupt or incompatible saved data stays recoverable before replacement. Erasing the local record cannot remove copies you already downloaded.
+
+### 4. Explore the evidence underneath
+
+**Explore demo** opens the complete comparative instrument with **120 fictional participants**. It is separate from your personal record: entering an interest, completing a step or describing a skill never changes a demo score.
+
+Inspect the Becoming Index, capability standings, compatible comparisons, the person just ahead, Surpass Projects, movement, evidence and consent controls. Every score exposes its evidence basis, assistance condition, date and coverage. Valid low scores stay visible; unknown stays unknown. Independent and AI-assisted results remain separate.
+
+Try the full evidence loop: choose a comparison, create a project, complete its practice, submit a synthetic demonstration, inspect it and accept or reject it. Only accepted eligible evidence changes placement. Revocation removes its contribution again.
+
+[Measurement architecture](docs/ARCHITECTURE.md) · [Data contracts](docs/DATA-CONTRACTS.md) · [Acceptance walkthrough](docs/ACCEPTANCE.md)
+
+All four images above are captures of the running interface, not mockups. The example record was entered by browser tests. They match the verified implementation at [`91b145ad`](https://github.com/bohselecta/oai-becoming/commit/91b145adb675ee170270f59c9ab4b6f27d7b22d8).
+
+## Advanced configuration
+
+### Serving and static hosting
+
+Set `PORT` to change the local server port, for example `PORT=4174 npm run dev` in a POSIX shell. No other environment variables or secrets are required.
+
+The checked-in `vercel.json` supports a static GitHub → Vercel setup with the repository root as the project root, `npm run build` as the build command and `dist` as the output directory. It includes security headers and a `connect-src 'none'` policy. Hosting is optional; this repository does not claim a verified production deployment.
+
+### Verification
+
+```bash
+npm run check
+```
+
+This runs **152 Node tests** and builds both formats. The [Product verification workflow](https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml) also runs both browser suites against the served site and the portable file, recording the exact source revision, JSON receipts and screenshots.
+
+To run browser verification locally after building:
 
 ```bash
 python -m pip install -r tests/requirements.txt
 python -m playwright install chromium
 
-# Portable/offline acceptance
+# Portable build
 python tests/browser_smoke.py
+python tests/discovery_browser.py
 
-# Served-origin acceptance, with preview running separately
+# Served build: run npm run preview in another terminal first
 python tests/browser_smoke.py --url http://127.0.0.1:4173
+python tests/discovery_browser.py --url http://127.0.0.1:4173
 ```
 
-### Current 0.2.1 evidence
+The [verified implementation run](https://github.com/bohselecta/oai-becoming/actions/runs/36776489243) at `91b145ad` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. Check the workflow for the current commit's result; a historical receipt does not verify later changes.
 
-| Verification | Result |
-|---|---:|
-| Domain/package tests | **100 passed** |
-| Local offline Chromium assertions | **232 passed** |
-| Served-browser assertions | **238 passed** |
-| Production build | **passed** |
-| Portable single-file build | **passed** |
+Coverage includes context on return, contradictory outcomes, corrections, preserved attempts, backup validation, recovery, storage failures, keyboard/focus behavior and desktop/phone layouts. Human first-use studies, a screen-reader audit and real-device Safari testing remain outstanding. See [QA and execution limits](docs/QA.md).
 
-The served run exercises modular loading, security headers, origin persistence, current and legacy legal downloads, responsive layouts, keyboard operation, comparison, Surpass Project creation, evidence review, movement, and revocation.
+### Extending the project
 
-See:
+`src/journey.js` owns the validated personal record; `src/discovery.js` presents the guided flow. `src/domain.js` and `src/participants.js` own the separate synthetic measurement model. Keep these boundaries intact.
 
-- [Current status](docs/STATUS.md)
-- [QA record](docs/QA.md)
-- [0.2.1 hosted browser receipt](docs/verification/0.2.1-hosted.json)
-- [Acceptance criteria](docs/ACCEPTANCE.md)
+Read the [discovery contract](docs/DISCOVERY-CONTRACT.md), [architecture](docs/ARCHITECTURE.md), [data contracts](docs/DATA-CONTRACTS.md) and [current status](docs/STATUS.md) before changing behavior. Real assessment would require authorized participant and evidence services, reviewer provenance, correction and withdrawal handling, and empirical measurement validation. No configuration switch turns the fictional demo into a real assessment.
 
-### Repository layout
+## Project & license
 
-```text
-oai-becoming/
-├── src/
-│   ├── app.js               # product UI and interactions
-│   ├── domain.js            # measurement and state model
-│   ├── participants.js      # synthetic comparator fixtures
-│   ├── styles.css           # retained Becoming design system
-│   └── comparative.css      # comparative-product additions
-├── public/
-│   ├── mark.svg
-│   ├── becoming-preview.png # actual verified product screenshot
-│   └── becoming-hero.svg    # product illustration
-├── tests/
-│   ├── domain.test.mjs
-│   ├── comparative.test.mjs
-│   ├── license-brand.test.mjs
-│   └── browser_smoke.py
-├── docs/
-├── licenses/
-├── scripts/
-├── LICENSE
-└── vercel.json
-```
+**Becoming** is the first-person instrument. **Emergence** is a separate world-facing concept; neither project requires the other to run. Becoming keeps its own name, original mark, forest-green visual identity and authorship. “An independent concept for the OpenAI ecosystem” describes intent, not an integration, partnership or endorsement. See the [brand standard](docs/BRAND.md).
 
-The next production step is not another mockup: it is an authorized real-participant/evidence adapter plus empirical measurement validation.
+Copyright © 2026 **Hayden Lindley**. New original material is offered under the **[Becoming OpenAI-Only License 1.0](LICENSE)**, first introduced with 0.2.1. This is a custom, recipient-limited grant, not a general open-source license. The license defines the eligible OpenAI entities and permitted uses.
 
----
-
-## 6. Product status and limits
-
-Becoming 0.2.1 is a **complete comparative demonstration**, not a calibrated real-world assessment service.
-
-### Implemented
-
-- evidence-backed capability estimates
-- decomposable Becoming Index
-- contextual percentile placement
-- cohort switching
-- independent / AI-assisted separation
-- synthetic person profiles
-- Compare Us
-- nearest-ahead comparator search
-- Surpass Projects
-- reviewed evidence movement
-- revocation propagation
-- trajectory/history
-- methodology inspection
-- selective export
-- responsive and keyboard-accessible behavior
-- portable offline build
-
-### Still deliberately synthetic or unverified
-
-- real participant identities and measurements
-- national or occupational population norms
-- psychometric calibration
-- participant studies
-- production authentication
-- OpenAI account integration
-- OpenAI API/model calls
-- screen-reader audit
-- live Vercel deployment
-- OpenAI endorsement, sponsorship, or acceptance
-
-The demo contains **120 fictional participants**, **eight named fixture populations**, and **four authored Perspective bundles**. That boundary is intentional: the interface is ready for real evidence, but it does not fabricate it.
-
----
-
-## 7. OpenAI offering, brand position, and license
-
-### Independent ecosystem concept
-
-Becoming uses its **own name, mark, visual system, and product hierarchy**. The phrase **“An independent concept for the OpenAI ecosystem”** is descriptive supporting copy, not a joint brand or partnership claim.
-
-No OpenAI Blossom, OpenAI wordmark, ChatGPT icon, proprietary OpenAI typeface, model name, or lookalike mark is used as Becoming's identity. The project does not claim to be official, certified, integrated, accepted, or endorsed.
-
-See **[Brand standard](docs/BRAND.md)**.
-
-### OpenAI-only grant for new material
-
-Copyright © 2026 **Hayden Lindley**.
-
-New original material first published with 0.2.1 is offered under **[Becoming OpenAI-Only License 1.0](LICENSE)**. The defined OpenAI entities receive a worldwide, royalty-free, nonexclusive right to use, modify, integrate, and commercialize that material subject to the license terms.
-
-This is a **public, source-visible repository**, but the new grant is **not a general open-source license** for unrelated companies, independent developers, customers, or ecosystem participants.
-
-### Earlier MIT rights remain intact
-
-Version 0.2.0 was already released under MIT. Those permissions are **not revoked or narrowed**, including for material retained from that release.
-
-- [License history](docs/LICENSE-HISTORY.md)
-- [Legacy MIT notice](licenses/MIT-legacy.txt)
-- [OpenAI permission summary](docs/PERMISSION.md)
-
-The custom 0.2.1 license has not been reviewed by counsel. Qualified legal review is appropriate before relying on it for commercial enforcement or a formal transfer.
-
----
+The earlier 0.2.0 MIT grant remains intact, including for retained material covered by it. Read the [license history](docs/LICENSE-HISTORY.md), [original MIT notice](licenses/MIT-legacy.txt) and [permission summary](docs/PERMISSION.md) for that boundary. The custom license has not been reviewed by counsel.
 
 <p align="center">
-  <img src="public/mark.svg" alt="" width="40" height="40">
-</p>
-
-<p align="center">
+  <img src="public/mark.svg" alt="" width="40" height="40"><br>
   <strong>Becoming</strong><br>
   Know your place. Change it.
 </p>
 
 <p align="center">
   <a href="docs/PROPOSAL.md">Proposal</a> ·
-  <a href="docs/ARCHITECTURE.md">Architecture</a> ·
   <a href="docs/EVALUATION.md">Evaluation</a> ·
-  <a href="docs/QA.md">QA</a> ·
   <a href="CONTRIBUTING.md">Contributing</a> ·
   <a href="CHANGELOG.md">Changelog</a>
-</p>
-
-<p align="center">
-  Independent concept for the OpenAI ecosystem · No affiliation or endorsement implied
 </p>
