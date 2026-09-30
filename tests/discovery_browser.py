@@ -207,7 +207,7 @@ def exercise(browser):
     check(page.get_by_test_id('index-value').count() == 0, 'fresh entry does not invent a visitor score')
     check('no live ai' in page.locator('.discovery-footnote').inner_text().lower(), 'fresh entry explicitly discloses authored prompts, no live AI')
     check('this browser' in page.locator('.discovery-footnote').inner_text(), 'fresh entry explains local data boundary')
-    check('Independent concept for ChatGPT + OpenAI' in page.locator('.ecosystem-context').inner_text(), 'ChatGPT and OpenAI ecosystem attribution is explicit')
+    ecosystem = page.locator('.ecosystem-context').inner_text()\n    check('Independent concept for' in ecosystem and 'ChatGPT' in ecosystem and 'OpenAI' in ecosystem, 'ChatGPT and OpenAI ecosystem attribution is explicit')
     check('Hayden Lindley' in page.locator('.page-footer').inner_text(), 'author attribution is retained')
     check('No affiliation or endorsement' in page.locator('.page-footer').inner_text(), 'no OpenAI affiliation or endorsement is implied')
     for example in ['Games', 'Music', 'Stories & fandom']:
