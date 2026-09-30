@@ -104,3 +104,17 @@
 .gentle-start{font-size:13px;color:#52674a;margin:-8px 0 23px}.gentle-start summary{cursor:pointer;min-height:30px;line-height:1.7}.gentle-start p{padding:13px 16px;background:#f4f7ef;border-radius:10px;margin-top:8px}.record-evidence>.text-link{display:flex;margin-top:13px}
 
 .attempt-history{margin:28px 0}.attempt-history .section-heading{margin-bottom:17px}.attempt-record{padding:20px 26px;margin:12px 0}.attempt-record summary{cursor:pointer;line-height:1.6;font-size:15px;font-weight:550;overflow-wrap:anywhere}.attempt-record dl{margin:20px 0}.attempt-record dt{font-size:11px;font-weight:600;color:#546d46}.attempt-record dd{margin:6px 0 19px;font-size:14px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}@media(max-width:580px){.attempt-record{padding:19px 21px}}
+
+/* On phones, keep the privacy control with the brand and let the task lead. */
+@media(max-width:580px){
+  .discovery-workspace .topbar{position:absolute;top:15px;right:14px;z-index:25;height:44px;width:44px;padding:0;border:0;background:transparent;justify-content:center}
+  .discovery-workspace .topbar .breadcrumb,.discovery-workspace .topbar .demo-pill{display:none}
+  .discovery-workspace .topbar .icon-button{width:44px;height:44px}
+  .discovery-workspace .ecosystem-context{padding-top:7px;padding-bottom:7px}
+  .discovery-workspace main{padding-top:16px}
+  .conversation-card{padding-top:19px;padding-bottom:22px}
+  .conversation-kicker{margin-bottom:18px;min-height:34px}
+  .conversation-prompt{margin-top:16px;margin-bottom:19px}
+  .gentle-start{margin-bottom:16px}
+  .conversation-actions{margin-top:19px}
+}
