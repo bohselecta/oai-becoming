@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title description">
+  <title id="title">Becoming — know your place. Change it.</title>
+  <desc id="description">Product illustration using the actual synthetic starting fixture: Becoming Index 597 out of 1000, 48th percentile, 100 percent evidence coverage; Sage Sato is 2.1 research points ahead.</desc>
+  <rect width="1440" height="760" rx="24" fill="#f5f7f0"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#243a2b">
+    <rect x="68" y="62" width="40" height="40" rx="11" fill="#173c2b"/>
+    <path d="M79 91V80a9 9 0 0118 0v11M84 91V80a4 4 0 018 0v11" fill="none" stroke="#d6efae" stroke-width="2.5"/>
+    <text x="122" y="91" font-size="30" font-weight="600" letter-spacing="-1.2">becoming.</text>
+    <text x="68" y="162" font-size="12" letter-spacing="2.4" fill="#586c4c">YOUR PLACE IN THE WORLD</text>
+    <text x="65" y="233" font-size="58" letter-spacing="-3">Know where you stand.</text>
+    <text x="69" y="271" font-size="19" fill="#607456">And what it would actually take to move.</text>
+    <rect x="67" y="317" width="777" height="340" rx="20" fill="white" stroke="#dce3d3"/>
+    <text x="101" y="362" font-size="11" letter-spacing="1.7" fill="#607456">BECOMING INDEX</text>
+    <text x="97" y="484" font-size="118" letter-spacing="-8">597</text>
+    <text x="304" y="480" font-size="23" fill="#647859">/ 1000</text>
+    <path d="M438 401v88" stroke="#dce3d3"/>
+    <text x="471" y="432" font-size="26">48th percentile</text>
+    <text x="472" y="463" font-size="14" fill="#607456">All comparable participants</text>
+    <text x="472" y="486" font-size="12" fill="#607456">120 synthetic reference people</text>
+    <rect x="103" y="522" width="706" height="7" rx="4" fill="#cfdebd"/>
+    <circle cx="442" cy="525" r="8" fill="#254d3b" stroke="white" stroke-width="3"/>
+    <text x="103" y="574" font-size="10" letter-spacing="1.2" fill="#607456">EVIDENCE COVERAGE</text>
+    <text x="103" y="615" font-size="31">100%</text>
+    <text x="464" y="574" font-size="10" letter-spacing="1.2" fill="#607456">MOVEMENT IS SEPARATE</text>
+    <text x="464" y="608" font-size="18">Only accepted evidence moves the score.</text>
+    <rect x="865" y="317" width="507" height="340" rx="20" fill="#173c2b"/>
+    <circle cx="1325" cy="350" r="117" fill="none" stroke="#365941" stroke-width="22" opacity=".35"/>
+    <text x="899" y="362" font-size="11" letter-spacing="1.7" fill="#c5d9ac">WHO IS JUST AHEAD?</text>
+    <circle cx="924" cy="416" r="25" fill="#e6edcf"/>
+    <text x="912" y="422" font-size="15">SS</text>
+    <text x="966" y="414" font-size="29" fill="#f4f8ee">Sage Sato</text>
+    <text x="967" y="439" font-size="12" fill="#c5d9ac">Synthetic person · Research judgment</text>
+    <text x="901" y="486" font-size="10" letter-spacing="1.1" fill="#c5d9ac">YOU</text>
+    <text x="901" y="531" font-size="37" fill="#f4f8ee">58.3</text>
+    <text x="1084" y="506" font-size="13" fill="#d6efae">+2.1 points</text>
+    <path d="M1110 524h48m-9-7 9 7-9 7" fill="none" stroke="#d6efae" stroke-width="1.5"/>
+    <text x="1250" y="486" font-size="10" letter-spacing="1.1" fill="#c5d9ac">SAGE</text>
+    <text x="1243" y="531" font-size="37" fill="#f4f8ee">60.4</text>
+    <rect x="900" y="570" width="437" height="49" rx="9" fill="#d6efae"/>
+    <text x="921" y="600" font-size="15">Compare us</text>
+    <path d="M1288 594h24m-7-6 7 6-7 6" fill="none" stroke="#254d3b" stroke-width="1.5"/>
+    <text x="69" y="706" font-size="13" fill="#607456">Standing → a person just ahead → a Surpass Project → evidence → movement</text>
+    <text x="1370" y="706" font-size="11" fill="#607456" text-anchor="end">Independent offering · MIT license · Product illustration</text>
+  </g>
+</svg>
