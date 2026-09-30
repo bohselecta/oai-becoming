@@ -1,6 +1,6 @@
 # Becoming — frozen comparative product contract
 
-Contract: `becoming-product/2` · Release: `0.3.0` · September 30, 2026.
+Contract: `becoming-product/2` · Release: `0.3.1` · September 30, 2026.
 
 ## Interest-led entry amendment — `becoming-discovery/1`
 
@@ -47,6 +47,6 @@ Retain assertions when fixing defects. Explain a genuine product-contract change
 
 The owner-directed 0.2.1 revision uses **Becoming OpenAI-Only License 1.0** for new original material. Read `LICENSE`, `docs/LICENSE-HISTORY.md` and `docs/BRAND.md`. Never describe the current grant as MIT, unrestricted reuse, or open source. Preserve `licenses/MIT-legacy.txt` and earlier MIT rights; a license change cannot erase that release. Do not broaden the defined recipients without the owner's authorization.
 
-Keep **Becoming** and its original mark primary. Supporting text is **An independent concept for the OpenAI ecosystem.** Identify Hayden Lindley; do not imply affiliation, official status, endorsement, an installed ChatGPT app, a model connection or a partnership. No OpenAI logos, lookalikes, co-brand lockups or proprietary fonts. Use the retained forest-green identity on quiet neutral surfaces. Refresh the actual README screenshot when branding changes.
+Keep **Becoming** and its original brand primary. The current mark is the 0.3.1 person-and-rising-path symbol. Supporting text is **Independent concept for ChatGPT + OpenAI.** ChatGPT/OpenAI may appear as secondary textual references, never as the product name or a partnership claim. Do not reconstruct, modify or merge OpenAI logos into the Becoming identity; official logo assets require exact current assets and applicable OpenAI permission/terms. Identify Hayden Lindley; do not imply affiliation, official status, endorsement, an installed ChatGPT app, a model connection or a partnership. Use the forest-green identity on quiet neutral surfaces. Refresh actual README screenshots whenever visible branding changes.
 
 Preserve the measurement contract, fixtures, storage key, state version and all user paths during branding-only changes. Both modular and portable builds must include the current license, retained legacy notice and working local document links. Keep the next-agent entry in `docs/STATUS.md` current.
