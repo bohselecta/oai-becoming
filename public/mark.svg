@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="15" fill="#173b32"/><g fill="none" stroke="#d5f3b7" stroke-width="3.6" stroke-linecap="round"><path d="M14 33V22a10 10 0 0 1 20 0v11"/><path d="M21 33V22a3 3 0 0 1 6 0v11"/><path d="M14 33h20"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="becoming-mark-title">
+  <title id="becoming-mark-title">Becoming</title>
+  <rect x="1" y="1" width="46" height="46" rx="14" fill="#173b32"/>
+  <circle cx="18.2" cy="14" r="4.2" fill="#d5f3b7"/>
+  <path d="M11.5 31.8c5.2-7.7 12.6-11.6 25-11.6v7.1c-10.4 0-18.3 2.5-25 8.6z" fill="#d5f3b7"/>
+  <path d="M11.5 39c5.6-6.4 13.9-9.6 25-9.6v7.1c-9.8 0-17.7 1.6-25 6.5z" fill="#f8f9f6"/>
+</svg>
