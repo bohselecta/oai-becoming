@@ -3,11 +3,15 @@
   <desc id="description">Product illustration using the actual synthetic starting fixture: Becoming Index 597 out of 1000, 48th percentile, 100 percent evidence coverage; Sage Sato is 2.1 research points ahead.</desc>
   <rect width="1440" height="760" rx="24" fill="#f5f7f0"/>
   <g font-family="Arial,Helvetica,sans-serif" fill="#243a2b">
-    <rect x="68" y="62" width="40" height="40" rx="11" fill="#173c2b"/>
-    <path d="M79 91V80a9 9 0 0118 0v11M84 91V80a4 4 0 018 0v11" fill="none" stroke="#d6efae" stroke-width="2.5"/>
+    <g transform="translate(68 62) scale(.833333)">
+      <rect x="1" y="1" width="46" height="46" rx="14" fill="#173b32"/>
+      <circle cx="18.2" cy="14" r="4.2" fill="#d5f3b7"/>
+      <path d="M11.5 31.8c5.2-7.7 12.6-11.6 25-11.6v7.1c-10.4 0-18.3 2.5-25 8.6z" fill="#d5f3b7"/>
+      <path d="M11.5 39c5.6-6.4 13.9-9.6 25-9.6v7.1c-9.8 0-17.7 1.6-25 6.5z" fill="#f8f9f6"/>
+    </g>
     <text x="122" y="91" font-size="30" font-weight="600" letter-spacing="-1.2">becoming.</text>
-    <text x="1370" y="86" font-size="15" fill="#586c4c" text-anchor="end">An independent concept for the OpenAI ecosystem.</text>
-    <text x="1370" y="108" font-size="11" fill="#607456" text-anchor="end">By Hayden Lindley · Not affiliated with OpenAI</text>
+    <text x="1370" y="86" font-size="15" fill="#586c4c" text-anchor="end">Independent concept for ChatGPT + OpenAI.</text>
+    <text x="1370" y="108" font-size="11" fill="#607456" text-anchor="end">By Hayden Lindley · No affiliation or endorsement</text>
     <text x="68" y="162" font-size="12" letter-spacing="2.4" fill="#586c4c">YOUR PLACE IN THE WORLD</text>
     <text x="65" y="233" font-size="58" letter-spacing="-3">Know where you stand.</text>
     <text x="69" y="271" font-size="19" fill="#607456">And what it would actually take to move.</text>
@@ -42,6 +46,6 @@
     <text x="921" y="600" font-size="15">Compare us</text>
     <path d="M1288 594h24m-7-6 7 6-7 6" fill="none" stroke="#254d3b" stroke-width="1.5"/>
     <text x="69" y="706" font-size="13" fill="#607456">Standing → a person just ahead → a Surpass Project → evidence → movement</text>
-    <text x="1370" y="706" font-size="11" fill="#607456" text-anchor="end">OpenAI-only new grant · Legacy MIT preserved · Illustration</text>
+    <text x="1370" y="706" font-size="11" fill="#607456" text-anchor="end">ChatGPT + OpenAI are OpenAI marks · Independent concept · Illustration</text>
   </g>
 </svg>
