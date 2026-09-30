@@ -24,7 +24,7 @@ export function discoveryView(record, stage=record.stage, storageStatus='new', s
   const e=discoveryEscape;
   const hints={
     interest:'You don’t need to arrive with a talent or a plan. A game, a song, a rabbit hole, something you keep coming back to. Any of that is a place to start.',
-    story:'Pick one recent moment connected to what caught your attention. What were you trying to do, what did you do, and what happened? Watching, listening or noticing something can be a starting point too. A short account is enough.',
+    story:`You mentioned “${record.interest}”. Pick one recent moment connected to that. What were you trying to do, what did you do, and what happened? Watching, listening or noticing something can be a starting point too. A short account is enough.`,
     skills:'Choose only actions that happened in your example. Leaving these blank is fine. We’re naming what you described, not giving you a grade.',
     direction:'Keep it connected to what you care about. It can be useful, playful, social, or just something you want to find out. Your words set the direction.',
     reward:'What would make this feel worthwhile to you, even if it stays small? You choose what counts.',
