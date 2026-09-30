@@ -10,9 +10,9 @@ An evidence-backed comparative development instrument: your standing, the people
 ![MIT license](https://img.shields.io/badge/license-MIT-254d3b)
 ![Runtime dependencies 0](https://img.shields.io/badge/runtime_dependencies-0-254d3b)
 
-<p align="center"><img src="public/becoming-hero.svg" alt="Becoming: a transparent 597-point index, named comparison population and a synthetic person just ahead" width="1200"></p>
+<p align="center"><img src="public/becoming-preview.png" alt="Becoming: a transparent 597-point index, named comparison population and a synthetic person just ahead" width="1200"></p>
 
-*Product illustration. The running demo calculates the same starting fixture: 597/1000, 48th percentile, 100% evidence coverage. These describe authored synthetic data, not the visitor.*
+*Screenshot of the running product. The demo calculates this starting fixture: 597/1000, 48th percentile, 100% evidence coverage. These describe authored synthetic data, not the visitor.*
 
 **Release:** complete local product demonstration · **Verified locally:** 90 domain tests and 203 Chromium assertions · **Offering:** original source, assets and documentation free to use under MIT, including by OpenAI.
 
