@@ -4,18 +4,20 @@ Frozen requirements: [D1–D8](DISCOVERY-CONTRACT.md). Baseline main `23b4f4c` p
 
 ## Executed browser evidence
 
-At exact source `b52af7ded72e8596649ffc8d3628583034619295`, [GitHub CI](https://github.com/bohselecta/oai-becoming/actions/runs/36774507264) executed:
+At exact source `2157a7ed84734bdeca53a9f244327a706494eb72`, [GitHub CI](https://github.com/bohselecta/oai-becoming/actions/runs/36775816619) passed the complete gate:
 
 | Suite | Result at that revision |
 |---|---|
-| Hosted comparative | PASS — 238 assertions, no runtime errors or external calls |
+| Hosted comparative | PASS — 238 assertions |
 | Hosted discovery | PASS — 297 assertions, actual localStorage reload and CSP |
 | Portable comparative | PASS — 232 assertions |
-| Portable discovery | FAIL — 292 functional assertions passed, then the test-only storage shim attempted to redefine a non-configurable helper during simulated reopen |
+| Portable discovery | PASS — 294 assertions, explicit offline Storage fault/reopen fixtures |
 
-The portable harness fix makes that helper configurable between explicitly simulated reopens. It does not change production state or suppress runtime errors. The no-errors assertion remains mandatory. All four suites are required in the [current exact-head PR gate](https://github.com/bohselecta/oai-becoming/pull/4/checks); consult that result for the final source, rather than claiming the older run was fully green. The workflow checks out the PR head directly and includes source revision/tree files in its evidence artifact.
+No runtime errors or external model/analytics/asset requests were observed. [Complete versioned receipt](verification/0.3.0-complete.json). The workflow checks out the PR head directly and includes source revision/tree files in its artifact. Consult the [latest exact-head PR gate](https://github.com/bohselecta/oai-becoming/pull/4/checks) for any later revision; an older receipt is not evidence for changed code.
 
-[Versioned hosted receipt](verification/0.3.0-hosted.json). Actual screenshots from that revision: [desktop](../public/becoming-preview.png), [phone](../public/becoming-phone.png), [chosen step](../public/becoming-next-step.png), [record](../public/becoming-record.png). These depict test-entered local context, not a real visitor assessment. Independent visual review found no clipping, overlap or hierarchy blocker; the phone Continue control fits within 390×844 pixels.
+The earlier `b52af7d` run passed both hosted suites and portable comparative verification, but the portable discovery harness could not redefine its test-only Window helper during a simulated reopen. Making that helper configurable fixed the harness lifecycle without changing production state or suppressing runtime errors. A parallel `2157a7e` PR run then exposed a CSP-sensitive plain-string polling predicate. Pollers now use explicit functions, preserving the strict product CSP and the no-errors assertions.
+
+Actual screenshots from `b52af7d`: [desktop](../public/becoming-preview.png), [phone](../public/becoming-phone.png), [chosen step](../public/becoming-next-step.png), [record](../public/becoming-record.png). These depict test-entered local context, not a real visitor assessment. Independent visual review found no clipping, overlap or hierarchy blocker; the phone Continue control fits within 390×844 pixels. Subsequent production presentation is unchanged; final-run artifacts include refreshed captures.
 
 ## Requirements exercised
 

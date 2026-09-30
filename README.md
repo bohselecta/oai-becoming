@@ -252,7 +252,7 @@ python tests/discovery_browser.py --url http://127.0.0.1:4173
 
 ### Review evidence
 
-The interest-led implementation passes **152 Node tests** and both production builds. At source `b52af7d`, Chromium also passed **238 hosted comparative**, **297 hosted discovery**, and **232 portable comparative** assertions. The full portable discovery runner reached its final error check and exposed a test-only storage-shim lifecycle defect; the shim was corrected without weakening the error assertion.
+The interest-led implementation passes **152 Node tests** and both production builds. At exact source `2157a7e`, Chromium passed all four suites: **238 hosted comparative**, **297 hosted discovery**, **232 portable comparative**, and **294 portable discovery** assertions, with no runtime errors or external requests. [Complete versioned receipt](docs/verification/0.3.0-complete.json).
 
 The [draft PR’s checks](https://github.com/bohselecta/oai-becoming/pull/4/checks) are the final gate. CI explicitly checks out the exact PR head, runs both complete browser suites in both served and portable modes, records the source revision/tree, and uploads JSON receipts and actual screenshots. A receipt from an earlier commit is not a pass for a later head.
 

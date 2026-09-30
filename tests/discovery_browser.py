@@ -139,7 +139,7 @@ def controls(page):
 
 def dismiss(page):
     page.keyboard.press('Escape')
-    page.wait_for_function('!document.querySelector("dialog").open')
+    page.wait_for_function('() => !document.querySelector("dialog").open')
 
 
 def download(page, locator, filename):
@@ -391,7 +391,7 @@ def exercise(browser):
     ]
     for label, invalid in invalids:
         upload(page, invalid, label + '.json')
-        page.wait_for_function('document.querySelector("#journey-import-error")?.textContent.length > 0')
+        page.wait_for_function('() => document.querySelector("#journey-import-error")?.textContent.length > 0')
         check(page.locator('[data-action="journey-confirm-import"]').count() == 0, label + ': invalid backup never reaches replacement confirmation')
         check(snapshot(page) == current, label + ': invalid import leaves stored bytes unchanged')
     upload(page, backup)

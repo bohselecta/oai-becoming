@@ -8,7 +8,7 @@ let state=initialState(), storageNotice='';
 try {const raw=localStorage.getItem(KEY);if(raw){const saved=JSON.parse(raw);if(isState(saved))state=saved;else storageNotice='Incompatible local state was reset. No old estimates were silently migrated.';}}
 catch {storageNotice='Storage is unavailable. This demo still works; this session will not be saved.';}
 let journeyStorage; try { journeyStorage=localStorage; } catch {}
-let journeyLoad=readJourney(journeyStorage), journey=journeyLoad.record, journeyStatus=journeyLoad.status, journeyMessage=journeyLoad.message||'', journeyStage=null, pendingJourneyImport=null;
+let journeyLoad=readJourney(journeyStorage), journey=journeyLoad.record, journeyStatus=journeyLoad.status, journeyMessage=journeyLoad.message||'', journeyStage=null, pendingJourneyImport=null, journeyImportSequence=0;
 let selectedSkill='research',selectedPersonId=null,projectFilter='All',historyDays=30,toastTimer,returnFocus=null,perspectivePerson=null;
 const paths={
   grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
@@ -159,9 +159,11 @@ catch(error){const target=$(event.target.id==='journey-form'?'#journey-error':ev
 });
 document.addEventListener('change',async event=>{
 if(event.target.id!=='journey-import')return;
-const file=event.target.files?.[0];if(!file)return;
-try {if(file.size>2000000)throw new Error('This file is too large for a local-record backup.');const candidate=parseJourneyBackup(await file.text());pendingJourneyImport=candidate;modal('Replace your local record?',`<p>The checked backup contains revision ${candidate.revision}.</p><div class="criterion"><strong>${esc(candidate.interest||'No interest recorded')}</strong><p>${esc(candidate.direction||'No direction recorded yet')}</p></div><p>Restoring replaces your current local record. Export it first if you want to keep both. The fictional demo is unchanged.</p><div class="button-row">${button('Cancel','close','btn outline')}${button('Restore this backup','journey-confirm-import','btn')}</div>`);}
-catch(error){pendingJourneyImport=null;const target=$('#journey-import-error');if(target){target.textContent=error.message;target.setAttribute('tabindex','-1');target.focus();}}
+const input=event.target,file=input.files?.[0];if(!file)return;
+const sequence=++journeyImportSequence;pendingJourneyImport=null;const errorTarget=$('#journey-import-error');if(errorTarget)errorTarget.textContent='';
+const stillCurrent=()=>sequence===journeyImportSequence&&input.isConnected&&$('#dialog').open&&$('#journey-import')===input;
+try {if(file.size>2000000)throw new Error('This file is too large for a local-record backup.');const text=await file.text();if(!stillCurrent())return;const candidate=parseJourneyBackup(text);pendingJourneyImport=candidate;modal('Replace your local record?',`<p>The checked backup contains revision ${candidate.revision}.</p><div class="criterion"><strong>${esc(candidate.interest||'No interest recorded')}</strong><p>${esc(candidate.direction||'No direction recorded yet')}</p></div><p>Restoring replaces your current local record. Export it first if you want to keep both. The fictional demo is unchanged.</p><div class="button-row">${button('Cancel','close','btn outline')}${button('Restore this backup','journey-confirm-import','btn')}</div>`);}
+catch(error){if(!stillCurrent())return;pendingJourneyImport=null;const target=$('#journey-import-error');if(target){target.textContent=error.message;target.setAttribute('tabindex','-1');target.focus();}}
 });
 document.addEventListener('change',event=>{const el=event.target;try{
 if(el.id==='cohort'){state.cohort=el.value;selectedPersonId=null;save();render();$('#cohort')?.focus();}
@@ -174,7 +176,7 @@ if(el.dataset.step!==undefined){const p=state.projects.find(p=>p.id===el.dataset
 document.addEventListener('input',event=>{if(event.target.id==='reflection'){const p=state.projects.find(p=>p.id===event.target.dataset.project);if(p){p.reflection=event.target.value.slice(0,4000);save();}}});
 document.addEventListener('submit',event=>{if(!['project-form','perspective-form'].includes(event.target.id))return;event.preventDefault();try{const data=new FormData(event.target);let p;if(event.target.id==='project-form'){p=createProject(state,{skill:data.get('skill'),title:data.get('title'),minutes:data.get('minutes'),personId:event.target.dataset.person||null});}else p=adopt(state,event.target.dataset.perspective,data.getAll('practice').map(Number),perspectivePerson);save();close();projectFilter='All';navigate('projects');projectDialog(p.id);toast('Surpass Project created. Scores and rank are unchanged.');}catch(error){toast(error.message);}});
 window.addEventListener('hashchange',()=>{render();window.scrollTo({top:0,behavior:'instant'});if(!$('#dialog').open)$('#main').focus({preventScroll:true});});
-$('#dialog').addEventListener('close',()=>{if(!$('#dialog').open){$('#dialog').replaceChildren();restoreActionFocus(returnFocus);}});
+$('#dialog').addEventListener('close',()=>{if(!$('#dialog').open){journeyImportSequence++;pendingJourneyImport=null;$('#dialog').replaceChildren();restoreActionFocus(returnFocus);}});
 // Keep keyboard traversal inside the current modal, including dynamic replacements.
 $('#dialog').addEventListener('keydown',event=>{
   if(event.key!=='Tab')return;

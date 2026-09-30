@@ -57,7 +57,7 @@ with sync_playwright() as pw:
 
     def dismiss():
         page.keyboard.press('Escape')
-        page.wait_for_function('!document.querySelector("dialog").open')
+        page.wait_for_function('() => !document.querySelector("dialog").open')
 
     def reset():
         route('consent')
