@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 — September 30, 2026
+
+- Replaced the earlier nested-arch mark with an original person-and-rising-path app icon informed by contemporary AI-product simplicity while remaining distinct from provider marks.
+- Made the intended ecosystem explicit as **“Independent concept for ChatGPT + OpenAI”** in the app, metadata, README and product illustration.
+- Kept Becoming visually primary; ChatGPT/OpenAI appear only as secondary textual references with no affiliation or endorsement claim.
+- Updated the brand standard and regressions to forbid reconstructed OpenAI logos, proprietary fonts or provider-lookalike Becoming marks.
+- No discovery, measurement, evidence, storage or license behavior changed.
+
+
 ## 0.3.0 — September 30, 2026
 
 - Interest-led, one-question-at-a-time opening and Today / Your record / Explore demo navigation
