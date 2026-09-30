@@ -1,0 +1,2 @@
+# Development-only, matching the locally executed acceptance runner.
+playwright==1.57.0

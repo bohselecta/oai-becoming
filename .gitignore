@@ -1,0 +1,10 @@
+dist/
+node_modules/
+qa-output*/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.vercel/
+.DS_Store
