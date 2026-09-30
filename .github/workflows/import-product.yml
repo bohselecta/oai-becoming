@@ -1,0 +1,87 @@
+name: Import verified Becoming product
+on:
+  push:
+    branches: ['codex/becoming-comparative-v2']
+    paths: ['.delivery/READY.json']
+permissions:
+  contents: write
+concurrency:
+  group: becoming-product-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - name: Materialize checksum-verified original source
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, lzma, pathlib, shutil
+          root = pathlib.Path('.')
+          manifest = json.loads((root / '.delivery/READY.json').read_text())
+          encoded = ''.join(p.read_text() for p in sorted((root / '.delivery').glob('part-*.b64')))
+          assert len(encoded) == manifest['encoded_bytes'], 'Encoded length mismatch'
+          packed = base64.b64decode(encoded, validate=True)
+          assert hashlib.sha256(packed).hexdigest() == manifest['sha256'], 'Packed checksum mismatch'
+          raw = lzma.decompress(packed)
+          assert hashlib.sha256(raw).hexdigest() == manifest['uncompressed_sha256'], 'Source checksum mismatch'
+          files = json.loads(raw)
+          assert len(files) == manifest['files'] == 34
+          for name, text in files.items():
+              path = pathlib.PurePosixPath(name)
+              assert not path.is_absolute() and '..' not in path.parts and '.git' not in path.parts
+              assert isinstance(text, str)
+              if name.startswith('.github/'):
+                  assert (root / name).read_text() == text, 'Workflow must already match the reviewed source'
+                  continue
+              target = root / name
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_text(text, encoding='utf-8')
+          shutil.rmtree(root / '.delivery')
+          print(f'Materialized {len(files)} verified UTF-8 source files.')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat: deliver complete Becoming comparative product v0.2.0'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - run: npm run check
+      - run: python -m pip install -r tests/requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: Verify served product and offline edge cases
+        run: |
+          node scripts/serve.mjs dist > /tmp/becoming-server.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ > /dev/null && break; sleep 1; done
+          python tests/browser_smoke.py --url http://127.0.0.1:4173 --output qa-output
+      - name: Record hosted evidence and actual product screenshot
+        run: |
+          python - <<'PY'
+          import json, pathlib, shutil
+          result = json.loads(pathlib.Path('qa-output/browser-results.json').read_text())
+          shutil.copyfile('qa-output/hero.png', 'public/becoming-preview.png')
+          shutil.copyfile('qa-output/browser-results.json', 'docs/verification/hosted-browser-results.json')
+          readme = pathlib.Path('README.md')
+          text = readme.read_text().replace('public/becoming-hero.svg', 'public/becoming-preview.png').replace('*Product illustration. The running demo calculates the same starting fixture:', '*Screenshot of the running product. The demo calculates this starting fixture:')
+          readme.write_text(text)
+          pathlib.Path('docs/verification/HOSTED.md').write_text('# Hosted-origin verification\n\nThe exact browser results for the served modular application and portable edge-case fixtures are recorded in `hosted-browser-results.json`.\n\nPassed assertions: ' + str(result['passed']) + '.\n\nThis is a local HTTP origin on a GitHub Actions runner, not a Vercel deployment. It does not establish measurement validity or real participant authorization.\n')
+          PY
+          git add README.md public/becoming-preview.png docs/verification/hosted-browser-results.json docs/verification/HOSTED.md
+          git commit -m 'docs: add running product screenshot and hosted acceptance receipt'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: becoming-import-verification
+          path: qa-output/
+          retention-days: 7
