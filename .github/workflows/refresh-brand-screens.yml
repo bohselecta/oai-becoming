@@ -1,0 +1,46 @@
+name: Refresh Becoming brand screenshots
+
+on:
+  push:
+    branches: ['codex/chatgpt-openai-branding']
+    paths: ['.github/workflows/refresh-brand-screens.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - run: npm run check
+      - run: python -m pip install -r tests/requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: Capture real served brand views
+        run: |
+          node scripts/serve.mjs dist > /tmp/becoming-server.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ > /dev/null && break; sleep 1; done
+          python tests/discovery_browser.py --url http://127.0.0.1:4173 --output qa-brand
+          cp qa-brand/fresh-1440.png public/becoming-preview.png
+          cp qa-brand/fresh-390.png public/becoming-phone.png
+          cp qa-brand/ready-desktop.png public/becoming-next-step.png
+          cp qa-brand/record-desktop.png public/becoming-record.png
+      - name: Commit refreshed verified screenshots
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/becoming-preview.png public/becoming-phone.png public/becoming-next-step.png public/becoming-record.png
+          git diff --cached --quiet && exit 0
+          git commit -m 'docs: refresh screenshots for 0.3.1 branding'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
