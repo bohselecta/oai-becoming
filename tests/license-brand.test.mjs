@@ -28,7 +28,7 @@ test('original MIT notice is preserved byte for byte, not repurposed as the new 
 test('package labels its custom license correctly and prevents accidental registry publication',()=>{
   const pkg=JSON.parse(text('package.json'));
   assert.equal(pkg.license,'SEE LICENSE IN LICENSE');
-  assert.equal(pkg.version,'0.3.0'); // Interest-led product revision; license invariants are unchanged.
+  assert.equal(pkg.version,'0.3.1'); // Branding refresh; license invariants are unchanged.
   assert.equal(pkg.private,true);
 });
 test('current offering no longer promises general MIT or unrestricted public reuse',()=>{
@@ -38,21 +38,26 @@ test('current offering no longer promises general MIT or unrestricted public reu
     assert.match(content,/OpenAI.only/i);
   }
 });
-test('primary product name remains Becoming; ecosystem description states independence',()=>{
+test('primary product name remains Becoming; ChatGPT and OpenAI are secondary ecosystem references',()=>{
   const html=text('index.html');
   assert.match(html,/<title>Becoming · Know your place\. Change it\.<\/title>/);
-  assert.match(html,/An independent concept for the OpenAI ecosystem/);
+  assert.match(html,/An independent concept for ChatGPT \+ OpenAI/);
   assert.doesNotMatch(html,/<title>[^<]*(?:OpenAI Becoming|ChatGPT Becoming|GPT-\d)/);
   const app=text('src/app.js');
   assert.match(app,/class="brand-author">by Hayden Lindley/);
-  assert.match(app,/An independent concept for the <span>OpenAI ecosystem\./);
-  assert.match(app,/No OpenAI affiliation/);
+  assert.match(app,/Independent concept for<\/span><strong class="ecosystem-product">ChatGPT<\/strong><span class="ecosystem-plus">\+<\/span><strong class="ecosystem-product">OpenAI<\/strong>/);
+  assert.match(app,/No affiliation or endorsement/);
 });
-test('original Becoming mark is retained and no official logo or font reference enters the app',()=>{
-  assert.equal(blob('public/mark.svg'),'bddbd5ab256249e4ad626891cbf653e622b0a284');
+test('Becoming owns its new AI-scale mark; no reconstructed OpenAI logo or proprietary font enters the app',()=>{
+  const mark=text('public/mark.svg');
+  assert.match(mark,/circle cx="18\.2" cy="14"/);
+  assert.match(mark,/person|Becoming|rising|path/i);
+  assert.doesNotMatch(mark,/OpenAI|ChatGPT|blossom|knot/i);
   for(const p of ['index.html','src/app.js','src/comparative.css']){
     assert.doesNotMatch(text(p),/cdn\.openai\.com|OpenAI Sans|openai-logo|chatgpt-logo|blossom\.svg|fonts\.googleapis/);
   }
+  assert.match(text('src/app.js'),/ecosystem-product">ChatGPT/);
+  assert.match(text('src/app.js'),/ecosystem-product">OpenAI/);
 });
 test('branding patch leaves measurement code, participants, base styles and prior assertions untouched',()=>{
   for(const [p,sha] of Object.entries({
