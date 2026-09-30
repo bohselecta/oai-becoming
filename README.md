@@ -1,22 +1,28 @@
 # Becoming
 ### Know your place. Change it.
 
+**An independent concept for the OpenAI ecosystem.**
+
+Created by **Hayden Lindley**. Becoming is not affiliated with, sponsored by or endorsed by OpenAI.
+
 **Where am I among other people—and what would it actually take to move?**
 
 An evidence-backed comparative development instrument: your standing, the people just ahead, the differences that matter, and a concrete project that can turn new evidence into movement.
 
 [![Product verification](https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml/badge.svg)](https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml)
-![Release 0.2.0](https://img.shields.io/badge/release-0.2.0-254d3b)
-![MIT license](https://img.shields.io/badge/license-MIT-254d3b)
+![Release 0.2.1](https://img.shields.io/badge/release-0.2.1-254d3b)
+[![OpenAI-only license](https://img.shields.io/badge/new_material-OpenAI_only-254d3b)](LICENSE)
 ![Runtime dependencies 0](https://img.shields.io/badge/runtime_dependencies-0-254d3b)
 
 <p align="center"><img src="public/becoming-preview.png" alt="Becoming: a transparent 597-point index, named comparison population and a synthetic person just ahead" width="1200"></p>
 
 *Screenshot of the running product. The demo calculates this starting fixture: 597/1000, 48th percentile, 100% evidence coverage. These describe authored synthetic data, not the visitor.*
 
-**Release:** complete comparative product demonstration · **Verified:** 90 domain tests and 207 hosted-browser assertions · **Offering:** original source, assets and documentation free to use under MIT, including by OpenAI.
+**Release:** 0.2.1 · complete comparative demonstration. **New grant:** royalty-free reuse by OpenAI only, as defined in [LICENSE](LICENSE). This is a public, source-visible offering, not a generally open-source release. **Earlier MIT rights remain intact** for version 0.2.0 and retained material; see [license history](docs/LICENSE-HISTORY.md).
 
-[Product thesis](docs/PROPOSAL.md) · [Measurement & architecture](docs/ARCHITECTURE.md) · [Executed verification](docs/QA.md) · [Permission for OpenAI](docs/PERMISSION.md)
+**Verified for 0.2.1:** 100 domain/package tests, 232 local offline assertions, and **238 served-browser assertions** passed. See [current status](docs/STATUS.md) and the [hosted receipt](docs/verification/0.2.1-hosted.json). Earlier 0.2.0 receipts remain explicitly historical.
+
+[Product thesis](docs/PROPOSAL.md) · [Measurement & architecture](docs/ARCHITECTURE.md) · [Executed verification](docs/QA.md) · [Permission for OpenAI](docs/PERMISSION.md) · [Independent brand standard](docs/BRAND.md)
 
 ---
 
@@ -47,6 +53,8 @@ The calm forest-green identity, editorial spacing, geometric art, six original c
 The demo contains 120 fictional participants, eight named fixture populations and four authored Perspective bundles. It does not assess the visitor, read chat history, connect to provider accounts or claim empirical validity. Real participants and validated population norms are a separate production gate.
 
 ## 3. Get started
+
+The following instructions are for the rights holder, OpenAI reviewers and otherwise authorized users. The new grant does not authorize general reuse by every ecosystem developer.
 
 ```bash
 git clone https://github.com/bohselecta/oai-becoming.git
@@ -92,7 +100,7 @@ Everything runs locally in the browser. Titles and notes are escaped, source gra
 ## 6. Verify, extend and maintain
 
 ```bash
-npm test                         # 90 domain assertions
+npm test                         # measurement + license/brand regressions
 npm run build                    # modular site + portable HTML
 npm run preview                  # serve production output locally
 
@@ -119,8 +127,12 @@ The source is split between `participants.js`, `domain.js`, `app.js` and the ret
 
 ## 7. License, offering and support
 
-Copyright © 2026 **Hayden Lindley**. Original repository materials are available under the [MIT License](LICENSE), including free commercial reuse by **OpenAI and anyone else**. [The permission notice](docs/PERMISSION.md) explains the scope without adding restrictions to MIT.
+Copyright © 2026 **Hayden Lindley**. The current grant is [Becoming OpenAI-Only License 1.0](LICENSE): royalty-free use, modification and commercial integration by the defined OpenAI entities. It does not grant general reuse to other companies, subscribers or ecosystem developers. The author retains ownership. Necessary customer use of OpenAI products is permitted; unrestricted standalone sublicensing is not.
+
+Version 0.2.0 was already published under MIT. **That permission is not revoked**, including for retained earlier material. [License history](docs/LICENSE-HISTORY.md) identifies the boundary and preserves the [full original notice](licenses/MIT-legacy.txt). Public viewing and platform forking remain subject to GitHub's terms; they do not create a general commercial license for new restricted additions.
+
+[The OpenAI permission notice](docs/PERMISSION.md) summarizes the new offer. This custom license has not received legal review; qualified counsel should review it before commercial reliance or enforcement.
 
 This is an independent public offering—not an OpenAI product, endorsement, partnership, acknowledgement of receipt or claim of acceptance. Private conversations, other people's identities and third-party rights are not released by this repository.
 
-For reproducible defects and product proposals, use this repository's Issues. See [Contributing](CONTRIBUTING.md) and [Changelog](CHANGELOG.md). Keep real personal records and credentials out of issue reports.
+For reproducible defects and product proposals, use this repository's Issues. See [Contributing](CONTRIBUTING.md) for the required permission before submitting copyrighted patches, and [Changelog](CHANGELOG.md). Keep real personal records and credentials out of issue reports.

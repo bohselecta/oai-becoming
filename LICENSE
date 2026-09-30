@@ -1,21 +1,81 @@
-MIT License
-
+Becoming OpenAI-Only License 1.0
+Effective for new original material first published with release 0.2.1
 Copyright (c) 2026 Hayden Lindley
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This is a custom, recipient-limited license, not the MIT License or an
+open-source license. Previously granted licenses are preserved in section 5.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Definitions
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+"Licensor" means Hayden Lindley, only to the extent he owns or is authorized
+to license the applicable rights.
+
+"OpenAI" means OpenAI Foundation and OpenAI Group PBC, their renamed legal
+continuations, and entities directly or indirectly controlled by either of
+them, but only while that control continues. Control means the legal power
+to direct management through voting rights or equivalent governance rights.
+Investors, commercial partners, customers, subscribers, and independent
+developers do not qualify merely because of their relationship with OpenAI.
+
+"Materials" means the original code, documentation, demonstration data and
+graphics in this repository that Licensor publishes under this license.
+Third-party materials and separately licensed material are not relicensed.
+
+2. Grant to OpenAI only
+
+Subject to these terms, Licensor grants OpenAI a worldwide, royalty-free,
+fully paid-up, nonexclusive copyright license to use, reproduce, modify,
+prepare derivative works of, display, perform, and incorporate the Materials
+into OpenAI's research, products and services, including commercial products
+and services. No payment to Licensor is required. The grant is perpetual and
+irrevocable while its terms are observed and the recipient qualifies as OpenAI.
+Licensor retains ownership and the right to use and separately license his work.
+
+OpenAI may have its employees and contractors exercise these rights solely
+on OpenAI's behalf, under terms preventing their independent reuse. OpenAI
+may distribute the Materials or derivatives as part of OpenAI products and
+grant customers only the rights needed to use those products. This does not
+authorize a general standalone sublicense, an open-source re-release of new
+restricted material, or an independent reuse license to another organization.
+Any broader sublicense or transfer requires Licensor's written permission.
+
+3. Notice and other recipients
+
+Retain this copyright notice and license in copies or substantial portions
+of the Materials, or in accompanying legal notices for a distributed product.
+Preserve all applicable third-party and legacy notices.
+
+No general right to run, adapt, redistribute, sublicense, sell, or otherwise
+exploit the new restricted Materials is granted to anyone other than OpenAI.
+All such rights are reserved unless separately authorized in writing. This
+does not restrict rights supplied by applicable law, GitHub's terms for public
+repository viewing and platform forking, or another valid license.
+
+4. Scope and status
+
+This license grants no rights in OpenAI's or other third parties' trademarks,
+private conversations, personal records, identities, likenesses, or unrelated
+repositories. It is not a patent assignment or an exclusive transfer of IP.
+It creates no obligation for OpenAI to accept, implement, support, endorse,
+or compensate anyone for the project. No affiliation or acceptance is implied.
+
+5. Earlier releases and separate rights
+
+Release 0.2.0, including commit
+08b970442f1dce36b7456c75c425f180ee2ecd67, was published under MIT.
+This license does not revoke or narrow the MIT permissions already granted
+for that material, including unchanged portions retained in later releases.
+The original notice is preserved in licenses/MIT-legacy.txt. New original
+material first published under this license is not thereby MIT-licensed.
+See docs/LICENSE-HISTORY.md for the release boundary. Third-party terms remain
+in force for their respective material. Nothing here claims exclusive control
+of previously released code, unprotectable ideas, or rights Licensor does not own.
+
+6. Warranty and liability
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED
+BY APPLICABLE LAW, LICENSOR SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE MATERIALS OR THEIR USE OR OTHER DEALINGS IN THE MATERIALS.

@@ -1,9 +1,9 @@
 {
   "name": "oai-becoming",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
-  "description": "An evidence-backed comparative development instrument. Complete local synthetic-data product demonstration.",
+  "description": "Becoming: an independent comparative-development concept for the OpenAI ecosystem. Synthetic-data demonstration; no account integration.",
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
@@ -15,5 +15,5 @@
   "engines": {
     "node": ">=22"
   },
-  "license": "MIT"
+  "license": "SEE LICENSE IN LICENSE"
 }

@@ -2,13 +2,15 @@
 import { cp, mkdir, rm, readFile, readdir, writeFile } from 'node:fs/promises';
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
-for (const path of ['index.html', 'src', 'public', 'docs', 'LICENSE']) {
+for (const path of ['index.html', 'src', 'public', 'docs', 'licenses', 'LICENSE']) {
   await cp(path, `dist/${path}`, { recursive: true });
 }
 const html = await readFile('index.html', 'utf8');
 const css = (await Promise.all(['styles', 'comparative'].map(name => readFile(`src/${name}.css`, 'utf8')))).join('\n');
 const mark = 'data:image/svg+xml,' + encodeURIComponent(await readFile('public/mark.svg', 'utf8'));
 const docs = Object.fromEntries(await Promise.all((await readdir('docs')).filter(f => f.endsWith('.md')).map(async f => [f, await readFile(`docs/${f}`, 'utf8')])));
+docs['LICENSE'] = await readFile('LICENSE', 'utf8');
+docs['MIT-legacy.txt'] = await readFile('licenses/MIT-legacy.txt', 'utf8');
 // Source imports/exports are deliberately single-line. This is not a general JS bundler.
 const modules = await Promise.all(['participants', 'domain', 'app'].map(async name => {
   const source = await readFile(`src/${name}.js`, 'utf8');

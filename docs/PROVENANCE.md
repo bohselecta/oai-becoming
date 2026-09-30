@@ -35,3 +35,9 @@ The anti-ranking philosophy is superseded, not hidden elsewhere as an active inv
 The original geometric mark and interface art are retained under the original MIT notice. Any screenshot in this release is a capture of the running synthetic product; an illustration is labeled as such. No real-person portraits, remote font files or third-party photography are used. The app and build have zero runtime/npm dependencies. Python Playwright is a development-only test dependency.
 
 GitHub Actions are pinned to upstream commits resolved on September 30, 2026: checkout `3d3c42e5aac5ba805825da76410c181273ba90b1`, setup-node `249970729cb0ef3589644e2896645e5dc5ba9c38`, setup-python `5fda3b95a4ea91299a34e894583c3862153e4b97`, and upload-artifact `ea165f8d65b6e75b540449e92b4886f43607fa02`. These are release inputs, not a promise that floating upstream tags will never change.
+
+## 0.2.1 — license and ecosystem presentation
+
+The exact public `main` baseline was `08b970442f1dce36b7456c75c425f180ee2ecd67`. The attached source archive was used for local bytes after direct Git transport was unavailable; critical source, contract, metadata and test files were checked against the live GitHub tree's blob identities before editing. The baseline check passed all 90 domain tests and both builds.
+
+The owner requested an OpenAI-only grant and a clear independent ecosystem presentation. New original material follows the custom root license; legacy material retains its earlier MIT permissions and full notice. The original mark, existing practice bundles, measurement engine, participant fixtures, storage contract and core interactions are retained. Neutral surface refinements, the supporting ecosystem descriptor, author attribution, license links and an updated real screenshot form the branding revision. No OpenAI logo, proprietary font, external imagery or account integration is introduced. See `BRAND.md` and `LICENSE-HISTORY.md` for dated source references and scope.

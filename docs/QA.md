@@ -1,5 +1,7 @@
 # Verification record
 
+**Latest patch: 0.2.1.** The license/brand revision passed 100 domain/package tests and 232 offline Chromium assertions locally; see [current status](STATUS.md) and [patch receipt](verification/0.2.1-local.json). The record below remains the historical 0.2.0 run. The subsequent GitHub served-origin patch run passed **238 browser assertions**; see [its receipt](verification/0.2.1-hosted.json). This was a runner-local HTTP origin, not a Vercel deployment.
+
 **Executed locally on September 30, 2026 · Release 0.2.0**
 
 ## Baseline

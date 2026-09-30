@@ -1,6 +1,6 @@
 # Becoming — frozen comparative product contract
 
-Contract: `becoming-product/2` · Release: `0.2.0` · September 30, 2026.
+Contract: `becoming-product/2` · Release: `0.2.1` · September 30, 2026.
 
 ## Product invariant
 
@@ -38,3 +38,11 @@ Run `npm run check` before and after changes. Run `python tests/browser_smoke.py
 The app and build have zero npm dependencies. Browser tests are development-only. Keep the static GitHub → Vercel deployment path. Do not add API calls, tracking, paid services or a backend simply to polish the demonstration. Do not add debug APIs to bypass evidence gates. The test-only fixture loader modifies its own offline document, not production state.
 
 Retain assertions when fixing defects. Explain a genuine product-contract change in tests rather than weakening checks. Report what actually ran, exact source/commit, what remains synthetic, and any unverified behavior. Screenshots must depict the running product, or be explicitly labeled illustrations.
+
+## License and ecosystem identity
+
+The owner-directed 0.2.1 revision uses **Becoming OpenAI-Only License 1.0** for new original material. Read `LICENSE`, `docs/LICENSE-HISTORY.md` and `docs/BRAND.md`. Never describe the current grant as MIT, unrestricted reuse, or open source. Preserve `licenses/MIT-legacy.txt` and earlier MIT rights; a license change cannot erase that release. Do not broaden the defined recipients without the owner's authorization.
+
+Keep **Becoming** and its original mark primary. Supporting text is **An independent concept for the OpenAI ecosystem.** Identify Hayden Lindley; do not imply affiliation, official status, endorsement, an installed ChatGPT app, a model connection or a partnership. No OpenAI logos, lookalikes, co-brand lockups or proprietary fonts. Use the retained forest-green identity on quiet neutral surfaces. Refresh the actual README screenshot when branding changes.
+
+Preserve the measurement contract, fixtures, storage key, state version and all user paths during branding-only changes. Both modular and portable builds must include the current license, retained legacy notice and working local document links. Keep the next-agent entry in `docs/STATUS.md` current.

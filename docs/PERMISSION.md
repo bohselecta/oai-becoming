@@ -1,15 +1,15 @@
-# Permission for OpenAI and other recipients
+# Permission for OpenAI only
 
-**Originator and copyright holder: Hayden Lindley · September 30, 2026**
+**Offered by Hayden Lindley · September 30, 2026 · Release 0.2.1**
 
-The original source code, authored demonstration data, original graphic assets and documentation published in `bohselecta/oai-becoming` are offered under the repository's MIT License.
+The governing permission is [Becoming OpenAI-Only License 1.0](../LICENSE). The new grant is for OpenAI Foundation, OpenAI Group PBC, and the controlled entities defined there. It does **not** extend to every OpenAI subscriber, API customer, partner, investor or independent ecosystem developer.
 
-OpenAI and any other recipient may use, copy, modify, merge, publish, distribute, sublicense and sell copies of those materials, including commercially, without a fee to the originator under that license. Retain the copyright and permission notice as the MIT License requires. This is a nonexclusive public offering, not a license limited to one company.
+OpenAI may use, modify and incorporate the covered original material into research and commercial products without paying a license fee. Employees and contractors may work on OpenAI's behalf; customers may receive the rights necessary to use OpenAI products. There is no unrestricted standalone sublicense to unrelated companies. The owner retains ownership; this is not an exclusive IP assignment.
 
-The permission covers only rights held in the materials deliberately published here. It does not release private chat histories, private account records, correspondence, unpublished evidence, other people's identities or likenesses, third-party trademarks, or unrelated repositories merely mentioned as lineage. Third-party development tools and GitHub Actions retain their own licenses.
+**Previously published MIT rights remain intact.** Version 0.2.0 and its retained material are not made exclusive by this revision. Read [the license history](LICENSE-HISTORY.md) and [the retained MIT notice](../licenses/MIT-legacy.txt). New original restricted material is source-visible, not generally open source. Public viewing and platform forking are subject to GitHub's terms.
 
-This is an independent contribution. It is not an OpenAI product, announcement, endorsement, sponsorship, partnership, employment relationship, acknowledgement of receipt, agreement to implement or acquisition. No delivery to an OpenAI employee, legal acceptance, patent assignment or promise of compensation is asserted.
+The offer covers only applicable rights the originator owns or may license. It excludes private chats, account data, unpublished evidence, other people's identities and likenesses, unrelated repositories and third-party trademarks. Tools and other third-party material retain their own terms.
 
-The repository contains no real participant assessments or private source transcripts. Synthetic names identify authored fixture records, not claims about similarly named people.
+Becoming is **an independent concept for the OpenAI ecosystem**. It is not an OpenAI product, approved integration, endorsement, partnership, acknowledgement of receipt or agreement to implement. No outreach to OpenAI or acceptance by OpenAI is claimed. No real participant is assessed; the included people and observations are synthetic.
 
-The MIT License in the root is the governing software permission and warranty disclaimer. This explanatory notice adds no usage restriction to that license.
+The license defines the rights; this page summarizes them. [Brand guidance](BRAND.md) records how the product communicates its intended ecosystem without implying affiliation.

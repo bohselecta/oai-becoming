@@ -1,6 +1,6 @@
 # Becoming: know your place. Change it.
 
-**Independent offering by Hayden Lindley · September 30, 2026 · MIT licensed**
+**An independent concept for the OpenAI ecosystem · Hayden Lindley · September 30, 2026**
 
 ## The product
 
@@ -44,7 +44,9 @@ Perspectives answer a practical question: what have people ahead intentionally s
 
 ## The OpenAI offering
 
-The original code, assets, contracts and documentation are offered under the MIT License, including free commercial use by OpenAI. No exclusive arrangement, endorsement, integration, receipt, adoption or acceptance by OpenAI is claimed. See `PERMISSION.md`.
+The new original material in release 0.2.1 is offered for royalty-free reuse under Becoming OpenAI-Only License 1.0, including commercial integration by the OpenAI entities defined there. The owner retains ownership. Earlier MIT permissions for release 0.2.0 and retained material remain intact; this is not an exclusive transfer of all existing IP. See `PERMISSION.md` and `LICENSE-HISTORY.md`.
+
+The consumer-created brand is **Becoming**, with the supporting descriptor **An independent concept for the OpenAI ecosystem.** No affiliation, endorsement, integration, receipt, adoption or acceptance by OpenAI is claimed. `BRAND.md` records the visual and naming standard.
 
 Becoming could accompany a persistent personal work context by converting authorized demonstrations into a revisable capability record. That is a future integration direction, not a claim that this app accesses private chats, Dots, provider accounts or account-level skills. Today, the exported Markdown brief is deliberately portable and manual.
 

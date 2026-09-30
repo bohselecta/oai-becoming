@@ -1,6 +1,6 @@
 # Acceptance — comparative vertical slice
 
-Release 0.2.0 implements the following product paths. The verification record is `QA.md`; this document defines what must remain true.
+Release 0.2.1 preserves the following product paths. The verification record is `QA.md`; this document defines what must remain true.
 
 | Requirement | Working surface / contract |
 |---|---|
@@ -18,7 +18,7 @@ Release 0.2.0 implements the following product paths. The verification record is
 | Methodology | Index → dimensions → capabilities → assessments → provenance; transparent fixture arithmetic. |
 | Synthetic labels | Header, subject, comparator profiles, assessments, practices and exports disclose fictional data. |
 | Accessible behavior | Named controls, keyboard traversal, native dialogs, focus return, reduced motion and responsive layouts. |
-| Product package | Source, static/offline build, docs, MIT license, permission scope, CI, tests and README image. |
+| Product package | Source, static/offline build, docs, OpenAI-only license, retained legacy notice, permission scope, CI, tests and README image. |
 
 ## Required walkthrough
 
@@ -35,3 +35,9 @@ An unknown is never zero. A 0th or 13th percentile stays explicit. Sparse eviden
 Complete here means the specified working synthetic-data vertical slice, not a production population-assessment service. No real people, live authentication, account integration, empirical calibration or externally issued credential is implemented. No hosted deployment or screen-reader audit is implied by local software tests.
 
 Final acceptance question: **Does the first screen answer where the person is relative to other people, and can the person understand what demonstrable change could move that position?** The release answers this with actual deterministic fixture calculations and a working evidence loop, while naming the synthetic reference plainly.
+
+## License and brand patch acceptance
+
+The app, README, metadata and current permission notice agree on the OpenAI-only new grant. The root license names the recipient entities and preserves previously released MIT material. Package metadata uses `SEE LICENSE IN LICENSE`. There is no blanket MIT badge or general reuse claim for the current release.
+
+The dominant original Becoming identity and independent ecosystem descriptor appear at desktop and mobile widths without overflow or loss of keyboard access. No OpenAI logo or proprietary font is introduced. Both production formats carry the full current license and unchanged legacy notice. The portable offering screen can download both notices and the brand/history documents without network calls. Existing measurement and persistence tests remain intact.
