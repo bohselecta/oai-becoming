@@ -78,6 +78,8 @@ def storage_html(seed=None, mode='normal'):
         clear() { fault('SecurityError'); }
       };
       Object.defineProperty(window, '__DISCOVERY_STORAGE_TEST__', {
+        // set_content reuses this Window during an explicitly simulated reopen.
+        configurable: true,
         value: {snapshot: () => Object.fromEntries(values), writes, deletes}
       });
       Object.defineProperty(window, 'localStorage', {

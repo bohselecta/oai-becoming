@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <img src="public/becoming-preview.png" alt="Retained fictional comparison demo, before the interest-led opening: index 597, 48th percentile and inspectable evidence" width="1180">
+  <img src="public/becoming-preview.png" alt="Actual Becoming local discovery: one interest-led question with Today, Your record and Explore demo navigation" width="1180">
 </p>
 
 **Start with what matters. Keep an honest record. Find a next step.**
@@ -250,12 +250,19 @@ python tests/browser_smoke.py --url http://127.0.0.1:4173
 python tests/discovery_browser.py --url http://127.0.0.1:4173
 ```
 
-### Current review evidence
+### Review evidence
 
-The interest-led branch currently passes **140 Node domain/presentation/package tests** and both production builds. Browser acceptance is being run in GitHub CI because this authoring environment blocks browser process sockets and loopback navigation. Check the exact draft-PR head and its receipts before claiming a browser pass. Prior 0.2.1 receipts are historical, not evidence for this revision.
+The interest-led implementation passes **152 Node tests** and both production builds. At source `b52af7d`, Chromium also passed **238 hosted comparative**, **297 hosted discovery**, and **232 portable comparative** assertions. The full portable discovery runner reached its final error check and exposed a test-only storage-shim lifecycle defect; the shim was corrected without weakening the error assertion.
+
+The [draft PR’s checks](https://github.com/bohselecta/oai-becoming/pull/4/checks) are the final gate. CI explicitly checks out the exact PR head, runs both complete browser suites in both served and portable modes, records the source revision/tree, and uploads JSON receipts and actual screenshots. A receipt from an earlier commit is not a pass for a later head.
+
+The images below come from the actual running interface at `b52af7d`; the sample record was entered by browser tests. Independent inspection found no clipping or hierarchy blocker. The phone’s Continue control fits within a 390×844 viewport without shrinking the main text.
+
+[Phone](public/becoming-phone.png) · [Chosen next step](public/becoming-next-step.png) · [Inspectable record](public/becoming-record.png)
 
 - [Current status](docs/STATUS.md)
-- [QA record](docs/QA.md)
+- [QA record and execution limits](docs/QA.md)
+- [Versioned hosted receipt](docs/verification/0.3.0-hosted.json)
 - [Frozen discovery contract](docs/DISCOVERY-CONTRACT.md)
 - [Preserved measurement acceptance](docs/ACCEPTANCE.md)
 
@@ -280,7 +287,10 @@ oai-becoming/
 │   ├── domain.test.mjs
 │   ├── comparative.test.mjs
 │   ├── license-brand.test.mjs
-│   └── browser_smoke.py
+│   ├── journey.test.mjs
+│   ├── discovery-contract.test.mjs
+│   ├── browser_smoke.py
+│   └── discovery_browser.py
 ├── docs/
 ├── licenses/
 ├── scripts/

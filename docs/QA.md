@@ -1,8 +1,40 @@
 # Interest-led 0.3.0 verification
 
-Frozen requirements: [D1–D8](DISCOVERY-CONTRACT.md). Baseline main `23b4f4c` passed 100 Node tests and both builds. The working branch passes 140 Node tests and both builds. Exact-head browser results and screenshots are pending GitHub CI, not implied by earlier receipts.
+Frozen requirements: [D1–D8](DISCOVERY-CONTRACT.md). Baseline main `23b4f4c` passed 100 Node tests and both builds. The current unit/presentation/package suite passes 152 tests and both builds. Core measurement files and the original regression assertions remain unchanged.
 
-Local verification limit: Chromium process startup fails with local socket permission denial, including an approved escalation. The provided cloud browser blocks loopback navigation. Neither policy was modified or bypassed. The workflow runs both the retained comparative suite and new discovery suite on its own loopback origin, and uploads evidence for inspection.
+## Executed browser evidence
+
+At exact source `b52af7ded72e8596649ffc8d3628583034619295`, [GitHub CI](https://github.com/bohselecta/oai-becoming/actions/runs/36774507264) executed:
+
+| Suite | Result at that revision |
+|---|---|
+| Hosted comparative | PASS — 238 assertions, no runtime errors or external calls |
+| Hosted discovery | PASS — 297 assertions, actual localStorage reload and CSP |
+| Portable comparative | PASS — 232 assertions |
+| Portable discovery | FAIL — 292 functional assertions passed, then the test-only storage shim attempted to redefine a non-configurable helper during simulated reopen |
+
+The portable harness fix makes that helper configurable between explicitly simulated reopens. It does not change production state or suppress runtime errors. The no-errors assertion remains mandatory. All four suites are required in the [current exact-head PR gate](https://github.com/bohselecta/oai-becoming/pull/4/checks); consult that result for the final source, rather than claiming the older run was fully green. The workflow checks out the PR head directly and includes source revision/tree files in its evidence artifact.
+
+[Versioned hosted receipt](verification/0.3.0-hosted.json). Actual screenshots from that revision: [desktop](../public/becoming-preview.png), [phone](../public/becoming-phone.png), [chosen step](../public/becoming-next-step.png), [record](../public/becoming-record.png). These depict test-entered local context, not a real visitor assessment. Independent visual review found no clipping, overlap or hierarchy blocker; the phone Continue control fits within 390×844 pixels.
+
+## Requirements exercised
+
+- D1–D3: one question, no fabricated personal score, chosen interest carried forward, optional confirmed actions, user-chosen direction/reward/constraints/action, no diagnosis or transfer claim
+- D4: real-origin resume, inspect/correct, explicit uncertainty and contradiction, prior attempt preserved on next action, changed story clears stale action confirmations, removal controls and metadata-only correction log
+- D5: strict schema and old-record migration, valid/corrupt/future data, quota/unavailable/delete failures, export/restore confirmation, no silent overwrite, separate synthetic key preserved byte for byte
+- D6: original complete comparison → project → pending → acceptance → movement → revocation walkthrough, low/unknown/assisted/sparse-reference cases unchanged
+- D7: both builds, keyboard errors/focus/modal replacement, reduced motion, accessible names, 320/390/768/1440 layouts, literal hostile text, CSP and no external requests
+- D8: original author/mark/legal notices preserved, draft PR open and unmerged; final exact-head gate remains required before delivery
+
+## Corrections made during verification
+
+Code review caught stale skill confirmations after editing a story and lost context when choosing a new step. Both now have domain and browser regressions. Browser checks caught an omitted chosen-interest cue, and hidden stale form controls left inside a closed dialog. The prompt now uses saved interest explicitly, and final dialog closure clears old content while preserving replacement-modal behavior and outer-trigger focus. The independent visual pass prompted a smaller phone header rather than smaller main text.
+
+## Execution limits
+
+Local Chromium startup failed under the authoring host’s socket policy, including an approved escalation, and the provided cloud browser blocked loopback navigation. No policy was modified or bypassed. Browser evidence comes from GitHub’s runner, with full portable runs distinguished from hosted-origin runs. Test-only storage fault shims never enter the production bundle.
+
+NOT_RUN: human participant usability study, screen-reader session, empirical assessment calibration, real-account/provider integration, production deployment. The product is authored local guided logic and an explicit synthetic comparison demo. No live LLM or therapeutic assessment is implemented.
 
 The historical records below describe prior releases only.
 
