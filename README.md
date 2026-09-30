@@ -10,13 +10,13 @@
 </p>
 
 <p align="center">
-  An independent concept for the OpenAI ecosystem.<br>
+  An independent concept for <strong>ChatGPT</strong> + <strong>OpenAI</strong>.<br>
   Created by <strong>Hayden Lindley</strong> · No OpenAI affiliation or endorsement
 </p>
 
 <p align="center">
   <a href="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml"><img alt="Product verification" src="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml/badge.svg?branch=main"></a>
-  <img alt="Version 0.3.0" src="https://img.shields.io/badge/version-0.3.0-254d3b">
+  <img alt="Version 0.3.1" src="https://img.shields.io/badge/version-0.3.1-254d3b">
   <img alt="Node 22+" src="https://img.shields.io/badge/node-22%2B-254d3b">
   <img alt="Runtime dependencies 0" src="https://img.shields.io/badge/runtime_dependencies-0-254d3b">
   <a href="LICENSE"><img alt="OpenAI-only new material license" src="https://img.shields.io/badge/new_material-OpenAI_only-254d3b"></a>
@@ -27,6 +27,8 @@
 </p>
 
 <p align="center">
+  <a href="https://chatgpt.com">ChatGPT</a> ·
+  <a href="https://openai.com">OpenAI</a> ·
   <a href="#install">Run locally</a> ·
   <a href="#core-usage">Walk through it</a> ·
   <a href="docs/PROPOSAL.md">Product thesis</a> ·
@@ -44,7 +46,7 @@ Becoming keeps two layers clear:
 
 The three destinations are **Today**, **Your record**, and **Explore demo**. Details appear when you ask for them; the first screen never assigns you a fictional score.
 
-**Version 0.3.0 uses authored guided prompts.** It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
+**Version 0.3.1 keeps the 0.3.0 interest-led product behavior and refreshes the identity/ecosystem presentation.** It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
 
 <p align="center">
   <a href="public/becoming-phone.png"><img src="public/becoming-phone.png" alt="Actual 390-pixel phone view: interest prompt, optional examples, answer field and Continue button" width="330"></a>
@@ -168,7 +170,7 @@ Read the [discovery contract](docs/DISCOVERY-CONTRACT.md), [architecture](docs/A
 
 ## Project & license
 
-**Becoming** is the first-person instrument. **Emergence** is a separate world-facing concept; neither project requires the other to run. Becoming keeps its own name, original mark, forest-green visual identity and authorship. “An independent concept for the OpenAI ecosystem” describes intent, not an integration, partnership or endorsement. See the [brand standard](docs/BRAND.md).
+**Becoming** is the first-person instrument. **Emergence** is a separate world-facing concept; neither project requires the other to run. Becoming keeps its own name, original forest-green visual identity and authorship. Version 0.3.1 introduces a simpler person-and-rising-path mark designed to read cleanly at modern AI-app icon scale without imitating OpenAI or another provider. “An independent concept for ChatGPT + OpenAI” makes the intended ecosystem explicit while remaining a secondary descriptor, not an integration, partnership or endorsement. See the [brand standard](docs/BRAND.md).
 
 Copyright © 2026 **Hayden Lindley**. New original material is offered under the **[Becoming OpenAI-Only License 1.0](LICENSE)**, first introduced with 0.2.1. This is a custom, recipient-limited grant, not a general open-source license. The license defines the eligible OpenAI entities and permitted uses.
 
