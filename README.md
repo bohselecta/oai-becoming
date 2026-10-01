@@ -46,7 +46,7 @@ Becoming keeps two layers clear:
 
 The three destinations are **Today**, **Your record**, and **Explore demo**. Details appear when you ask for them; the first screen never assigns you a fictional score.
 
-**Version 0.3.1 keeps the 0.3.0 interest-led product behavior and refreshes the identity/ecosystem presentation.** It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
+**Becoming uses authored guided prompts.** Version 0.3.1 preserves the interest-led experience and adds the new mark and ChatGPT/OpenAI presentation. It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
 
 <p align="center">
   <a href="public/becoming-phone.png"><img src="public/becoming-phone.png" alt="Actual 390-pixel phone view: interest prompt, optional examples, answer field and Continue button" width="330"></a>
@@ -125,7 +125,7 @@ Try the full evidence loop: choose a comparison, create a project, complete its 
 
 [Measurement architecture](docs/ARCHITECTURE.md) · [Data contracts](docs/DATA-CONTRACTS.md) · [Acceptance walkthrough](docs/ACCEPTANCE.md)
 
-All four images above are captures of the running 0.3.1 interface, not mockups. The example record was entered by browser tests. They were regenerated from the served application after the new mark and ChatGPT/OpenAI ecosystem treatment landed.
+All four images above are captures of the running 0.3.1 interface, not mockups. The example record was entered by browser tests. They match the served captures at [`d0b082da`](https://github.com/bohselecta/oai-becoming/commit/d0b082dae183cd439ad3a140819c011eb443af47), including the new mark and ChatGPT/OpenAI treatment. [Screenshot provenance](docs/verification/0.3.1-branding.json).
 
 ## Advanced configuration
 
@@ -158,7 +158,7 @@ python tests/browser_smoke.py --url http://127.0.0.1:4173
 python tests/discovery_browser.py --url http://127.0.0.1:4173
 ```
 
-The [0.3.1 branding verification run](https://github.com/bohselecta/oai-becoming/actions/runs/36791387277) at `21f75f14` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. The committed screenshots come from the same branded implementation. Check the workflow for the exact current commit; a historical receipt does not verify later documentation-only changes.
+The [0.3.1 branding verification run](https://github.com/bohselecta/oai-becoming/actions/runs/36791725253) at `d0b082da` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. [The versioned receipt](docs/verification/0.3.1-branding.json) records that exact source and the screenshot hashes. Check the workflow for the exact current commit; a historical receipt does not verify later changes.
 
 Coverage includes context on return, contradictory outcomes, corrections, preserved attempts, backup validation, recovery, storage failures, keyboard/focus behavior and desktop/phone layouts. Human first-use studies, a screen-reader audit and real-device Safari testing remain outstanding. See [QA and execution limits](docs/QA.md).
 

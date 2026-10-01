@@ -22,7 +22,7 @@ Selected original blob identities:
 
 The original 33 domain tests passed before revision. The original offline app was rendered and visually inspected in Chromium. The predecessor's full 69-check browser script was read but not rerun; no new claim is made that it passed in this session.
 
-## What was retained and changed
+## What was retained and changed in 0.2.0
 
 Retained: six capability definitions and criteria, source families, evidence-review chassis, independent/assisted modes, unknown states, original logo/styles/geometric map, selected-practice provenance, manual briefs and static/offline deployment approach.
 
@@ -30,7 +30,7 @@ Changed: product contract, placement-first home, explicit person comparison, par
 
 The anti-ranking philosophy is superseded, not hidden elsewhere as an active invariant. The integrity of evidence remains central because comparison depends on it.
 
-## Asset and dependency provenance
+## Original asset and dependency provenance
 
 The original geometric mark and interface art are retained under the original MIT notice. Any screenshot in this release is a capture of the running synthetic product; an illustration is labeled as such. No real-person portraits, remote font files or third-party photography are used. The app and build have zero runtime/npm dependencies. Python Playwright is a development-only test dependency.
 
@@ -41,3 +41,9 @@ GitHub Actions are pinned to upstream commits resolved on September 30, 2026: ch
 The exact public `main` baseline was `08b970442f1dce36b7456c75c425f180ee2ecd67`. The attached source archive was used for local bytes after direct Git transport was unavailable; critical source, contract, metadata and test files were checked against the live GitHub tree's blob identities before editing. The baseline check passed all 90 domain tests and both builds.
 
 The owner requested an OpenAI-only grant and a clear independent ecosystem presentation. New original material follows the custom root license; legacy material retains its earlier MIT permissions and full notice. The original mark, existing practice bundles, measurement engine, participant fixtures, storage contract and core interactions are retained. Neutral surface refinements, the supporting ecosystem descriptor, author attribution, license links and an updated real screenshot form the branding revision. No OpenAI logo, proprietary font, external imagery or account integration is introduced. See `BRAND.md` and `LICENSE-HISTORY.md` for dated source references and scope.
+
+## 0.3.0–0.3.1 — discovery and current identity
+
+PR #4 added the separate interest-led local record and made Today the default entry, preserving the full synthetic comparative instrument. It was merged at `c9c45059506a2c3ed5887043811188d71c8598ba` after owner review. Its screenshots show test-entered local context rather than an assessed real person.
+
+PR #5 replaces the earlier MIT-origin arch mark with the original person-and-rising-path mark, adds secondary ChatGPT/OpenAI text labels and refreshes the actual product captures. The old mark remains in historical releases; the earlier paragraphs describe those releases. The new mark is original 0.3.1 material under the current license. No third-party logo or font is bundled. The license texts and discovery/measurement state behavior are unchanged. See the [current brand standard](BRAND.md) and [exact-source screenshot receipt](verification/0.3.1-branding.json).

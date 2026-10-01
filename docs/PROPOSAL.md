@@ -2,7 +2,7 @@
 
 ## Current entry: interest first, detail when useful
 
-Version 0.3.0 starts with the visitor’s interest, one concrete example, a wanted activity and reward, practical constraints and a chosen small step. A correctable local record preserves context, attempted actions and uncertain or contradictory results. The current presentation is authored guided logic, not a connected language model. It does not rate visitors or make therapeutic claims.
+Version 0.3.1 retains the interest-led flow introduced in 0.3.0. It starts with the visitor’s interest, one concrete example, a wanted activity and reward, practical constraints and a chosen small step. A correctable local record preserves context, attempted actions and uncertain or contradictory results. The current presentation is authored guided logic, not a connected language model. It does not rate visitors or make therapeutic claims.
 
 The original comparative instrument below remains available as an explicit fictional demonstration. A real visitor’s self-reported gaming, creative or everyday skills never inherit its fixture scores. Transfer into a new setting requires its own evidence. This presentation amendment preserves the measurement protocol, source rights, licenses and independence of Becoming.
 

@@ -12,6 +12,10 @@ This is authored, deterministic conversation logic, not a connected language mod
 
 After reviewing PR #4, the owner explicitly requested merging the changes to main and refreshing the README with the new images and text. That later instruction supersedes the initial draft-only and unmerged delivery restriction above and in D8. All product, evidence, branding and license requirements remain in force. No production deployment is included.
 
+## Branding and consolidation amendment — October 1, 2026
+
+The subsequent owner-requested 0.3.1 revision replaces the initial arch mark with Becoming’s person-and-rising-path mark and adds secondary ChatGPT/OpenAI textual context. The latest instruction authorizes consolidating pending PRs into main. These amendments supersede the original mark and delivery details below; they do not change discovery, measurement, evidence or license requirements.
+
 ## Two layers
 
 - The presentation defaults to Today, Your record, and Explore demo. Today asks the next missing question or shows the chosen action. Plain speech, optional examples, editable answers, no imposed coach persona.
