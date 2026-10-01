@@ -10,13 +10,13 @@
 </p>
 
 <p align="center">
-  An independent concept for the OpenAI ecosystem.<br>
+  An independent concept for <strong>ChatGPT</strong> + <strong>OpenAI</strong>.<br>
   Created by <strong>Hayden Lindley</strong> · No OpenAI affiliation or endorsement
 </p>
 
 <p align="center">
   <a href="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml"><img alt="Product verification" src="https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml/badge.svg?branch=main"></a>
-  <img alt="Version 0.3.0" src="https://img.shields.io/badge/version-0.3.0-254d3b">
+  <img alt="Version 0.3.1" src="https://img.shields.io/badge/version-0.3.1-254d3b">
   <img alt="Node 22+" src="https://img.shields.io/badge/node-22%2B-254d3b">
   <img alt="Runtime dependencies 0" src="https://img.shields.io/badge/runtime_dependencies-0-254d3b">
   <a href="LICENSE"><img alt="OpenAI-only new material license" src="https://img.shields.io/badge/new_material-OpenAI_only-254d3b"></a>
@@ -27,6 +27,8 @@
 </p>
 
 <p align="center">
+  <a href="https://chatgpt.com">ChatGPT</a> ·
+  <a href="https://openai.com">OpenAI</a> ·
   <a href="#install">Run locally</a> ·
   <a href="#core-usage">Walk through it</a> ·
   <a href="docs/PROPOSAL.md">Product thesis</a> ·
@@ -44,7 +46,7 @@ Becoming keeps two layers clear:
 
 The three destinations are **Today**, **Your record**, and **Explore demo**. Details appear when you ask for them; the first screen never assigns you a fictional score.
 
-**Version 0.3.0 uses authored guided prompts.** It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
+**Becoming uses authored guided prompts.** Version 0.3.1 preserves the interest-led experience and adds the new mark and ChatGPT/OpenAI presentation. It has no live language model, automatic skill assessment or account integration. It makes no model or analytics calls. It is a working local experience and a synthetic measurement demonstration, not a validated assessment service.
 
 <p align="center">
   <a href="public/becoming-phone.png"><img src="public/becoming-phone.png" alt="Actual 390-pixel phone view: interest prompt, optional examples, answer field and Continue button" width="330"></a>
@@ -123,7 +125,7 @@ Try the full evidence loop: choose a comparison, create a project, complete its 
 
 [Measurement architecture](docs/ARCHITECTURE.md) · [Data contracts](docs/DATA-CONTRACTS.md) · [Acceptance walkthrough](docs/ACCEPTANCE.md)
 
-All four images above are captures of the running interface, not mockups. The example record was entered by browser tests. They match the verified implementation at [`91b145ad`](https://github.com/bohselecta/oai-becoming/commit/91b145adb675ee170270f59c9ab4b6f27d7b22d8).
+All four images above are captures of the running 0.3.1 interface, not mockups. The example record was entered by browser tests. They match the served captures at [`d0b082da`](https://github.com/bohselecta/oai-becoming/commit/d0b082dae183cd439ad3a140819c011eb443af47), including the new mark and ChatGPT/OpenAI treatment. [Screenshot provenance](docs/verification/0.3.1-branding.json).
 
 ## Advanced configuration
 
@@ -156,7 +158,7 @@ python tests/browser_smoke.py --url http://127.0.0.1:4173
 python tests/discovery_browser.py --url http://127.0.0.1:4173
 ```
 
-The [verified implementation run](https://github.com/bohselecta/oai-becoming/actions/runs/36776489243) at `91b145ad` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. Check the workflow for the current commit's result; a historical receipt does not verify later changes.
+The [0.3.1 branding verification run](https://github.com/bohselecta/oai-becoming/actions/runs/36791725253) at `d0b082da` passed **1,061 browser assertions**: 238 comparative and 297 discovery checks on the served site, plus 232 comparative and 294 discovery checks on the portable build. It reported no runtime errors or external requests. [The versioned receipt](docs/verification/0.3.1-branding.json) records that exact source and the screenshot hashes. Check the workflow for the exact current commit; a historical receipt does not verify later changes.
 
 Coverage includes context on return, contradictory outcomes, corrections, preserved attempts, backup validation, recovery, storage failures, keyboard/focus behavior and desktop/phone layouts. Human first-use studies, a screen-reader audit and real-device Safari testing remain outstanding. See [QA and execution limits](docs/QA.md).
 
@@ -168,7 +170,7 @@ Read the [discovery contract](docs/DISCOVERY-CONTRACT.md), [architecture](docs/A
 
 ## Project & license
 
-**Becoming** is the first-person instrument. **Emergence** is a separate world-facing concept; neither project requires the other to run. Becoming keeps its own name, original mark, forest-green visual identity and authorship. “An independent concept for the OpenAI ecosystem” describes intent, not an integration, partnership or endorsement. See the [brand standard](docs/BRAND.md).
+**Becoming** is the first-person instrument. **Emergence** is a separate world-facing concept; neither project requires the other to run. Becoming keeps its own name, original forest-green visual identity and authorship. Version 0.3.1 introduces a simpler person-and-rising-path mark designed to read cleanly at modern AI-app icon scale without imitating OpenAI or another provider. “An independent concept for ChatGPT + OpenAI” makes the intended ecosystem explicit while remaining a secondary descriptor, not an integration, partnership or endorsement. See the [brand standard](docs/BRAND.md).
 
 Copyright © 2026 **Hayden Lindley**. New original material is offered under the **[Becoming OpenAI-Only License 1.0](LICENSE)**, first introduced with 0.2.1. This is a custom, recipient-limited grant, not a general open-source license. The license defines the eligible OpenAI entities and permitted uses.
 

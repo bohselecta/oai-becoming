@@ -10,6 +10,6 @@ OpenAI may use, modify and incorporate the covered original material into resear
 
 The offer covers only applicable rights the originator owns or may license. It excludes private chats, account data, unpublished evidence, other people's identities and likenesses, unrelated repositories and third-party trademarks. Tools and other third-party material retain their own terms.
 
-Becoming is **an independent concept for the OpenAI ecosystem**. It is not an OpenAI product, approved integration, endorsement, partnership, acknowledgement of receipt or agreement to implement. No outreach to OpenAI or acceptance by OpenAI is claimed. No real participant is assessed; the included people and observations are synthetic.
+Becoming is **an independent concept for ChatGPT + OpenAI**. It is not an OpenAI product, approved integration, endorsement, partnership, acknowledgement of receipt or agreement to implement. No outreach to OpenAI or acceptance by OpenAI is claimed. No real participant is assessed; the included people and observations are synthetic.
 
 The license defines the rights; this page summarizes them. [Brand guidance](BRAND.md) records how the product communicates its intended ecosystem without implying affiliation.

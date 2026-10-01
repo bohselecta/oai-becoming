@@ -1,0 +1,57 @@
+{
+  "source_revision": "d0b082dae183cd439ad3a140819c011eb443af47",
+  "source_tree": "b4a9a0c3427d577881b12968b51332b3373f3245",
+  "workflow_run": "https://github.com/bohselecta/oai-becoming/actions/runs/36791725253",
+  "artifact_id": 11132014000,
+  "scope": "Historical exact-head verification of the complete 0.3.1 branding implementation before consolidation documentation edits. Later commits require their own CI.",
+  "node_tests": 152,
+  "builds": [
+    "modular",
+    "portable"
+  ],
+  "browser_suites": {
+    "served_comparative": {
+      "passed": 238,
+      "page_errors": [],
+      "browser": "153.0.8010.0"
+    },
+    "served_discovery": {
+      "passed": 297,
+      "page_errors": [],
+      "browser": "153.0.8010.0"
+    },
+    "portable_comparative": {
+      "passed": 232,
+      "page_errors": [],
+      "browser": "153.0.8010.0"
+    },
+    "portable_discovery": {
+      "passed": 294,
+      "page_errors": [],
+      "browser": "153.0.8010.0"
+    }
+  },
+  "screenshots": {
+    "public/becoming-preview.png": {
+      "sha256": "16a70a832f1d0b3cb7357f72ab288d40bf8c404ce6b17dbcea5720edcf7e43c1",
+      "matches_capture": "discovery/fresh-1440.png"
+    },
+    "public/becoming-phone.png": {
+      "sha256": "c1579d22752fdf12d6d497b1f5c36071072749969a4ad7ec67c4f5afd5aff34d",
+      "matches_capture": "discovery/fresh-390.png"
+    },
+    "public/becoming-next-step.png": {
+      "sha256": "ac054c483c11ba2db0aec0662d4cbca640f0b352e07e01702de34446079a6799",
+      "matches_capture": "discovery/ready-desktop.png"
+    },
+    "public/becoming-record.png": {
+      "sha256": "06aa9d7e3d10e959b280a98f6b4098673741344c6ae6f7278d2db406c7f76e93",
+      "matches_capture": "discovery/record-desktop.png"
+    }
+  },
+  "limits": [
+    "Authored local guided prompts; no live model or account integration",
+    "Synthetic comparison data; no validated visitor assessment",
+    "No human usability study, screen-reader audit, real-device Safari test or production deployment"
+  ]
+}

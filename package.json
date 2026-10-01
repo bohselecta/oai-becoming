@@ -1,9 +1,9 @@
 {
   "name": "oai-becoming",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "type": "module",
-  "description": "Becoming: interest-led local discovery with an inspectable synthetic comparative instrument. Independent concept for the OpenAI ecosystem; no live AI or account integration.",
+  "description": "Becoming: interest-led local discovery with an inspectable synthetic comparative instrument. Independent concept for ChatGPT + OpenAI; no live AI or account integration.",
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",

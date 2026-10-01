@@ -1,6 +1,6 @@
 # Architecture — interest-led surface, steady evidence protocol
 
-Contract `becoming-discovery/1` + preserved `becoming-product/2` · App `0.3.0`.
+Contract `becoming-discovery/1` + preserved `becoming-product/2` · App `0.3.1`; discovery/measurement behavior unchanged from `0.3.0`.
 
 ## New local discovery layer
 
@@ -41,7 +41,7 @@ Browser-local subject state                    Versioned reference snapshot
 
 There is no application backend, model call, analytics collector, authentication service or live participant ingestion. The subject and every reference person are fictional. Project reflections and review notes are browser-local. The application is an interactive implementation, not a server placeholder.
 
-`src/participants.js` owns a deterministic reference snapshot and cohort metadata. `src/domain.js` owns pure measurements plus explicit state-changing operations. `src/app.js` owns navigation, rendering, forms, native dialogs and downloads. The original `styles.css`, mark, constellation and practice-art vocabulary are retained; `comparative.css` makes placement the primary information hierarchy.
+`src/participants.js` owns a deterministic reference snapshot and cohort metadata. `src/domain.js` owns pure measurements plus explicit state-changing operations. `src/app.js` owns navigation, rendering, forms, native dialogs and downloads. The original `styles.css`, constellation and practice-art vocabulary are retained. Version 0.3.1 replaces the mark with the person-and-rising-path symbol and updates secondary ecosystem labels. `comparative.css` provides the detailed demo layout and brand treatment; discovery remains the default entry.
 
 ## 2. Measurement contract
 

@@ -1,3 +1,17 @@
+# Current verification — Becoming 0.3.1
+
+The complete branding implementation at `d0b082dae183cd439ad3a140819c011eb443af47` passed [exact-head CI](https://github.com/bohselecta/oai-becoming/actions/runs/36791725253): **152 Node tests**, both builds and **1,061 browser assertions** (238 served comparative, 297 served discovery, 232 portable comparative, 294 portable discovery). All four browser receipts contain zero page errors; the no-external-request assertions passed.
+
+The [versioned branding receipt](verification/0.3.1-branding.json) records the source revision/tree, counts and screenshot hashes. The current [desktop](../public/becoming-preview.png), [phone](../public/becoming-phone.png), [chosen-step](../public/becoming-next-step.png) and [record](../public/becoming-record.png) images match that run's served captures byte for byte. They show the person-and-rising-path mark and secondary ChatGPT/OpenAI labels. The phone Continue control remains within the 390×844 viewport.
+
+This is a tested baseline, not a pass for later documentation or merge commits. Consult [Product verification](https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml) for the exact current main/PR revision. Each run stores source-revision.txt, source-tree.txt, browser receipts and actual screenshots. The historical records below retain the source they actually verified.
+
+## Current limits
+
+The product uses authored local guided prompts and synthetic comparison data. No live model, account service, real visitor scoring, calibrated assessment, human usability study, screen-reader audit, real-device Safari test or production deployment is claimed. Browser execution uses the permitted GitHub runner; local browser restrictions were not changed.
+
+---
+
 # Interest-led 0.3.0 verification
 
 Frozen requirements: [D1–D8](DISCOVERY-CONTRACT.md). Baseline main `23b4f4c` passed 100 Node tests and both builds. The current unit/presentation/package suite passes 152 tests and both builds. Core measurement files and the original regression assertions remain unchanged.
@@ -13,11 +27,11 @@ At exact source `2157a7ed84734bdeca53a9f244327a706494eb72`, [GitHub CI](https://
 | Portable comparative | PASS — 232 assertions |
 | Portable discovery | PASS — 294 assertions, explicit offline Storage fault/reopen fixtures |
 
-No runtime errors or external model/analytics/asset requests were observed. [Complete versioned receipt](verification/0.3.0-complete.json). The workflow checks out the PR head directly and includes source revision/tree files in its artifact. Consult the [latest exact-head PR gate](https://github.com/bohselecta/oai-becoming/pull/4/checks) for any later revision; an older receipt is not evidence for changed code.
+No runtime errors or external model/analytics/asset requests were observed. [Complete versioned receipt](verification/0.3.0-complete.json). The workflow checks out the PR head directly and includes source revision/tree files in its artifact. The linked run and receipt describe that historical revision; the current gate is linked above.
 
 The earlier `b52af7d` run passed both hosted suites and portable comparative verification, but the portable discovery harness could not redefine its test-only Window helper during a simulated reopen. Making that helper configurable fixed the harness lifecycle without changing production state or suppressing runtime errors. A parallel `2157a7e` PR run then exposed a CSP-sensitive plain-string polling predicate. Pollers now use explicit functions, preserving the strict product CSP and the no-errors assertions.
 
-Actual screenshots from `b52af7d`: [desktop](../public/becoming-preview.png), [phone](../public/becoming-phone.png), [chosen step](../public/becoming-next-step.png), [record](../public/becoming-record.png). These depict test-entered local context, not a real visitor assessment. Independent visual review found no clipping, overlap or hierarchy blocker; the phone Continue control fits within 390×844 pixels. Subsequent production presentation is unchanged; final-run artifacts include refreshed captures.
+Historical 0.3.0 captures, initially rendered at `b52af7d` and committed by `91b145ad`: [desktop](https://github.com/bohselecta/oai-becoming/blob/91b145adb675ee170270f59c9ab4b6f27d7b22d8/public/becoming-preview.png), [phone](https://github.com/bohselecta/oai-becoming/blob/91b145adb675ee170270f59c9ab4b6f27d7b22d8/public/becoming-phone.png), [chosen step](https://github.com/bohselecta/oai-becoming/blob/91b145adb675ee170270f59c9ab4b6f27d7b22d8/public/becoming-next-step.png), [record](https://github.com/bohselecta/oai-becoming/blob/91b145adb675ee170270f59c9ab4b6f27d7b22d8/public/becoming-record.png). These depict test-entered local context, not a real visitor assessment. Independent visual review found no clipping, overlap or hierarchy blocker; the phone Continue control fits within 390×844 pixels. The later 0.3.1 branding revision replaces these checked-in images; its current captures and receipt are linked above.
 
 ## Requirements exercised
 
@@ -26,7 +40,7 @@ Actual screenshots from `b52af7d`: [desktop](../public/becoming-preview.png), [p
 - D5: strict schema and old-record migration, valid/corrupt/future data, quota/unavailable/delete failures, export/restore confirmation, no silent overwrite, separate synthetic key preserved byte for byte
 - D6: original complete comparison → project → pending → acceptance → movement → revocation walkthrough, low/unknown/assisted/sparse-reference cases unchanged
 - D7: both builds, keyboard errors/focus/modal replacement, reduced motion, accessible names, 320/390/768/1440 layouts, literal hostile text, CSP and no external requests
-- D8: original author/mark/legal notices preserved, draft PR open and unmerged; final exact-head gate remains required before delivery
+- D8 at initial delivery: original author/mark/legal notices preserved and PR #4 left as a draft. The owner later approved its merge and the 0.3.1 mark revision; current requirements retain authorship, license scope, independent branding and exact-head verification.
 
 ## Corrections made during verification
 
@@ -42,7 +56,7 @@ The historical records below describe prior releases only.
 
 # Verification record
 
-**Latest patch: 0.2.1.** The license/brand revision passed 100 domain/package tests and 232 offline Chromium assertions locally; see [current status](STATUS.md) and [patch receipt](verification/0.2.1-local.json). The record below remains the historical 0.2.0 run. The subsequent GitHub served-origin patch run passed **238 browser assertions**; see [its receipt](verification/0.2.1-hosted.json). This was a runner-local HTTP origin, not a Vercel deployment.
+**Historical patch: 0.2.1.** The license/brand revision passed 100 domain/package tests and 232 offline Chromium assertions locally; see [current status](STATUS.md) and [patch receipt](verification/0.2.1-local.json). The record below remains the historical 0.2.0 run. The subsequent GitHub served-origin patch run passed **238 browser assertions**; see [its receipt](verification/0.2.1-hosted.json). This was a runner-local HTTP origin, not a Vercel deployment.
 
 **Executed locally on September 30, 2026 · Release 0.2.0**
 

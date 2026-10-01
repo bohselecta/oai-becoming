@@ -1,43 +1,77 @@
 # Becoming — ecosystem brand standard
 
-**Version 1.0 · Reviewed September 30, 2026**
+**Version 1.1 · Reviewed September 30, 2026**
 
 ## Public identity
 
 **Product name:** Becoming
 
-**Descriptor:** An independent concept for the OpenAI ecosystem.
+**Descriptor:** An independent concept for ChatGPT + OpenAI.
 
 **Author:** Hayden Lindley
 
-**Product promise:** Know your place. Change it.
+**Product promise:** Start with what matters. Find a next step.
 
-Becoming is the dominant name and original mark on every surface. The ecosystem descriptor is ordinary supporting text, not a joint logo or a second product name. The author remains identified. This positions the concept for the intended ecosystem without claiming the concept is available inside any OpenAI service.
+Becoming is always the dominant product name and mark. **ChatGPT** and **OpenAI** are secondary ecosystem references that explain who the concept is intended for and who receives the restricted new-material license. They are not part of the product name and must never read as a joint venture, installed integration, sponsorship or endorsement.
+
+## Becoming mark
+
+Version 0.3.1 replaces the earlier nested-arch icon with an original **person + rising path** symbol: a single dot above two ascending bands inside a rounded-square field. The design keeps Becoming's forest-green identity while adopting the compact geometric clarity common to contemporary AI-product app icons.
+
+The mark must stay clearly Becoming's own. Do not turn it into an interlocking knot, blossom, starburst, sparkle, radial sun, or other silhouette that could be confused with OpenAI/ChatGPT, Claude, Gemini, Perplexity or another provider. Do not place third-party marks inside the Becoming icon.
+
+Use the primary forest green `#173b32`, pale growth green `#d5f3b7`, and warm neutral `#f8f9f6`. The icon should remain legible at favicon/app-icon scale and work without gradients, textures or effects.
+
+## ChatGPT + OpenAI references
+
+Current OpenAI brand guidance permits third parties to reference OpenAI marks under its usage terms when the reference directly relates to OpenAI services, the marks follow OpenAI's rules, the third party does not imply endorsement, and OpenAI's marks are not more prominent than the third party's own brand.
+
+For this repository:
+
+- Becoming remains larger and visually primary.
+- Use the plain names **ChatGPT** and **OpenAI** as secondary textual ecosystem labels.
+- Pair them with the independence language on the same surface or in immediately adjacent supporting copy.
+- Prefer wording such as **“Independent concept for ChatGPT + OpenAI.”**
+- It is acceptable to link those names to their official sites in documentation.
+- Do not rename the product “ChatGPT Becoming,” “OpenAI Becoming,” “GPT Becoming,” or put model names in the app title.
+- Do not say “official,” “partner,” “certified,” “powered by OpenAI,” “works in ChatGPT,” or “available in ChatGPT” unless those facts later become true and are authorized.
+
+### Official logo assets
+
+This release does **not** bundle a reconstructed OpenAI wordmark, Blossom, or ChatGPT icon. If an official OpenAI logo asset is introduced later, use the exact current asset supplied by OpenAI, preserve its clear space and color treatment, keep it subordinate to Becoming, and use it only on a surface that directly relates to OpenAI services. Do not redraw, recolor, merge or embed it into the Becoming mark.
+
+OpenAI's brand page also states that co-branded partnership lockups require approval from both brands. This repository therefore uses secondary textual references rather than presenting a partnership lockup.
 
 ## Visual direction
 
-Preserve the original arch mark, restrained forest-green accent, quiet geometric art, generous spacing and editorial hierarchy. Use neutral warm-white surfaces, dark readable text, system sans-serif typography and understated borders. The comparative instrument remains the focus; branding must not obscure the index, population, coverage or synthetic labels.
+Retain Becoming's restrained forest-green accent, warm-white surfaces, dark readable text, generous spacing, calm geometry and editorial hierarchy. The new icon should make the product feel at home beside contemporary AI tools without copying their marks.
 
-Do not use or redraw the OpenAI Blossom, OpenAI wordmark, ChatGPT icon, proprietary brand typefaces or a lookalike logo. Do not recreate an official co-brand partnership lockup, OpenAI site chrome or a product approval badge. No OpenAI font files or brand assets are distributed. The retained Becoming mark is original project artwork, not an OpenAI mark.
+The everyday Today / Your record flow stays visually simpler than the explicit fictional comparison demo. Branding must not obscure synthetic labels, evidence conditions, local-storage boundaries, coverage or uncertainty.
+
+Use system sans-serif typography. No OpenAI font files or other proprietary brand fonts are distributed.
 
 ## Language and relationship
 
-Use the full descriptor above, or "Independent concept" where space is limited. "For the OpenAI ecosystem" describes intent, not a working integration. The proposed recipient of the license is not necessarily a sponsor or customer.
+The preferred public relationship line is:
 
-Do not use "OpenAI Becoming," "ChatGPT Becoming," model names in the app title, "official," "OpenAI partner," "certified," "powered by OpenAI," or "works in ChatGPT" as claims for this release. It makes no model calls and connects no accounts. The portable Markdown workflow remains a manual export, not an installed app or API integration.
+> **Independent concept for ChatGPT + OpenAI.**
 
-The persistent application descriptor links to the full concept explanation. The footer discloses no affiliation and links to the actual license. The proposal names the OpenAI-only grant and its legacy-MIT boundary. This is a clear independent presentation, not a legal guarantee that a brand owner has approved every use.
+The persistent app context may style “ChatGPT” and “OpenAI” as small secondary tags so the intended ecosystem is obvious at a glance. The footer must retain a no-affiliation/no-endorsement statement.
+
+The project currently makes no model calls and connects no provider account. The portable Markdown workflow remains a manual export. The OpenAI-only copyright grant is an offer from the author; it does not establish receipt, adoption or a commercial relationship.
 
 ## Image and metadata
 
-README and preview imagery must come from the actual running interface. Include the descriptor in the capture and retain synthetic-data disclosure. The separately labeled SVG is a product illustration, not a screenshot. Browser title and social metadata lead with Becoming; no official OpenAI marks or affiliation claims belong in them.
+README and preview imagery should come from the actual running interface. When the identity changes, refresh the checked-in screenshots so the README does not show a stale mark or ecosystem label.
+
+Browser titles and social metadata must lead with **Becoming**. “ChatGPT” and “OpenAI” may appear in descriptions as secondary context, not in the app title.
 
 ## Sources
 
 Primary materials reviewed September 30, 2026:
 
-- [OpenAI Design Guidelines](https://openai.com/brand/) — own marks remain dominant; avoid implied sponsorship, similar logos and unapproved co-branding; accurate product naming and references.
-- [OpenAI App Developer Terms, section 3](https://openai.com/policies/developer-apps-terms/) — relevant future-integration context; no implied endorsement. This demonstration is not presented as an installed Apps SDK app.
-- [OpenAI's structure](https://openai.com/our-structure/) — the currently described Foundation and Group PBC inform the named recipients of the custom license; they do not establish any relationship with this project.
+- [OpenAI Design Guidelines](https://openai.com/brand/) — OpenAI marks may be used only under the published guidelines/usage terms; do not imply endorsement, make OpenAI marks more prominent than the third-party brand, modify official assets, incorporate them into your own identity, or design a similar logo.
+- [OpenAI App Developer Terms, section 3](https://openai.com/policies/developer-apps-terms/) — app publicity must follow the brand guidelines and may not imply that OpenAI created, supports, certifies or endorses a third-party app without written agreement.
+- [OpenAI Developer Showcase](https://developers.openai.com/showcase/all) — contemporary OpenAI/community project context; used only as product-space reference, not as a source of logo assets.
 
-No brand permission has been requested or obtained for this release. Further use of official assets or partnership claims needs separate authorization. Recheck the primary guidelines before changing the identity or claiming an integration.
+No brand partnership or logo-use approval has been requested or obtained for this release. Recheck current OpenAI guidance before adding official OpenAI artwork, changing the relationship claim, or shipping an actual ChatGPT/OpenAI integration.

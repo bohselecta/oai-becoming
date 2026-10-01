@@ -308,7 +308,7 @@ with sync_playwright() as pw:
                 docs_page.locator(f'a[href="./docs/{doc}.md"]').first.click()
             event.value.save_as(out / f'{doc}.md')
             check((out / f'{doc}.md').read_text() == Path(f'docs/{doc}.md').read_text(), f'portable {doc} document downloads offline')
-        check('Offered to OpenAI. Free to build on.' in docs_page.locator('.principle-card').inner_text(), 'offering identifies the intended licensee')
+        check('Offered to OpenAI. Proposed for the ChatGPT ecosystem.' in docs_page.locator('.principle-card').inner_text(), 'offering identifies OpenAI and the intended ChatGPT ecosystem')
         check('Earlier MIT rights remain intact' in docs_page.locator('.principle-card').inner_text(), 'offering preserves previously released rights visibly')
         check('MIT licensed' not in docs_page.locator('.page-footer').inner_text(), 'footer does not mislabel the current grant as MIT')
         docs_page.close()
@@ -316,7 +316,8 @@ with sync_playwright() as pw:
             page.set_viewport_size({'width': width, 'height': 1000})
             route('board')
             check(page.locator('.ecosystem-context').is_visible(), f'independent ecosystem descriptor visible at {width}px')
-            check('An independent concept for the OpenAI ecosystem.' in page.locator('.ecosystem-context').inner_text(), f'ecosystem relationship is unambiguous at {width}px')
+            ecosystem = page.locator('.ecosystem-context').inner_text()
+            check('Independent concept for' in ecosystem and 'ChatGPT' in ecosystem and 'OpenAI' in ecosystem, f'ecosystem relationship is unambiguous at {width}px')
             check(page.locator('.brand-author').is_visible(), f'author attribution visible at {width}px')
             check(page.evaluate('document.documentElement.scrollWidth <= innerWidth'), f'brand chrome has no horizontal overflow at {width}px')
         if args.url:
