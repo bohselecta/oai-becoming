@@ -1,0 +1,20 @@
+{
+  "stage": "OWNER_REPORTED_SERVICE_URL",
+  "serviceOrigin": "https://becoming-pilot.onrender.com",
+  "resourceAudience": "https://becoming-pilot.onrender.com/mcp",
+  "accountCallback": "https://becoming-pilot.onrender.com/auth/callback",
+  "reportedBy": "Owner in continuation chat",
+  "readiness": "NOT_VERIFIED",
+  "deployedRevision": null,
+  "issuer": null,
+  "accountClientId": null,
+  "realOAuth": "NOT_RUN",
+  "chatgptSandbox": "NOT_RUN",
+  "independentProbe": {
+    "result": "BLOCKED_BY_EXECUTOR_PROXY",
+    "httpStatus": 403,
+    "originOfError": "Proxy CONNECT denial; not an observed Render or Auth0 response",
+    "policyChangedOrBypassed": false
+  },
+  "note": "A reported URL does not establish healthy setup, configured OAuth or a completed ChatGPT test. No credentials or private identities are recorded."
+}

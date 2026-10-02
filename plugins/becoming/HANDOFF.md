@@ -36,7 +36,12 @@ the injected gh CLI authentication did not pass, so PR metadata uses the connect
 GitHub tool instead. The owner has entered payment and reached Render’s blueprint review. His screenshot
 shows Render parsed the preceding service configuration and six manual fields.
 The update reduces first deployment to SETUP_MODE=true and a generated secret;
-no actual service hostname/client IDs/user IDs are recorded yet.
+the owner subsequently reported **https://becoming-pilot.onrender.com**.
+Readiness/running SHA are still unverified: direct health and Auth0 discovery probes
+returned executor proxy CONNECT 403, not observed provider responses. Account client
+ID, exact issuer and owner subject are still needed. See
+[live setup status](docs/verification/live-setup.json); never mark real OAuth/host
+acceptance PASS from a reported URL alone.
 
 ## Delivered continuation
 

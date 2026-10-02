@@ -5,9 +5,17 @@ Selected by Hayden Lindley on October 1, 2026: **Auth0 + Render**; publisher
 The mailbox still needs to be created and tested. Deployment/agreement authority
 is already given. This guide stops at your personal test before general-use submission.
 
-**Current state:** verified source and deployment configuration, **not a deployed
-app**. No real tenant, service URL, OAuth registration or ChatGPT installation is
-recorded yet. This chat has no Auth0/Render credentials or browser session. Merely
+**Service URL reported by the owner:** [https://becoming-pilot.onrender.com](https://becoming-pilot.onrender.com).
+Use the exact [MCP audience](https://becoming-pilot.onrender.com/mcp) and account
+callback `https://becoming-pilot.onrender.com/auth/callback` for Auth0 registration.
+[Health](https://becoming-pilot.onrender.com/health) still needs a public response
+confirming setup-only status and the actual running source. Independent probes
+were blocked by the executor proxy; readiness and real OAuth are not yet verified.
+Account/privacy/review links remain unavailable in setup mode.
+
+**Current state:** verified source and a reported Render service URL; no healthy
+deployment, real OAuth registration or ChatGPT installation is verified yet.
+This chat has no Auth0/Render credentials or browser session. Merely
 logging into those sites does not transfer your session to this execution environment.
 Do not paste passwords, client secrets or tokens into this chat.
 
