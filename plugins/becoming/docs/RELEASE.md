@@ -30,7 +30,7 @@ when checked; that is not a security audit. Dependency notices are preserved.
 
 The committed [local receipt](verification/local-receipt.json) identifies the tested
 source checkpoint, individual runtime/test SHA-256 hashes and browser counts.
-Receipt commits may add documentation/images afterward; a checkpoint is not a
+The clean source checkpoint is `7a3027daeba17f86e008b7a6a0f0544443a5450d`. Receipt commits may add documentation/images afterward; a checkpoint is not a
 claim that every later commit was tested. The exact current-head CI workflows
 [Product verification](https://github.com/bohselecta/oai-becoming/actions/workflows/check.yml)
 and [ChatGPT app verification](https://github.com/bohselecta/oai-becoming/actions/workflows/chatgpt-app.yml)

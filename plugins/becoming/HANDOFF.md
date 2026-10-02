@@ -1,5 +1,7 @@
 # Becoming ChatGPT integration — continuation handoff
 
+[Draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6) — open, draft, unmerged.
+
 Review branch: `codex/becoming-chatgpt-app`, based on clean verified app baseline
 `b044e6dffab10ed9ae62158e71203a36a3510ed2`. Requested publisher **Corgi-Verse Software**;
 original author/copyright **Hayden Lindley**. The integration is locally implemented
@@ -75,7 +77,7 @@ npm audit --omit=dev
 npm run test:browser
 ```
 
-Browser dependencies are the existing `tests/requirements.txt`. Current-head CI
+Browser dependencies are the existing `tests/requirements.txt`. The committed local receipt verifies clean source `7a3027daeba17f86e008b7a6a0f0544443a5450d`; the final receipt/handoff update adds documentation only. Current-head CI
 publishes source-revision/tree files, receipts and screenshots for both packages.
 The [local receipt](docs/verification/local-receipt.json) pins source hashes and
 explicit fixture labels. Read the receipt's checkpoint/dirty-state fields; it does
