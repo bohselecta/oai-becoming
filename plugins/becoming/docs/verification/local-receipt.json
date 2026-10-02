@@ -1,0 +1,57 @@
+{
+  "status": "PASS_LOCAL_DIRTY_SOURCE",
+  "date": "2026-10-01 America/Chicago",
+  "baseCommit": "b044e6dffab10ed9ae62158e71203a36a3510ed2",
+  "workingTree": "Implementation before first commit; file hashes below identify tested runtime source.",
+  "labels": {
+    "integration": "TEST FIXTURE: IdP/ChatGPT bridge/people; actual HTTP MCP and UI",
+    "original": "Actual standalone app with its disclosed synthetic comparison demo"
+  },
+  "checks": {
+    "existingNodeTests": 152,
+    "existingBuilds": [
+      "modular",
+      "portable"
+    ],
+    "servedComparisonAssertions": 238,
+    "servedDiscoveryAssertions": 297,
+    "portableComparisonAssertions": 232,
+    "portableDiscoveryAssertions": 294,
+    "integrationNodeTests": 11,
+    "integrationBrowserAssertions": 23,
+    "runtimeErrors": [],
+    "npmAuditKnownVulnerabilities": 0
+  },
+  "sourceSha256": {
+    "plugins/becoming/assets/widget.html": "65411e85f000ecf65206eee923254026693132111ed9518067e416c85bf3b3f2",
+    "plugins/becoming/package-lock.json": "a0a25830a1a69223c8be8acd95f04067790e55e82769e9c403eee7e7a5b81781",
+    "plugins/becoming/package.json": "e36b93566553c4124e3d21f03880ea3bf8a625cb96a04b9c46a3f76ffa98ccfa",
+    "plugins/becoming/src/auth.mjs": "2cfe4a3134bbcd1d7e7d6537cea2dcf054a5c387e9c3761b048aaa85b9bb8ab0",
+    "plugins/becoming/src/http.mjs": "afc00dcb315a1dcdb34c9e14f2705ddd1c1828fefa5b7e2b95267f4633718faa",
+    "plugins/becoming/src/main.mjs": "5493630176a6e52460531ed4312c5d4bee03bdb307b53a719da292dadb739d75",
+    "plugins/becoming/src/measurement.mjs": "a60fced4aa5274d196c7ea5aac40dbc7373301d33d5dd2e05395eb423fd5d822",
+    "plugins/becoming/src/store.mjs": "a01bea1f4bf4b81c81c31967dc389a69e6d3372ab89920d207579bc5d4d089ed",
+    "plugins/becoming/src/tools.mjs": "de8ef8ffe1a878ee62295d1459f4c362d9c307116532860cd03aa43fe8537ea0",
+    "plugins/becoming/tests/browser.py": "9d49970c836fb2e3b1d09eced60c42895c1d4c7a361131bcd404240234d5b73e",
+    "plugins/becoming/tests/fixture.mjs": "38510dd857bac0bf2a5ff35d746b19de7d38c7b3316aea3350d44c389d598ec9",
+    "plugins/becoming/tests/harness.mjs": "86e763f85e3a81abc64dfcae21478e378733fb3954ae2ec1ea40b76165866d37",
+    "plugins/becoming/tests/integration.test.mjs": "3faf3854c081f8e6440fa121cc64d205d63256cca0a14199bd64671b0cfa8cb7",
+    "plugins/becoming/tests/measurement.test.mjs": "d5f232e55bccbd978acdd3bddfc8c10fd8856e747dc73b6d7885167c097b898e",
+    "src/app.js": "ae592cfc2035ddd13f8fd4f188b65ba0e1ef2ac1eb127b00e8de7d3455b18a7a",
+    "src/comparative.css": "6356a1722640530d14e8673f16340f541295a68b7cd6b3a3b35e57954de6890f",
+    "src/discovery.css": "ad243d598ec1507985ee83b114bdb48dd1d2541c835c14152c10047471bdaf6b",
+    "src/discovery.js": "a3c60a7190c53e3202f74293c41aa4abcc51d67e29420291a34e79d0b18f882b",
+    "src/domain.js": "e648ec27d3ad3bac2800b6e5edd6de9964338c7d1d3f580d00e000f1edadb222",
+    "src/journey.js": "e8f67275527eb319a15d7e368d63eef8fa7a815214f6e6ce17055eabb61f0b9e",
+    "src/participants.js": "66b7f7144968c153e01319da9235d06824e888684903ef08ee6cc55f961ac9be",
+    "src/styles.css": "61ae408cb37efff7b4476b4f49bf1c2ed40dc99fe1cbecf836f91f5896bcc8d5"
+  },
+  "notRun": [
+    "Live ChatGPT",
+    "Real IdP",
+    "Publisher verification",
+    "Empirical calibration",
+    "Owner publication approval",
+    "Deployment/submission"
+  ]
+}

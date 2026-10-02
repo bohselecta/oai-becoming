@@ -1,3 +1,23 @@
+# ChatGPT app integration — review branch, separate from 0.3.1
+
+The October 1 owner request adds a real Apps SDK/MCP integration in
+`plugins/becoming`, with Corgi-Verse Software as the requested publisher. The baseline
+below remains the verified standalone app at `b044e6dffab10ed9ae62158e71203a36a3510ed2`.
+Its application source, fixtures, storage keys, licenses and static deployment
+settings are preserved. New backend code is separately packaged; no automatic
+browser upload, live model API call, deployment or publication is claimed.
+
+Start with the
+[integration handoff](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/HANDOFF.md),
+[contract](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/CONTRACT.md)
+and [release evidence](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/docs/RELEASE.md).
+These are online repository links; the portable static app does not include the
+separate server. The handoff distinguishes local fixture verification, live tests
+awaiting setup and manual account/license/privacy/publication gates. The owner’s
+personal review is the final publication gate.
+
+---
+
 # Current state — Becoming 0.3.1
 
 ## Scope and contract

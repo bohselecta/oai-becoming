@@ -54,6 +54,25 @@ The three destinations are **Today**, **Your record**, and **Explore demo**. Det
 
 <p align="center"><em>Actual phone layout. Continue is visible within a 390 × 844 viewport.</em></p>
 
+## ChatGPT app integration — separate review package
+
+A working Apps SDK/MCP integration is under review in
+[`plugins/becoming`](https://github.com/bohselecta/oai-becoming/tree/codex/becoming-chatgpt-app/plugins/becoming),
+with **Corgi-Verse Software** as the requested publisher. It adds authenticated,
+consented durable records, human-reviewed evidence, transparent participating-sample
+comparisons and concrete growth projects in a separate Node 24 backend. The static
+0.3.1 app described here keeps its current behavior, local records and zero runtime
+dependencies. No data is uploaded automatically.
+
+The integration is not deployed or listed in ChatGPT. Local tests use labeled OAuth
+and host fixtures; real ChatGPT/identity-provider tests await approved setup. Current
+licenses remain intact, with independent publisher rights flagged for the owner's
+decision. See the
+[installation guide](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/INSTALL.md)
+and [handoff](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/HANDOFF.md).
+These links require network access; the portable standalone app does not bundle the
+separate server package.
+
 ## Requirements
 
 - **Node.js 22+** to run checks, build or serve the project

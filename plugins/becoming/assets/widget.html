@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Becoming</title>
+    <style>
+      :root {
+        font: 16px system-ui;
+        color: #173b32;
+        background: #f8f9f6;
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        padding: 22px;
+        line-height: 1.55;
+      }
+      header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      h1 {
+        margin: 0;
+        font-size: 25px;
+      }
+      h2 {
+        font-size: 22px;
+        line-height: 1.25;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        margin: 0.6rem 0 1rem;
+      }
+      small {
+        display: block;
+        color: #53665c;
+      }
+      section {
+        border-top: 1px solid #d6ded8;
+        margin-top: 20px;
+        padding-top: 16px;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 16px 0;
+      }
+      button {
+        font: inherit;
+        background: #173b32;
+        color: #fff;
+        border: 1px solid #173b32;
+        border-radius: 9px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: transparent;
+        color: #173b32;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: wait;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input:not([type="checkbox"]),
+      textarea,
+      select {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        font: inherit;
+        padding: 10px;
+        border: 1px solid #8a9a90;
+        border-radius: 8px;
+        background: #fff;
+        color: #173b32;
+      }
+      textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+      form {
+        display: grid;
+        gap: 6px;
+      }
+      *:focus-visible {
+        outline: 3px solid #668834;
+        outline-offset: 3px;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font: 13px system-ui;
+      }
+      details {
+        margin: 14px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow-wrap: anywhere;
+      }
+      td,
+      th {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #d6ded8;
+      }
+      .message {
+        padding: 12px;
+        background: #e3ecd9;
+        border-radius: 8px;
+      }
+      .bad {
+        background: #f4e0d6;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      #busy {
+        min-height: 1.5em;
+      }
+      svg {
+        flex-shrink: 0;
+      }
+      @media (max-width: 400px) {
+        body {
+          padding: 14px;
+        }
+        button {
+          padding: 10px 12px;
+        }
+        h1 {
+          font-size: 22px;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          background: #18231e;
+          color: #edf2eb;
+        }
+        small {
+          color: #b6c7ba;
+        }
+        input:not([type="checkbox"]),
+        textarea,
+        select {
+          background: #24352b;
+          color: #edf2eb;
+        }
+        button.secondary {
+          color: #edf2eb;
+          border-color: #b6c7ba;
+        }
+        .message {
+          background: #30412c;
+        }
+        .bad {
+          background: #533a30;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <svg
+        width="44"
+        height="44"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
+        <title id="becoming-mark-title">Becoming</title>
+        <rect x="1" y="1" width="46" height="46" rx="14" fill="#173b32" />
+        <circle cx="18.2" cy="14" r="4.2" fill="#d5f3b7" />
+        <path
+          d="M11.5 31.8c5.2-7.7 12.6-11.6 25-11.6v7.1c-10.4 0-18.3 2.5-25 8.6z"
+          fill="#d5f3b7"
+        />
+        <path
+          d="M11.5 39c5.6-6.4 13.9-9.6 25-9.6v7.1c-9.8 0-17.7 1.6-25 6.5z"
+          fill="#f8f9f6"
+        />
+      </svg>
+      <div>
+        <h1>Becoming</h1>
+        <small>Corgi-Verse Software · Independent app for ChatGPT</small>
+      </div>
+    </header>
+    <nav aria-label="Becoming">
+      <button id="refresh">Your record</button
+      ><button class="secondary" id="account">Data & consent</button>
+    </nav>
+    <p id="busy" role="status" aria-live="polite"></p>
+    <div id="error" role="alert"></div>
+    <main id="main"><p>Waiting for Becoming’s tool result.</p></main>
+    <script>
+      "use strict";
+      let data = window.openai?.toolOutput || null;
+      let busy = false;
+      const main = document.querySelector("#main"),
+        error = document.querySelector("#error"),
+        status = document.querySelector("#busy");
+      const fields = {
+        interest: "What has your attention lately?",
+        story: "Describe one concrete example of what you did.",
+        skills: "Which actions did you actually use in that setting?",
+        direction: "What would you like to try?",
+        reward: "What reward matters to you?",
+        constraints: "What needs to fit your circumstances?",
+        action: "Choose one small step you want to take.",
+        reflection: "What happened when you tried it?",
+      };
+      const skills = [
+        "systems",
+        "research",
+        "story",
+        "prototype",
+        "facilitation",
+        "creative",
+      ];
+      const el = (tag, text, props = {}) => {
+        const n = document.createElement(tag);
+        if (text !== null && text !== undefined) n.textContent = text;
+        Object.assign(n, props);
+        return n;
+      };
+      const button = (text, fn, secondary = false) => {
+        const b = el("button", text, {
+          type: "button",
+          className: secondary ? "secondary" : "",
+        });
+        b.addEventListener("click", fn);
+        return b;
+      };
+      let controlId = 0;
+      const label = (text, input) => {
+        input.id = "control-" + ++controlId;
+        const n = el("div");
+        n.append(el("label", text, { htmlFor: input.id }), input);
+        return n;
+      };
+      const input = (name, max = 1500) =>
+        el("textarea", null, { name, maxLength: max, required: true });
+      const selectedValues = new Map();
+      const select = (name, choices, key = name) => {
+        const n = el("select", null, { name });
+        for (const value of choices) n.append(el("option", value, { value }));
+        if (selectedValues.has(key)) n.value = selectedValues.get(key);
+        n.addEventListener("change", () => selectedValues.set(key, n.value));
+        return n;
+      };
+      const detail = (title, value) => {
+        const d = el("details");
+        d.append(
+          el("summary", title),
+          el(
+            "pre",
+            typeof value === "string" ? value : JSON.stringify(value, null, 2),
+          ),
+        );
+        return d;
+      };
+      const uiOpen = new Set();
+      const section = (title, collapsible = false) => {
+        const s = el("section");
+        main.append(s);
+        if (!collapsible) {
+          s.append(el("h2", title));
+          return s;
+        }
+        const d = el("details", null, { open: uiOpen.has(title) });
+        d.dataset.panel = title;
+        d.append(el("summary", title));
+        const content = el("div");
+        d.append(content);
+        s.append(d);
+        return content;
+      };
+      function requestArgs(extra = {}) {
+        return {
+          expectedRevision: data.revision,
+          requestId: crypto.randomUUID(),
+          ...extra,
+        };
+      }
+      async function call(name, args = {}) {
+        if (busy) return;
+        error.replaceChildren();
+        busy = true;
+        status.textContent = "Saving or loading…";
+        document.querySelectorAll("button").forEach((b) => (b.disabled = true));
+        try {
+          if (!window.openai?.callTool)
+            throw new Error(
+              "ChatGPT’s tool bridge is unavailable. This widget requires the ChatGPT host.",
+            );
+          const result = await window.openai.callTool(name, args);
+          const next = result.structuredContent || result;
+          if (result.isError || next.status === "error")
+            throw new Error(
+              next.message ||
+                "The operation did not complete. Read your record and retry.",
+            );
+          data = next;
+          render();
+        } catch (e) {
+          error.replaceChildren(
+            el("p", e.message, { className: "message bad" }),
+          );
+        } finally {
+          busy = false;
+          status.textContent = "";
+          document
+            .querySelectorAll("button")
+            .forEach((b) => (b.disabled = false));
+        }
+      }
+      function form(parent, submit) {
+        const f = el("form");
+        f.addEventListener("submit", (event) => {
+          event.preventDefault();
+          submit(new FormData(f));
+        });
+        parent.append(f);
+        return f;
+      }
+      function submit(f, text) {
+        f.append(el("button", text, { type: "submit" }));
+      }
+      function openAccount() {
+        if (data?.accountUrl && window.openai?.openExternal)
+          window.openai.openExternal({ href: data.accountUrl });
+        else
+          error.replaceChildren(
+            el(
+              "p",
+              "Read your record first, then open data and consent in the ChatGPT host.",
+            ),
+          );
+      }
+      document.querySelector("#refresh").onclick = () => call("becoming_open");
+      document.querySelector("#account").onclick = openAccount;
+      function render() {
+        for (const d of main.querySelectorAll("details[data-panel]")) {
+          if (d.open) uiOpen.add(d.dataset.panel);
+          else uiOpen.delete(d.dataset.panel);
+        }
+        main.replaceChildren();
+        if (!data)
+          return main.append(el("p", "Use Your record to load Becoming."));
+        if (data.status === "consent-required") {
+          main.append(
+            el("h2", "Start with your choice"),
+            el("p", data.notice),
+            button("Choose consent in my account", openAccount),
+          );
+          return;
+        }
+        if (!data.record)
+          return main.append(
+            el("p", "The result is unavailable. Use Your record to reload."),
+          );
+        const r = data.record;
+        main.append(el("p", data.notice, { className: "message" }));
+        const stage = r.stage === "ready" ? "reflection" : r.stage;
+        const s = section(
+          r.stage === "ready" ? "Your next step" : fields[stage],
+        );
+        if (r.interest) s.append(el("p", `Your interest: ${r.interest}`));
+        if (r.nextStep) s.append(el("p", r.nextStep));
+        if (r.outcome)
+          s.append(el("p", `Your account: ${r.outcome} (${r.evidenceStatus})`));
+        if (fields[stage]) {
+          const f = form(s, (fd) => {
+            let value = fd.get("answer");
+            if (stage === "skills") value = fd.getAll("skill");
+            if (stage === "reflection")
+              value = {
+                outcome: fd.get("answer"),
+                evidenceStatus: fd.get("evidenceStatus"),
+              };
+            call("becoming_save_answer", requestArgs({ stage, value }));
+          });
+          if (stage === "skills")
+            for (const skill of [
+              "planning",
+              "coordination",
+              "persistence",
+              "adaptation",
+            ]) {
+              const i = el("input", null, {
+                type: "checkbox",
+                name: "skill",
+                value: skill,
+                checked: r.skills.includes(skill),
+              });
+              f.append(label(skill, i));
+            }
+          else
+            f.append(
+              label(
+                fields[stage],
+                input(
+                  "answer",
+                  stage === "story" ? 3000 : stage === "interest" ? 300 : 1500,
+                ),
+              ),
+            );
+          if (stage === "constraints")
+            f.querySelector("textarea").required = false;
+          if (stage === "reflection")
+            f.append(
+              label(
+                "What does it mean for your chosen direction?",
+                select("evidenceStatus", [
+                  "uncertain",
+                  "supports",
+                  "contradicts",
+                ]),
+              ),
+            );
+          submit(
+            f,
+            stage === "reflection"
+              ? "Record my reflection"
+              : "Save my answer and continue",
+          );
+        }
+        if (r.stage === "ready" || r.stage === "reflection") {
+          const choice = el("details");
+          choice.append(el("summary", "Choose another step"));
+          s.append(choice);
+          const f = form(choice, (fd) =>
+            call(
+              "becoming_next_step",
+              requestArgs({ nextStep: fd.get("nextStep") }),
+            ),
+          );
+          f.append(
+            label(
+              "Choose a new step; preserve any completed attempt",
+              input("nextStep"),
+            ),
+          );
+          submit(f, "Start my next step");
+        }
+        const rec = section("Inspect and correct", true);
+        rec.append(detail("Your unassessed record", r));
+        const correction = form(rec, (fd) =>
+          call(
+            "becoming_correct_record",
+            requestArgs({ patch: { [fd.get("field")]: fd.get("value") } }),
+          ),
+        );
+        correction.append(
+          label(
+            "Field",
+            select("field", [
+              "interest",
+              "story",
+              "direction",
+              "reward",
+              "constraints",
+              "nextStep",
+            ]),
+          ),
+          label("Corrected text", input("value", 3000)),
+        );
+        submit(correction, "Save this correction");
+        for (const a of r.attempts) {
+          rec.append(
+            detail(`Earlier attempt — ${a.at}`, a),
+            button(
+              "Remove this earlier attempt",
+              () => {
+                if (confirm("Permanently remove this earlier attempt?"))
+                  call(
+                    "becoming_remove_attempt",
+                    requestArgs({ attemptId: a.id }),
+                  );
+              },
+              true,
+            ),
+          );
+        }
+        const evidence = section("Evidence — separate from your answers", true);
+        evidence.append(
+          el(
+            "p",
+            "Submit an account of an actual demonstration. It stays pending until a separately authorized human inspects the work. This is an unvalidated descriptive protocol.",
+          ),
+        );
+        const ef = form(evidence, (fd) =>
+          call("becoming_submit_evidence", requestArgs(Object.fromEntries(fd))),
+        );
+        for (const [name, title, max] of [
+          ["title", "Title", 200],
+          ["demonstrationId", "Distinct demonstration identifier", 100],
+          ["account", "What did you demonstrate?", 3000],
+          [
+            "criterion",
+            "Criterion and actual work the reviewer can inspect",
+            1500,
+          ],
+        ])
+          ef.append(label(title, input(name, max)));
+        ef.append(
+          label(
+            "Observation date",
+            el("input", null, { type: "date", name: "date", required: true }),
+          ),
+          label("Capability", select("skill", skills, "evidence-skill")),
+          label(
+            "Assistance condition",
+            select("mode", ["independent", "assisted"], "evidence-mode"),
+          ),
+        );
+        const projectChoice = select("projectId", [
+          "",
+          ...data.projects.map((p) => p.id),
+        ]);
+        ef.append(label("Optional project ID", projectChoice));
+        ef.addEventListener("formdata", (event) => {
+          if (!event.formData.get("projectId"))
+            event.formData.delete("projectId");
+        });
+        submit(ef, "Submit pending evidence");
+        for (const e of data.evidence) {
+          evidence.append(
+            detail(`${e.title} — ${e.status}`, e),
+            button(
+              "Revoke this evidence",
+              () =>
+                call(
+                  "becoming_revoke_evidence",
+                  requestArgs({ evidenceId: e.id }),
+                ),
+              true,
+            ),
+            button(
+              "Remove this evidence",
+              () => {
+                if (confirm("Permanently remove this evidence?"))
+                  call(
+                    "becoming_remove_evidence",
+                    requestArgs({ evidenceId: e.id }),
+                  );
+              },
+              true,
+            ),
+          );
+        }
+        const compare = section("Where does the evidence place me?", true);
+        compare.append(el("p", data.measurementNotice));
+        const cf = form(compare, (fd) =>
+          call("becoming_placement", Object.fromEntries(fd)),
+        );
+        cf.append(
+          label("Capability", select("skill", skills, "placement-skill")),
+          label(
+            "Assistance condition",
+            select("mode", ["independent", "assisted"], "placement-mode"),
+          ),
+        );
+        submit(cf, "Inspect my observed placement");
+        if (data.placement) {
+          const p = data.placement;
+          compare.append(
+            el(
+              "p",
+              p.score === null
+                ? "Placement unknown."
+                : `Observed ${p.skill}: ${Math.round(p.score)} / 1000. ${p.n} accepted demonstrations. ${p.mode}.`,
+            ),
+            el(
+              "p",
+              p.percentile === null
+                ? `Sample percentile unavailable (${p.sampleSize} compatible reference participants).`
+                : `${p.percentile}th percentile among ${p.sampleSize} compatible consenting reference participants.`,
+            ),
+            el(
+              "p",
+              p.unknownReason ||
+                "This placement describes only the participating sample.",
+            ),
+            detail(
+              "Evidence, conditions, reference version, coverage and index",
+              p,
+            ),
+          );
+        }
+        const projects = section("Concrete growth projects", true);
+        const pf = form(projects, (fd) => {
+          const args = Object.fromEntries(fd);
+          args.targetScore = Number(args.targetScore);
+          if (!args.participantId) delete args.participantId;
+          call("becoming_create_project", requestArgs(args));
+        });
+        pf.append(
+          label("Project name", input("title", 200)),
+          label("Next concrete action", input("nextAction")),
+          label("What would count as a demonstration?", input("criterion")),
+          label("Capability", select("skill", skills, "project-skill")),
+          label(
+            "Assistance condition",
+            select("mode", ["independent", "assisted"], "project-mode"),
+          ),
+          label(
+            "Observed target / 1000",
+            el("input", null, {
+              type: "number",
+              name: "targetScore",
+              min: 0,
+              max: 1000,
+              value: 750,
+              required: true,
+            }),
+          ),
+        );
+        const person = el("select", null, { name: "participantId" });
+        person.append(el("option", "Threshold target", { value: "" }));
+        for (const r of data.placement?.references || [])
+          person.append(
+            el("option", `${r.displayName}: ${Math.round(r.score)}`, {
+              value: r.participantId,
+            }),
+          );
+        pf.append(
+          label(
+            "Optional consenting participant target (inspect placement first)",
+            person,
+          ),
+        );
+        submit(pf, "Freeze my project target");
+        for (const p of data.projects)
+          projects.append(
+            detail(`${p.title} — ${p.status}`, p),
+            button(
+              "Mark practice done",
+              () =>
+                call(
+                  "becoming_update_project",
+                  requestArgs({ projectId: p.id, action: "practice-done" }),
+                ),
+              true,
+            ),
+            button(
+              "Remove project",
+              () => {
+                if (confirm("Permanently remove this project?"))
+                  call(
+                    "becoming_update_project",
+                    requestArgs({ projectId: p.id, action: "remove" }),
+                  );
+              },
+              true,
+            ),
+          );
+        main.append(
+          el(
+            "small",
+            "No public profile statistics or population benchmarks are available. Human review uses an unvalidated descriptive rubric. Private exports, consent, restore and account erase are in Data & consent.",
+          ),
+        );
+      }
+      window.addEventListener("openai:set_globals", (event) => {
+        if (event.detail?.globals?.toolOutput) {
+          data = event.detail.globals.toolOutput;
+          render();
+        }
+      });
+      render();
+    </script>
+  </body>
+</html>
