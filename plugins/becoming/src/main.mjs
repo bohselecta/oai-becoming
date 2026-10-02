@@ -1,30 +1,12 @@
 import { createApp } from "./http.mjs";
-const list = (s) =>
-  s
-    ? s
-        .split(",")
-        .map((v) => v.trim())
-        .filter(Boolean)
-    : undefined;
+import { runtimeConfig } from "./runtime-config.mjs";
+import { createSetupApp } from "./setup.mjs";
 try {
-  const app = await createApp({
-    origin: process.env.APP_ORIGIN,
-    issuer: process.env.OIDC_ISSUER,
-    clientId: process.env.OIDC_CLIENT_ID,
-    clientSecret: process.env.OIDC_CLIENT_SECRET,
-    dataKey: process.env.DATA_KEY,
-    database: process.env.DATABASE_PATH,
-    development: process.env.NODE_ENV === "development",
-    reviewerSubjects: list(process.env.REVIEWER_SUBJECTS),
-    pilotMode: process.env.PILOT_MODE,
-    pilotSubjects: list(process.env.PILOT_SUBJECTS),
-    sourceRevision: process.env.RENDER_GIT_COMMIT || process.env.SOURCE_REVISION,
-    allowedOrigins: list(process.env.ALLOWED_ORIGINS),
-    trustedOidcOrigins: list(process.env.OIDC_TRUSTED_ORIGINS),
-  });
+  const config = runtimeConfig(process.env);
+  const app = config.setupMode ? createSetupApp(config) : await createApp(config);
   const port = Number(process.env.PORT || 8787);
   app.server.listen(port, process.env.BIND_ADDRESS || "127.0.0.1", () =>
-    console.log("Becoming MCP and account server started."),
+    console.log(config.setupMode ? "Becoming setup-only server started; OAuth and private data access are disabled." : "Becoming MCP and account server started."),
   );
   for (const signal of ["SIGTERM", "SIGINT"])
     process.on(signal, () => {

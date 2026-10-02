@@ -97,3 +97,12 @@ fixtures, never shipped as participants. A fixture-host harness can verify the
 actual transport/UI code but cannot certify the live ChatGPT sandbox or real IdP.
 Official requirements are checked against accessible current primary sources;
 blocked documentation and publication requirements remain explicit live gates.
+
+## Deployment preparation amendment — October 1, 2026
+
+An explicit setup-only server can reserve the actual provider URL before Auth0
+registration. It must label itself setup-required, expose no account/MCP/OAuth
+service, create no database/session and never activate on authentication failure.
+Normal operation still requires strict issuer/audience/scopes, consent and pilot
+invitations. Render may generate a stable protected secret; existing base64-key
+configurations must stay compatible and conflicting key inputs fail closed.

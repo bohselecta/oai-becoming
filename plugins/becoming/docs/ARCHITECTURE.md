@@ -122,3 +122,18 @@ This is not a distributed database, identity proofing service, assessment calibr
 system or automatic content-moderation service. Review capacity, participant abuse,
 operational data retention and independent security/usability audits remain release
 considerations; current code implements the advertised local contracts.
+
+## Explicit Render setup phase
+
+`SETUP_MODE=true` starts a minimal server at the actual Render-provided origin. It
+serves a setup page and source-bound health (`setup-required`, `setup-only`); all
+account, authorization, review, metadata and MCP endpoints return 503. No database,
+OAuth client, sessions or participants are instantiated. This is an explicit
+preparation mode, never a fallback after authentication/configuration failure.
+Absent/false setup mode requires the normal strict OAuth/private-server configuration.
+
+`runtime-config.mjs` preserves legacy base64 DATA_KEY input. Render-generated
+DATA_KEY_SECRET uses domain-separated SHA-256 to derive a stable 32-byte key from
+a random provider secret of at least 32 bytes. Conflicting inputs fail; neither is
+automatically preferred or rotated. The same secret must persist across restarts.
+APP_ORIGIN overrides Render's actual RENDER_EXTERNAL_URL only when explicitly set.

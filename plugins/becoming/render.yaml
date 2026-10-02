@@ -28,17 +28,15 @@ services:
         value: /var/data/becoming/private.sqlite
       - key: PILOT_MODE
         value: "true"
-      - key: APP_ORIGIN
+      - key: DATA_KEY_SECRET
+        generateValue: true
+      # Enter true for the first deploy. sync:false lets the operator later set
+      # false without a future blueprint sync undoing the configured OAuth pilot.
+      - key: SETUP_MODE
         sync: false
-      - key: OIDC_ISSUER
-        sync: false
-      - key: OIDC_CLIENT_ID
-        sync: false
-      - key: OIDC_CLIENT_SECRET
-        sync: false
-      - key: DATA_KEY
-        sync: false
-      - key: PILOT_SUBJECTS
-        sync: false
+# First deploy only needs SETUP_MODE=true; Render supplies RENDER_EXTERNAL_URL.
+# Then add OIDC_ISSUER/CLIENT_ID/CLIENT_SECRET and PILOT_SUBJECTS in Environment,
+# verify callback/audience settings, and set SETUP_MODE=false. Do not replace
+# DATA_KEY_SECRET: it derives the durable encryption key and account identifiers.
 # REVIEWER_SUBJECTS is deliberately absent: add a separate real reviewer only
 # when authorized. No default reviewer, test IdP or test participant is included.

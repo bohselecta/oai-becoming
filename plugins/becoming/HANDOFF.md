@@ -32,12 +32,19 @@ The current network policy also blocks their HTTP domains. Do not bypass the pro
 use supported environment configuration if adding access. Provider/API credentials
 must enter approved secret storage, never chat/Git or logs. Git transport works;
 the injected gh CLI authentication did not pass, so PR metadata uses the connected
-GitHub tool instead. No actual service hostname/client IDs/user IDs are recorded yet.
+GitHub tool instead. The owner has entered payment and reached Render’s blueprint review. His screenshot
+shows Render parsed the preceding service configuration and six manual fields.
+The update reduces first deployment to SETUP_MODE=true and a generated secret;
+no actual service hostname/client IDs/user IDs are recorded yet.
 
 ## Delivered continuation
 
 - `render.yaml`: separate single-process Node 24.19.0 persistent-disk pilot,
   manual deploys, no test harness or reviewer identities, no Vercel changes.
+  First deployment asks only for `SETUP_MODE=true`; Render generates `DATA_KEY_SECRET`
+  and provides `RENDER_EXTERNAL_URL`. Setup mode has no database, accounts or MCP;
+  `/health` explicitly reports setup-required. Set mode false after real OAuth
+  configuration. Existing base64 DATA_KEY inputs remain compatible; never set both.
 - `PILOT_MODE` + exact `PILOT_SUBJECTS`: signed but uninvited accounts cannot use
   MCP or log into account pages. Empty pilot allowlist fails startup. Previously
   issued account sessions cannot retain removed invitations/reviewer roles.
@@ -86,5 +93,7 @@ Current-source tests/CI and hashes belong in the continuation receipt.
 Reproduce: root `npm run check`, both browser runners portable and served, then
 `cd plugins/becoming && npm ci --ignore-scripts && npm test && npm audit --omit=dev`
 and `npm run test:browser`. The integration tests now include pilot denial, stale
-session permission removal and source-bound preflight checks. Fixture IdP/host
+session permission removal, source-bound preflight, actual setup-mode entrypoint
+boundaries and stable generated-secret derivation. The preceding receipt covers
+the earlier source; use the latest exact-head CI for this setup amendment. Fixture IdP/host
 execution remains explicitly **not live ChatGPT acceptance**.

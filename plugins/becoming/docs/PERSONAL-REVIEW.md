@@ -1,7 +1,7 @@
 # Becoming — personal test and publication review
 
 Review destination: [draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6).
-Exact tested implementation: `dc769250e074df33b259eebd4ded80cd891591d7`.
+Preceding tested implementation: `dc769250e074df33b259eebd4ded80cd891591d7`.
 Source-bound evidence: [continuation receipt](verification/continuation-receipt.json).
 
 The original static app's source, tests, fixtures, assets, storage keys, builds,
@@ -11,7 +11,7 @@ ChatGPT server remains a separate package. No local browser record is uploaded.
 | Review item | Current evidence |
 |---|---|
 | Standalone product preserved | 152 Node tests, both builds, 1,061 browser assertions; exact-source CI passed. |
-| MCP/account/widget implementation | 13 integration tests, 23 fixture browser assertions, actual official MCP HTTP client; exact-source CI passed; zero known npm audit findings. |
+| MCP/account/widget implementation | Preceding 13 integration tests, 23 fixture browser assertions, actual official MCP HTTP client; exact-source CI passed; zero known npm audit findings. |
 | Hosted owner-test access | Exact-subject pilot gate, no default identities/reviewer; retained sessions cannot keep removed roles; tested locally. |
 | Source identity | `/health` reports Render commit; read-only preflight rejects a dirty checkout, wrong running commit or non-pilot service. |
 | Publisher/license | Hayden's confirmed DBA Corgi-Verse Software; specific publisher authorization at `/legal`; root and MIT legacy notices preserved. |
@@ -31,3 +31,10 @@ save/return/uncertainty/correction/export/restore/withdraw/erase. Keep all publi
 assessment claims unavailable until the applicable real evidence/reviewer/sample
 checks pass. Record real consented/redacted captures and the actual deployment SHA
 against [LIVE-TESTS.md](LIVE-TESTS.md) before changing its NOT_RUN status.
+
+The subsequent setup amendment reduces the first Render deploy to SETUP_MODE=true,
+a provider-generated encryption secret, and the real provider URL. Setup-only
+readiness is not live OAuth/ChatGPT acceptance. Current integration has 16 tests;
+use current-head CI and the setup amendment receipt for the updated source.
+The owner has entered payment in Render; incurred charges are not independently
+observed. A healthy setup-only URL remains preparation until configured OAuth runs.

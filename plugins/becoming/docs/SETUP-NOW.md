@@ -22,7 +22,7 @@ Do not paste passwords, client secrets or tokens into this chat.
 
 Only account registration/authorization and these account-owned settings require
 manual work. No OpenAI API key is needed. You already authorized service costs;
-Render's current displayed plan/disk price applies. No charge has occurred here.
+Render's current displayed plan/disk price applies. The owner entered payment in Render; actual charges have not been independently observed.
 
 ## 1. Auth0: sign-in and exact token audience
 
@@ -30,10 +30,11 @@ Use a **dedicated tenant** so its default audience does not affect other apps.
 In [Auth0](https://manage.auth0.com/), note the exact tenant HTTPS issuer, including
 its trailing slash as reported by `/.well-known/openid-configuration`.
 
-After Render reserves the service's actual hostname in step 2, use that origin
-as `APP_ORIGIN` below. If you need to reserve the service first, it is safe for
-its initial deploy to fail until its real configuration is supplied. Never replace
-an unknown hostname with an invented production URL.
+First deploy the explicit setup-only service in step 2 with **`SETUP_MODE=true`**.
+Render supplies its actual hostname through `RENDER_EXTERNAL_URL`; no guessed origin
+or Auth0 placeholder is needed. Use that exact origin as `APP_ORIGIN` in the
+Auth0 instructions below. An explicit custom `APP_ORIGIN` can override the provider
+URL when a real custom domain is configured.
 
 1. Applications → APIs → Create API: name **Becoming pilot**, identifier exactly
    **`APP_ORIGIN/mcp`**, Auth0 JWT profile, **RS256**, token expiry **3600 seconds**.
@@ -89,16 +90,41 @@ It provisions a single native Node 24.19.0 Starter web service in Oregon with a
 Automatic deployment is off. Check Render's displayed price and parsed settings.
 The blueprint has been parsed locally, not validated by an authenticated Render account.
 
-Set these values in **Render → service → Environment**:
+For the **first deploy**, the updated blueprint asks for only one value:
 
-| Variable | Value |
+| Variable | First-deploy value |
 |---|---|
-| `APP_ORIGIN` | Actual reserved Render HTTPS origin, no trailing slash/path |
+| `SETUP_MODE` | `true` |
+
+Render generates **`DATA_KEY_SECRET`** in its protected environment and supplies
+**`RENDER_EXTERNAL_URL`**. The server derives its stable 32-byte encryption key
+from that generated secret. Do not replace or delete it after records exist.
+No secret needs to be copied through chat, Git or a local terminal. Existing
+self-hosted `DATA_KEY` base64 configurations still work; never configure both key
+inputs at once or switch an existing database's key without a migration.
+
+Click **Deploy Blueprint**. The initial service should start and show **Becoming
+is being set up**; `/health` returns `setup-required` and the deployed commit.
+This stage creates no record database, sessions or OAuth/MCP service. Every private
+endpoint responds `503 SETUP_REQUIRED`. It is deployment preparation, not a working
+ChatGPT integration or a live-acceptance PASS.
+
+Copy the service's actual HTTPS URL and return it to this chat. Then finish Auth0
+step 1 and add these values at **Render → service → Environment**:
+
+| Variable | Value after Auth0 registration |
+|---|---|
 | `OIDC_ISSUER` | Exact Auth0 discovery issuer, usually with trailing slash |
 | `OIDC_CLIENT_ID` | Becoming account-web Client ID |
 | `OIDC_CLIENT_SECRET` | Account-web secret; protected Render environment value |
-| `DATA_KEY` | Random 32 bytes as base64; generate with `openssl rand -base64 32` in your own terminal and paste only in Render |
-| `PILOT_SUBJECTS` | Your exact Auth0 `user_id`; comma-separated only if inviting another real participant |
+| `PILOT_SUBJECTS` | Your exact Auth0 `user_id`; comma-separated only for another invited real participant |
+| `SETUP_MODE` | Change to `false` only after the issuer/client/callback/audience/owner configuration is complete |
+
+`APP_ORIGIN` is optional on Render: when absent, the actual `RENDER_EXTERNAL_URL`
+is used. Add it only for an intentional exact canonical custom origin. Changing
+`SETUP_MODE` to false requires complete normal configuration; the app still fails
+closed on missing/invalid OAuth, key or pilot subjects. SETUP_MODE is a `sync:false`
+value so later blueprint syncs do not re-enable preparation mode automatically.
 
 The blueprint supplies production mode, `BIND_ADDRESS=0.0.0.0`, the persistent
 SQLite path and **`PILOT_MODE=true`**. Leave `REVIEWER_SUBJECTS` absent until you
@@ -114,7 +140,7 @@ Do not scale SQLite to multiple processes or move it to an ephemeral filesystem.
 
 After deploy, these are your real service links (replace `APP_ORIGIN`):
 
-- **`APP_ORIGIN/health`** — health, exact source SHA and invite-only status
+- **`APP_ORIGIN/health`** — exact source SHA and setup-only or invite-only status
 - **`APP_ORIGIN/account`** — sign in and explicitly grant storage consent
 - **`APP_ORIGIN/privacy`** — pilot disclosures and contact status
 - **`APP_ORIGIN/legal`** — unchanged licenses and the specific DBA publisher grant
@@ -130,7 +156,7 @@ npm run preflight -- https://ACTUAL-SERVICE-HOST
 ```
 
 The command saves a source-bound receipt in ignored `qa-output/live-preflight.json`.
-It checks HTTPS, exact running SHA, pilot mode, OAuth discovery, S256 and the actual
+Run it after setup mode is disabled. It checks HTTPS, exact running SHA, pilot mode, OAuth discovery, S256 and the actual
 11-tool MCP/widget descriptors. It makes no writes and does not certify ChatGPT.
 An optional `BECOMING_ACCEPTANCE_TOKEN` supplied through your own approved secret
 store can check a real consented read; private text/tokens are never printed.
