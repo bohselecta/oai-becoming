@@ -66,8 +66,8 @@ dependencies. No data is uploaded automatically.
 
 The integration is not deployed or listed in ChatGPT. Local tests use labeled OAuth
 and host fixtures; real ChatGPT/identity-provider tests await approved setup. Current
-licenses remain intact, with independent publisher rights flagged for the owner's
-decision. See the
+licenses remain intact. The owner-confirmed Corgi-Verse Software DBA now has a
+specific service-publisher authorization; Auth0 + Render pilot setup is prepared. See the
 [installation guide](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/INSTALL.md)
 and [handoff](https://github.com/bohselecta/oai-becoming/blob/codex/becoming-chatgpt-app/plugins/becoming/HANDOFF.md).
 These links require network access; the portable standalone app does not bundle the

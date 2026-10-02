@@ -1,0 +1,90 @@
+{
+  "verifiedCommit": "dc769250e074df33b259eebd4ded80cd891591d7",
+  "verifiedTree": "94fb042e61a18f080ad96352e7b1d2a238a6062c",
+  "observedStatus": "PASS_FOR_PREPARATION",
+  "workflows": [
+    {
+      "name": "Product verification",
+      "runId": 36949701350,
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/36949701350",
+      "conclusion": "success",
+      "headSha": "dc769250e074df33b259eebd4ded80cd891591d7"
+    },
+    {
+      "name": "ChatGPT app verification",
+      "runId": 36949701284,
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/36949701284",
+      "conclusion": "success",
+      "headSha": "dc769250e074df33b259eebd4ded80cd891591d7"
+    }
+  ],
+  "counts": {
+    "originalNode": 152,
+    "originalServedComparative": 238,
+    "originalServedDiscovery": 297,
+    "originalPortableComparative": 232,
+    "originalPortableDiscovery": 294,
+    "integrationNode": 13,
+    "integrationFixtureBrowser": 23
+  },
+  "live": {
+    "deployment": "NOT_RUN",
+    "realOAuth": "NOT_RUN",
+    "chatgptSandbox": "NOT_RUN",
+    "realReviewer": "NOT_RUN",
+    "backupExpiryAndRestoreDeletion": "NOT_RUN",
+    "agreementsAccepted": "NONE",
+    "directorySubmission": "NOT_RUN"
+  },
+  "decisions": {
+    "publisher": "Corgi-Verse Software",
+    "relationship": "Hayden Lindley's owner-confirmed DBA; legal filing/portal verification unverified",
+    "contact": "hayden@corgi-verse.com \u2014 activation pending",
+    "providers": [
+      "Auth0",
+      "Render"
+    ],
+    "actionAuthority": "Owner explicitly authorized agreements, deployment and submission",
+    "deliveryStage": "Personal invite-only test before general-use submission"
+  },
+  "limits": [
+    "Fixture JWT/OIDC/bridge/reference checks do not establish live ChatGPT/real IdP behavior.",
+    "Render YAML parsed locally; authenticated provider validation/provisioning NOT_RUN.",
+    "Current provider/OpenAI web requirements and terms blocked by enforced network proxy 403.",
+    "Receipt/documentation commits do not automatically certify every later source. Inspect final head CI."
+  ],
+  "preservedBaseline": "b044e6dffab10ed9ae62158e71203a36a3510ed2",
+  "originalProductDiff": "Empty for src, public, tests, scripts, package.json, index.html, LICENSE, licenses and vercel.json.",
+  "sourceSha256": {
+    "plugins/becoming/src/store.mjs": "a01bea1f4bf4b81c81c31967dc389a69e6d3372ab89920d207579bc5d4d089ed",
+    "plugins/becoming/src/http.mjs": "a8f615f58b2cec157971b241608d92fa924453a881044113e4b840bf0c7106c9",
+    "plugins/becoming/src/main.mjs": "6a0942bc23e85e3f917ed7874f13d3bf18a0427b39d2c15f231a4d64d71e0676",
+    "plugins/becoming/src/auth.mjs": "2c795379100b4794306e45988c461a9d67a4e40f58ce6f7085ae568906f254fa",
+    "plugins/becoming/src/tools.mjs": "de8ef8ffe1a878ee62295d1459f4c362d9c307116532860cd03aa43fe8537ea0",
+    "plugins/becoming/src/measurement.mjs": "9d6bc25569e3582da9a082f17545f54c3837b49fb7575bbbb7c7a093625c93d2",
+    "plugins/becoming/scripts/licenses.mjs": "503153caa26947bfc68897e55d820238a818af25f04e321dab038ee6cf26a41b",
+    "plugins/becoming/scripts/preflight.mjs": "bdb80492b37d50bb399b7e3c2d346fbe762bda46c9aba247b513bf3e4f5915bb",
+    "plugins/becoming/render.yaml": "f1c20a0586df872bbc348eef2a1f23f5ebc3e4dcadcdc55c5b351937fb68f865",
+    "plugins/becoming/package-lock.json": "a0a25830a1a69223c8be8acd95f04067790e55e82769e9c403eee7e7a5b81781",
+    "plugins/becoming/assets/widget.html": "65411e85f000ecf65206eee923254026693132111ed9518067e416c85bf3b3f2",
+    "src/journey.js": "e8f67275527eb319a15d7e368d63eef8fa7a815214f6e6ce17055eabb61f0b9e",
+    "LICENSE": "cf8b77be3e49bd46a919f664f98ca95abfbfb562b9720887eb0407902562c91b",
+    "licenses/MIT-legacy.txt": "588461c993e53b939b9be2e57f42c59c27cef0d3bd15920ef3baacf2dc73d181",
+    "plugins/becoming/docs/PUBLISHER-GRANT.md": "85693be5dcf70b78c29e76b48f62aeeb3390031823261d0c527ac74239966b54",
+    "plugins/becoming/docs/PRIVACY.md": "de6ae2089b4567df7b9c504e1b4a813241e5e56669b110dae9d9bab00f6c4c24"
+  },
+  "localBrowserReceipt": {
+    "status": "PASS",
+    "label": "TEST FIXTURE: actual MCP/widget/account; ChatGPT bridge and IdP are substitutes",
+    "assertions": 23,
+    "runtimeErrors": [],
+    "workingTree": "",
+    "source": "dc769250e074df33b259eebd4ded80cd891591d7"
+  },
+  "actualScreenshotSha256": {
+    "plugins/becoming/qa-output/first-use-phone.png": "06db1f98fda18d0da116f939fbd9f5c3726c1cc55dbc509305429f2943dee711",
+    "plugins/becoming/qa-output/first-use-desktop.png": "6c697bb941976a3bd4a06807eab02f9d32657793fa1fec6faa7661ac416e5062",
+    "plugins/becoming/qa-output/widget-desktop.png": "f53cc7f2be3ce4d188b66fdf377517866858b9ab508c276018173601066a2973",
+    "plugins/becoming/qa-output/widget-phone.png": "1e41ea9a74c519236c6bd7a3ac7f95dbaea501a8b8870cf1417a044f8528119a"
+  }
+}
