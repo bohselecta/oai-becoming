@@ -2,7 +2,8 @@
 
 Continue [draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6), branch
 `codex/becoming-chatgpt-app`, from the exact source in
-[continuation receipt](docs/verification/continuation-receipt.json).
+[latest setup receipt](docs/verification/setup-receipt.json). The preceding
+[continuation receipt](docs/verification/continuation-receipt.json) remains historical.
 Original static/portable app baseline:
 `b044e6dffab10ed9ae62158e71203a36a3510ed2`. Read Git/AGENTS,
 [contract](CONTRACT.md), [acceptance](ACCEPTANCE.md) and [release](docs/RELEASE.md).

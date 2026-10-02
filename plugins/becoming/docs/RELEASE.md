@@ -16,6 +16,28 @@ Real deployment/OAuth/ChatGPT/backup deletion/publisher account checks remain
 superseded by the owner's permission; the requested personal-test stopping point
 precedes general-use submission. Start at [SETUP-NOW.md](SETUP-NOW.md).
 
+## One-field Render setup amendment
+
+At exact source `af669abc6b71cd8405dd8484f1191855b9c0a62b`, both CI gates passed:
+[Product verification](https://github.com/bohselecta/oai-becoming/actions/runs/36951414416)
+and [ChatGPT app verification](https://github.com/bohselecta/oai-becoming/actions/runs/36951414361).
+Integration now has **16 tests**, including actual entrypoint setup-mode denial,
+stable generated-secret keys and fail-closed transition to normal configuration.
+The 23 widget fixture assertions, 152 original tests, both original builds and
+1,061 original browser assertions also passed. [Setup receipt](verification/setup-receipt.json).
+
+The first deployment asks for `SETUP_MODE=true`; Render supplies the actual origin
+and generated private secret. Setup mode creates no database, OAuth/session or MCP
+service; it reports setup-required and denies private routes. Set mode false only
+after real Auth0/callback/audience/owner configuration is complete. Source supports
+the original manual base64 key path; never supply both key inputs or rotate the
+key of an existing database casually. A setup-only URL is not live acceptance.
+
+The owner entered payment and reached Render's blueprint review. Actual charges,
+new hosted service URL and real OAuth/ChatGPT remain unobserved. The old continuation
+receipt still describes its own earlier source; do not apply its hashes to this
+amendment. Receipt-only commits must be distinguished from the tested checkpoint.
+
 ## Historical local acceptance
 
 | Contract | Status | Evidence and practical limit |

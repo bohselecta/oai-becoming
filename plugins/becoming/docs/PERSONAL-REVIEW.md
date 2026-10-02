@@ -35,6 +35,7 @@ against [LIVE-TESTS.md](LIVE-TESTS.md) before changing its NOT_RUN status.
 The subsequent setup amendment reduces the first Render deploy to SETUP_MODE=true,
 a provider-generated encryption secret, and the real provider URL. Setup-only
 readiness is not live OAuth/ChatGPT acceptance. Current integration has 16 tests;
-use current-head CI and the setup amendment receipt for the updated source.
+use current-head CI and [the setup amendment receipt](verification/setup-receipt.json)
+for the updated source.
 The owner has entered payment in Render; incurred charges are not independently
 observed. A healthy setup-only URL remains preparation until configured OAuth runs.
