@@ -45,7 +45,9 @@ for (const { dir, meta } of packages) {
     /^(license|licence|copying|notice)(\.|$|-)/i.test(n),
   );
   for (const name of names)
-    notices += `\n${name}\n${readFileSync(join(dir, name), "utf8")}\n`;
+    notices += `\n${name}\n${readFileSync(join(dir, name), "utf8")
+      .replaceAll("\r\n", "\n")
+      .replace(/[ \t]+$/gm, "")}\n`;
   if (!names.length)
     notices +=
       "No top-level notice file packaged. Review package metadata and upstream terms before redistribution.\n";

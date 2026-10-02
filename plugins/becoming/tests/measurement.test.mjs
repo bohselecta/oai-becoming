@@ -145,6 +145,12 @@ test("C8 project target freezes real reference, completion never awards marks, a
     criterion: "Disclose uncertainty and alternatives",
     participantId: "test-peer",
   });
+  s.consent.compare = false;
+  assert.equal(
+    projectStatus(store, "test-subject", s, s.projects[0]),
+    "reference-unavailable",
+  );
+  s.consent.compare = true;
   const p = s.projects[0],
     target = structuredClone(p.target);
   p.practiceDone = true;

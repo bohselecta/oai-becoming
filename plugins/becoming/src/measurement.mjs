@@ -377,6 +377,7 @@ export function createProject(store, id, state, input) {
 }
 export function projectStatus(store, id, state, project) {
   if (project.target.participantId) {
+    if (!state.consent.compare) return "reference-unavailable";
     const person = store.read(project.target.participantId);
     const observation = estimate(person, project.skill, project.mode);
     if (
