@@ -37,6 +37,8 @@ and [ChatGPT app verification](https://github.com/bohselecta/oai-becoming/action
 record source revision/tree and publish actual receipts/screenshots. Check the draft
 PR's exact head and check results, not a badge or historical receipt.
 
+Both GitHub CI gates passed at `17d897664e8217bcd796b5eb75cf97beb9aba209`: [Product verification](https://github.com/bohselecta/oai-becoming/actions/runs/36944969439) and [ChatGPT app verification](https://github.com/bohselecta/oai-becoming/actions/runs/36944969417). [Exact-source CI receipt](verification/ci-receipt.json). This receipt commit adds documentation only; later-head status must be checked separately.
+
 ## Actual defects repaired during acceptance
 
 - Browser POSTs under `Referrer-Policy: no-referrer` sent a null Origin, preventing

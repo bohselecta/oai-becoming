@@ -9,6 +9,8 @@ and verified; live installation/publication is held for the owner. Read
 [CONTRACT.md](CONTRACT.md), [ACCEPTANCE.md](ACCEPTANCE.md) and
 [release evidence](docs/RELEASE.md) before changing scope.
 
+Both CI gates passed on `17d8976`: [existing app](https://github.com/bohselecta/oai-becoming/actions/runs/36944969439) and [ChatGPT integration](https://github.com/bohselecta/oai-becoming/actions/runs/36944969417). The [CI receipt](docs/verification/ci-receipt.json) records that exact source. This final receipt update changes documentation only; check the PR current-head gates for any later commit.
+
 ## Delivered engineering
 
 Real Streamable HTTP MCP tools and embedded widget, strict schemas/annotations/auth
