@@ -16,7 +16,7 @@ export async function port() {
   return p;
 }
 const sha = (s) => createHash("sha256").update(s).digest("base64url");
-export async function fixture() {
+export async function fixture(overrides = {}) {
   const { privateKey, publicKey } = await generateKeyPair("RS256");
   const jwk = {
     ...(await exportJWK(publicKey)),
@@ -153,6 +153,7 @@ export async function fixture() {
     database: join(dir, "records.sqlite"),
     reviewerSubjects: ["reviewer"],
     development: true,
+    ...overrides,
   };
   let app = await createApp(config);
   await new Promise((r) =>

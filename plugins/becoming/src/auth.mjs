@@ -41,7 +41,23 @@ export function validateConfig(c) {
       "Development mode is restricted to loopback app and issuer.",
     );
   c.resource = `${c.origin}/mcp`;
+  if (typeof c.pilotMode === "string") {
+    requireThat(["true", "false"].includes(c.pilotMode), "CONFIG", "PILOT_MODE must be true or false.");
+    c.pilotMode = c.pilotMode === "true";
+  }
+  requireThat(c.pilotMode === undefined || typeof c.pilotMode === "boolean", "CONFIG", "PILOT_MODE must be true or false.");
+  requireThat(
+    c.sourceRevision === undefined || /^[a-f0-9]{40}$/.test(c.sourceRevision),
+    "CONFIG",
+    "SOURCE_REVISION must be an exact Git commit SHA.",
+  );
   c.reviewerSubjects ||= [];
+  c.pilotSubjects ||= [];
+  requireThat(
+    !c.pilotMode || c.pilotSubjects.length > 0,
+    "CONFIG",
+    "PILOT_MODE requires at least one exact PILOT_SUBJECTS identity.",
+  );
   c.allowedOrigins ||= [c.origin, "https://chatgpt.com"];
   c.trustedOidcOrigins ||= [new URL(c.issuer).origin];
   return c;
@@ -98,6 +114,14 @@ export async function createAuth(config, store) {
       401,
     );
     const id = store.identity(config.issuer, payload.sub);
+    requireThat(
+      !config.pilotMode ||
+        config.pilotSubjects.includes(payload.sub) ||
+        config.reviewerSubjects.includes(payload.sub),
+      "PILOT_ACCESS",
+      "This Becoming pilot is available only to invited accounts.",
+      401,
+    );
     store.assertToken(id, payload.iat);
     return { id, subject: payload.sub, payload };
   };

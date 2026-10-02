@@ -16,6 +16,9 @@ try {
     database: process.env.DATABASE_PATH,
     development: process.env.NODE_ENV === "development",
     reviewerSubjects: list(process.env.REVIEWER_SUBJECTS),
+    pilotMode: process.env.PILOT_MODE,
+    pilotSubjects: list(process.env.PILOT_SUBJECTS),
+    sourceRevision: process.env.RENDER_GIT_COMMIT || process.env.SOURCE_REVISION,
     allowedOrigins: list(process.env.ALLOWED_ORIGINS),
     trustedOidcOrigins: list(process.env.OIDC_TRUSTED_ORIGINS),
   });

@@ -1,5 +1,7 @@
-# Live acceptance — awaiting approved setup
+# Live acceptance — selected Auth0/Render pilot
 
+Account setup links and configuration are in [SETUP-NOW.md](SETUP-NOW.md).
+Setup/deployment authority is already given; real account access is still needed.
 Current status **NOT_RUN** for every check below. Local fixture tests are separate
 from real ChatGPT/IdP execution. Record exact Git commit, dependency lock hash,
 HTTPS deployment, issuer, client registration method, account plan/workspace,
@@ -36,6 +38,7 @@ date, tool list and screenshots; never include passwords or tokens in receipts.
    verify the owner-approved backup/IdP/chat-history deletion procedures.
 9. Publish final source-bound PASS/FAIL receipts and real redacted screenshots.
    Remove reviewer/test access and never publicly expose fixture harness routes.
-10. Present evidence and resolved publisher/license/privacy decisions for the owner's
-    personal publication approval. Do not infer it from this checklist or from a
-    successful developer-mode installation.
+10. Present exact-source evidence and the owner-selected DBA grant/contact/providers
+    for the requested personal test before general-use submission. General action
+    permission is already given; do not claim that an unperformed personal test or
+    publisher/legal verification is complete.

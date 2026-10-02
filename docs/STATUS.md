@@ -49,3 +49,14 @@ Local Chromium process startup was blocked by the authoring host’s socket poli
 Read `AGENTS.md`, `LICENSE`, `docs/LICENSE-HISTORY.md`, `docs/BRAND.md`, `docs/DISCOVERY-CONTRACT.md`, and this file. Check the exact current main or review-branch commit and its own CI receipts before claiming completion. Run `npm run check`, then both browser runners against portable and served builds. Preserve old unfavorable/unknown/pending/assisted tests and context/history/storage boundaries. For branding, keep Becoming primary; ChatGPT/OpenAI are secondary textual ecosystem references unless exact official assets and applicable OpenAI permission/terms are available. No deployment or license change is authorized by this patch.
 
 No human usability session, screen-reader audit, empirical measurement validation, live model integration, account service, or production release is claimed. The first-use flow remains authored guided logic, not a responsive live-AI companion.
+
+## ChatGPT pilot continuation — October 1, 2026
+
+The static app remains the unchanged 0.3.1 baseline. Separate integration setup
+continues on draft [PR #6](https://github.com/bohselecta/oai-becoming/pull/6). Start at
+[the direct-link pilot guide](../plugins/becoming/docs/SETUP-NOW.md) and
+[handoff](../plugins/becoming/HANDOFF.md). The owner authorized real setup/deployment
+and selected Auth0 + Render, Corgi-Verse Software as his DBA, and an intended contact
+mailbox. Specific publisher rights are recorded without changing the root license.
+The hosted configuration uses an exact-subject pilot gate and one persistent disk.
+Real deployment, OAuth, ChatGPT sandbox and general-use submission are not claimed.

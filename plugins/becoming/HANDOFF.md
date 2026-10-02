@@ -1,96 +1,90 @@
-# Becoming ChatGPT integration — continuation handoff
+# Becoming ChatGPT pilot — current continuation handoff
 
-[Draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6) — open, draft, unmerged.
+Continue [draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6), branch
+`codex/becoming-chatgpt-app`, from the exact source in
+[continuation receipt](docs/verification/continuation-receipt.json).
+Original static/portable app baseline:
+`b044e6dffab10ed9ae62158e71203a36a3510ed2`. Read Git/AGENTS,
+[contract](CONTRACT.md), [acceptance](ACCEPTANCE.md) and [release](docs/RELEASE.md).
 
-Review branch: `codex/becoming-chatgpt-app`, based on clean verified app baseline
-`b044e6dffab10ed9ae62158e71203a36a3510ed2`. Requested publisher **Corgi-Verse Software**;
-original author/copyright **Hayden Lindley**. The integration is locally implemented
-and verified; live installation/publication is held for the owner. Read
-[CONTRACT.md](CONTRACT.md), [ACCEPTANCE.md](ACCEPTANCE.md) and
-[release evidence](docs/RELEASE.md) before changing scope.
+## Owner direction and selected operations
 
-Both CI gates passed on `17d8976`: [existing app](https://github.com/bohselecta/oai-becoming/actions/runs/36944969439) and [ChatGPT integration](https://github.com/bohselecta/oai-becoming/actions/runs/36944969417). The [CI receipt](docs/verification/ci-receipt.json) records that exact source. This final receipt update changes documentation only; check the PR current-head gates for any later commit.
+The owner explicitly permitted real setup, agreements, deployment and submission
+without further explicit approval. This supersedes the previous handoff/build-only
+holds. The current intended stopping point is **his personal test before submission
+for general use**. Never infer an actual completed user test from broad permission.
 
-## Delivered engineering
+Selected providers: **Auth0 + Render**. Owner-confirmed publisher:
+**Corgi-Verse Software**, Hayden Lindley's DBA. Author/copyright remains Hayden.
+[Specific publisher authorization](docs/PUBLISHER-GRANT.md) resolves service-hosting
+rights while retaining the root license, earlier MIT rights and third-party notices.
+Intended contact **hayden@corgi-verse.com** is pending mailbox activation/delivery.
 
-Real Streamable HTTP MCP tools and embedded widget, strict schemas/annotations/auth
-metadata, external OAuth/OIDC JWT verification, PKCE/state/nonce account login,
-encrypted durable SQLite records, human consent, revisions/retries, correctable
-interest-led discovery, contradiction/uncertainty, attempts, export/validated restore,
-erase/tombstones, separately authorized human evidence review, compatible real
-participating-sample comparison and frozen concrete growth projects. The original
-static/portable app, licenses, fixtures, storage and deployment path are preserved.
-Normal runtime seeds no participants, reviewers or evidence; all test identities and
-30-person comparison samples are explicitly synthetic fixtures in test files only.
+Owner is logged into:
 
-**Unfinished code:** no required tool is a stub in the documented single-process,
-JWT/OIDC slice. Public-profile adapters, calibration/population benchmarks, identity
-proofing, opaque-token support, other client-auth methods, pairwise-sub mapping and
-distributed storage are unavailable. If a chosen vendor needs those capabilities,
-add/test the necessary adapter before claiming compatibility. Never scrape or
-invent replacement statistics/participants.
+- [Auth0 tenant onboarding](https://manage.auth0.com/dashboard/us/dev-awuiql8cytawcdoh/guided-onboarding)
+- [Auth0 applications](https://manage.auth0.com/dashboard/us/dev-awuiql8cytawcdoh/applications)
+- [Render dashboard](https://dashboard.render.com/)
 
-**Live tests awaiting setup:** real ChatGPT app installation, host OAuth/scope step-up,
-actual sandbox/CSP/bridge behavior, chosen real issuer/account, consented real evidence,
-nonempty real references and backup deletion operations. Use
-[docs/LIVE-TESTS.md](docs/LIVE-TESTS.md). Local widget tests substitute a visibly labeled
-ChatGPT bridge and IdP while executing the real MCP/server/UI code; they are not live
-ChatGPT proof. 152 original Node tests, both builds, 1,061 existing browser assertions,
-11 integration Node tests and 23 integration browser assertions passed locally.
+Those account browser sessions are not available through this cloud executor.
+No Auth0/Render management identity, secrets or browser-control tool is attached.
+The current network policy also blocks their HTTP domains. Do not bypass the proxy;
+use supported environment configuration if adding access. Provider/API credentials
+must enter approved secret storage, never chat/Git or logs. Git transport works;
+the injected gh CLI authentication did not pass, so PR metadata uses the connected
+GitHub tool instead. No actual service hostname/client IDs/user IDs are recorded yet.
 
-**Owner/manual account and authorization steps:**
+## Delivered continuation
 
-1. Review the draft PR/source, particularly publisher rights in
-   [docs/PUBLISHER.md](docs/PUBLISHER.md). Existing OpenAI-only licensing does not
-   automatically grant independent Corgi-Verse hosting/distribution rights.
-   Confirm the publisher relationship/grant without erasing earlier MIT rights.
-2. Recheck current Apps SDK submission/publisher/brand/terms requirements that were
-   blocked here. [docs/REQUIREMENTS.md](docs/REQUIREMENTS.md) pins checked official
-   repository sources and records the developers.openai.com proxy 403. Never claim
-   the inaccessible portal/terms were fully verified or accepted.
-3. Choose/approve an OAuth/OIDC issuer with the supported token/client contract and
-   stable cross-client subjects, account-web client, exact API audience/scopes,
-   ChatGPT registration/callback and separately authorized reviewer subjects.
-   Put credentials only in approved secret storage. Follow [INSTALL.md](INSTALL.md).
-4. Approve publisher/account/domain identity, hosting/IdP costs and agreements,
-   privacy/support contacts, region/age availability and actual backup deletion
-   window. Then explicitly authorize the specific deployment/public exposure.
-   None of these actions was performed by this build.
-5. Run/record the real live test checklist; replace visibly labeled fixture listing
-   captures with consented/redacted live screenshots. Recheck current asset specs.
-6. Present exact release source and complete evidence for the owner's **personal
-   publication approval**. Obtain approval before spending, accepting agreements,
-   deploying or submitting. Technical success is not human publication acceptance.
+- `render.yaml`: separate single-process Node 24.19.0 persistent-disk pilot,
+  manual deploys, no test harness or reviewer identities, no Vercel changes.
+- `PILOT_MODE` + exact `PILOT_SUBJECTS`: signed but uninvited accounts cannot use
+  MCP or log into account pages. Empty pilot allowlist fails startup. Previously
+  issued account sessions cannot retain removed invitations/reviewer roles.
+- `/health`: exposes Render's exact source SHA and invite-only status, no identities.
+- `/legal`: includes the specific DBA publisher grant beside preserved licenses.
+- `npm run preflight -- HTTPS_ORIGIN`: read-only exact-source HTTPS/OIDC/MCP check;
+  optional approved secret-store bearer read, never logs private text/tokens. Public
+  readiness does not certify real OAuth or the ChatGPT host.
+- [SETUP-NOW.md](docs/SETUP-NOW.md): one linked guide for current account work,
+  Auth0 Default Audience/PKCE/client settings, secret storage, service links,
+  ChatGPT install/test, and remaining publication facts.
+- Publisher/privacy/contract docs reconcile the newer authorization and selected DBA,
+  contact/providers. Infrastructure retention and mailbox delivery remain explicit.
 
-## Reproduction and source receipts
+## External work remaining
 
-```bash
-# Existing static app, from repository root
-npm run check
-npm run preview
-# Run the two browser runners with --url http://127.0.0.1:4173,
-# then run both without --url for the portable build.
+1. Finish Auth0 real account/API/client setup using the linked guide. Verify exact
+   issuer (including trailing slash), stable cross-client subject, `/mcp` audience,
+   read/write scopes, RS256, S256 and one-hour tokens. Prefer pre-registration if
+   the current host supports it; use only its actual shown callback URI.
+2. Authorize Render's GitHub integration, parse/provision the blueprint, supply
+   secrets only in Render and record actual HTTPS hostname/deployed source.
+3. Run the exact-source preflight over permitted network access. Owner installs
+   the app in [ChatGPT settings](https://chatgpt.com/#settings), signs in with the
+   same real account and personally grants storage consent at `/account`.
+4. Execute [LIVE-TESTS.md](docs/LIVE-TESTS.md). Initial real sample is empty and
+   correctly unknown. A separate actual reviewer and consented real participants
+   are needed for reviewed placement; 30 references only for aggregate percentile.
+   Never seed test people to manufacture live proof.
+5. Create/test the contact mailbox; review actual provider/OpenAI agreements and
+   publisher verification; record actual snapshot/log retention and safe deletion/
+   restore procedure. Do not claim an unobserved backup deletion window.
+6. Bring exact source, live redacted screenshots and PASS/FAIL/NOT_RUN receipts
+   to the owner's personal test/review. Keep general-use submission pending that
+   requested test. Broad action permission does not establish host compatibility,
+   agreement acceptance or completed publication.
 
-# Independent integration package (Node 24.13+)
-cd plugins/becoming
-npm ci --ignore-scripts
-npm test
-npm audit --omit=dev
-npm run test:browser
-```
+## Verification
 
-Browser dependencies are the existing `tests/requirements.txt`. The committed local receipt verifies clean source `7a3027daeba17f86e008b7a6a0f0544443a5450d`; the final receipt/handoff update adds documentation only. Current-head CI
-publishes source-revision/tree files, receipts and screenshots for both packages.
-The [local receipt](docs/verification/local-receipt.json) pins source hashes and
-explicit fixture labels. Read the receipt's checkpoint/dirty-state fields; it does
-not certify later source automatically. Existing app sources are compared to the
-verified baseline; new images capture actual running UI. No workflow deploys.
+Historical draft CI passed exact source `9db3cb67df4b1faddc56a37afc221bb4a1305ace`:
+[original app](https://github.com/bohselecta/oai-becoming/actions/runs/36945381892),
+[integration](https://github.com/bohselecta/oai-becoming/actions/runs/36945381862).
+Historical receipts pin earlier exact revisions and cannot certify this continuation.
+Current-source tests/CI and hashes belong in the continuation receipt.
 
-## Short continuation prompt
-
-> Continue Becoming’s ChatGPT integration from this draft branch. Read
-> `plugins/becoming/HANDOFF.md`, its contract and release receipts; inspect Git/AGENTS
-> and preserve the existing app. Finish approved real OAuth/ChatGPT setup and live
-> acceptance, resolve Corgi-Verse publisher/license/privacy decisions, then bring
-> exact-source evidence to my personal publication review. Do not spend, accept
-> agreements, deploy or submit without my explicit approval.
+Reproduce: root `npm run check`, both browser runners portable and served, then
+`cd plugins/becoming && npm ci --ignore-scripts && npm test && npm audit --omit=dev`
+and `npm run test:browser`. The integration tests now include pilot denial, stale
+session permission removal and source-bound preflight checks. Fixture IdP/host
+execution remains explicitly **not live ChatGPT acceptance**.

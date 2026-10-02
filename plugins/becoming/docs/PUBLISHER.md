@@ -1,60 +1,65 @@
-# Publisher, rights and publication gate
+# Publisher, rights and pilot release decisions
 
-Requested public publisher: **Corgi-Verse Software**. Product: **Becoming**.
-Author/copyright: **Hayden Lindley**. Preserve independent ChatGPT/OpenAI language;
-no affiliation, certification, partnership or directory availability claim.
-No publisher account, company verification, agreement or domain was created.
+Owner decisions recorded October 1, 2026 (America/Chicago): **Corgi-Verse Software**
+is Hayden Lindley's DBA/publishing name; copyright remains **Hayden Lindley**.
+Chosen providers are **Auth0 + Render**. Intended privacy/support mailbox:
+**hayden@corgi-verse.com**, to be created and tested by the owner.
 
-## Required owner decisions
+## Resolved authority and licensing
 
-1. **Rights conflict:** the root Becoming OpenAI-Only License 1.0 grants defined
-   OpenAI entities reuse rights. Section 1 explicitly excludes independent
-   developers/partners merely using OpenAI services. Section 3 reserves ordinary
-   rights for everyone else; section 2 requires written authorization for broader
-   sublicense/transfer. It does not, by itself, grant an independently operated
-   Corgi-Verse Software publisher the right to run or redistribute new restricted
-   materials. Hayden retains rights and may authorize his own publishing vehicle;
-   confirm that relationship and scope explicitly. The user's instruction
-   authorizes this implementation/review PR, not a rewritten general license.
-   **Decision pending: publisher authorization or an owner-approved separate grant.**
-2. Preserve `LICENSE`, `docs/LICENSE-HISTORY.md`, `licenses/MIT-legacy.txt` and the
-   prior MIT boundary byte for byte. Do not call current Becoming open source or
-   extend the grant to all ChatGPT users. Do not replace the copyright author with
-   the requested publisher. New integration material follows the existing license
-   unless the owner separately directs otherwise.
-3. Verify the publisher's legal/account identity, domain control and right to use
-   **Corgi-Verse Software** as its display name. Choose privacy/support contacts,
-   jurisdiction and any organization/account verification needed by the current
-   OpenAI portal. The exact portal requirements were not accessible here; the
-   [source/access record](REQUIREMENTS.md) distinguishes checked material from
-   destinations requiring recheck.
-4. Personally review current App Developer Terms and applicable policies. Only
-   the user may approve/accept agreements. The build did not accept any terms.
-5. Approve hosting/IdP provider, cost, region, audience/scope configuration,
-   reviewer operators, backups/deletion window and incident/support responsibilities.
-   A consent form is not a substitute for an approved operational privacy policy.
-6. Review the descriptive scoring protocol before inviting real participants.
-   Human-reviewed observations and opting in do not establish empirical calibration
-   or a representative benchmark. Keep every unvalidated/small-sample limit visible.
-7. Personally review the exact release source, live test evidence, listing copy,
-   icon/screenshots and first-party URLs before deployment or app submission.
+The owner explicitly authorized real setup, agreement acceptance, deployment and
+submission without another approval request. The requested current endpoint is
+his personal test before general-use submission. Earlier build-only permission
+holds are superseded; no action needs renewed permission solely because those
+historical holds appear in the handoff.
+
+[The specific written publisher authorization](PUBLISHER-GRANT.md) resolves the
+independent-publisher rights conflict for Hayden's DBA operation. It is served at
+`/legal` beside the unchanged root license and MIT legacy notice. It permits this
+service's hosting/distribution and necessary processor use without granting
+unrestricted reuse to independent developers or changing copyright ownership.
+The root license, legacy MIT boundary and third-party notices remain unchanged.
+The owner's DBA statement is not a claim that a legal filing or OpenAI publisher
+verification has been completed.
+
+## Pilot operational decisions
+
+Use one Render Node process and a private persistent disk in Oregon, exact Auth0
+JWT audience and separate account-web/ChatGPT clients. The hosted blueprint enables
+an exact-subject invitation allowlist. No default reviewer, participants, public
+signup or synthetic observations are provided. Choose a separately authorized
+real reviewer only when actual demonstration review begins. The first test may
+have zero references and correctly unavailable scores/percentiles.
+
+The pilot is for invited adults conducting the owner's test; no general-use
+regional distribution is enabled by this configuration. There are no operator-created
+backups, analytics or advertising. Retained records last until explicit removal;
+withdrawal blocks private tools immediately; active-storage erase retains only
+keyed anti-resurrection tombstones. Render snapshots and provider/access-log
+retention require an actual account check and deletion/expiry test. No unverified
+backup-erasure window or legal jurisdiction is invented.
+
+## Outstanding account facts, not permission requests
+
+- Auth0 tenant and real client/user registration; Render GitHub authorization,
+  actual service hostname and deployed exact source; live ChatGPT OAuth/sandbox.
+- Activate/test the intended support mailbox, confirm controller contact and any
+  address/jurisdiction fields required by the publisher portal.
+- Review actual current provider/OpenAI terms through the accessible account UI.
+  No terms have been read in full or accepted by this continuation. Network access
+  to those web destinations returned proxy 403; user permission alone cannot
+  substitute for reading the agreement or supply missing account access.
+- Record infrastructure snapshots/log retention and safe restore/erase operations;
+  final production privacy wording must reflect the observed setup.
+- Owner's real test, live redacted listing screenshots, publisher verification
+  and current portal asset/region/age requirements before general-use submission.
+
+Use [the linked setup guide](SETUP-NOW.md). No live deployment, charge, agreement
+acceptance or submission is claimed yet.
 
 ## Third-party rights
 
-The integration depends on the official MCP SDK, jose and zod, plus their pinned
-lockfile dependencies. Their own license metadata and packaged notices are in
-[dependency-inventory.json](dependency-inventory.json) and
-[THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt). Those licenses cover those
-packages only and do not broaden Becoming's original-material grant. Dependencies
-are installed with scripts disabled and are not committed as `node_modules`.
-The package is private to prevent accidental npm publication. OpenAI's examples
-were inspected as references; no example code/assets were copied into this package.
-The integration reuses Becoming's exact original mark; no third-party logo or font
-is distributed. Retain applicable notices with any authorized redistribution.
-
-## Release gate
-
-Reviewable branch/draft PR publication was explicitly authorized. Product deployment,
-public tunnel/preview, spending, agreement acceptance, directory submission and final
-publication are **not** authorized. Technical test success does not constitute the
-owner's acceptance or approval of the license/publisher/privacy decisions.
+Retain [dependency inventory](dependency-inventory.json) and
+[third-party notices](THIRD-PARTY-NOTICES.txt) for the pinned MCP SDK, jose, zod
+and their dependencies. Their licenses do not broaden Becoming's original-material
+grant. No OpenAI logo/font or official partnership identity is distributed.

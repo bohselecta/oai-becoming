@@ -1,5 +1,10 @@
 # Installation and setup
 
+**Current continuation:** Auth0 + Render is selected and deployment authority is
+already given. Start with [SETUP-NOW.md](docs/SETUP-NOW.md) for direct account links,
+the persistent Render blueprint and exact Auth0 settings. Historical approval holds
+below describe the original build phase and are superseded by the contract amendment.
+
 ## 1. Review source without credentials
 
 Read [CONTRACT.md](CONTRACT.md), [docs/RELEASE.md](docs/RELEASE.md) and

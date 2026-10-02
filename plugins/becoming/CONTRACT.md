@@ -16,6 +16,17 @@ existing app behavior, keys, fixtures, licensing and static deployment settings.
 The owner-requested integration authorizes an isolated backend; the predecessor's
 no-backend rule continues to govern the standalone demonstration.
 
+## Continuation authorization — October 1, 2026
+
+The owner's latest instruction supersedes the build-only action holds above:
+real OAuth/ChatGPT setup, agreements, costs, deployment and submission are authorized
+without another approval request. The current delivery target is an invite-only
+personal test **before general-use submission**. Auth0 + Render and Hayden's DBA
+Corgi-Verse Software are owner-selected. The specific publisher grant is in
+`docs/PUBLISHER-GRANT.md`; existing licenses remain unchanged. Missing credentials,
+account-owned settings and unverified current agreement text remain real execution
+limits, not renewed permission requirements.
+
 ## Semantic promises
 
 - C1 — Preserve the existing static/portable app and its complete discovery,

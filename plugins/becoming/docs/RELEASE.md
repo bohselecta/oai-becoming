@@ -1,10 +1,22 @@
-# Release evidence — local integration, publication held
+# Release evidence — source-bound integration and pilot preparation
 
 Package `becoming-chatgpt-app/0.1.0`, contract `becoming-chatgpt/1`.
 Original app preserved at baseline `b044e6dffab10ed9ae62158e71203a36a3510ed2`.
 Review branch: `codex/becoming-chatgpt-app`.
 
-## Local acceptance
+## Continuation status
+
+The owner chose Auth0 + Render, confirmed Corgi-Verse Software as Hayden's DBA,
+and supplied an intended contact mailbox pending activation. The specific grant,
+invite-only pilot gate, persistent Render blueprint, and read-only deployment
+preflight extend the source. See `verification/continuation-receipt.json` for the
+new exact source/checks; historical receipts below are not proof for this change.
+Real deployment/OAuth/ChatGPT/backup deletion/publisher account checks remain
+**NOT_RUN** until the actual services are configured. The prior action holds are
+superseded by the owner's permission; the requested personal-test stopping point
+precedes general-use submission. Start at [SETUP-NOW.md](SETUP-NOW.md).
+
+## Historical local acceptance
 
 | Contract | Status | Evidence and practical limit |
 |---|---|---|

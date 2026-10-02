@@ -2,7 +2,7 @@
 
 **Name:** Becoming
 
-**Publisher:** Corgi-Verse Software (requested; account/legal identity unverified)
+**Publisher:** Corgi-Verse Software (Hayden Lindley's owner-confirmed DBA; portal verification pending)
 
 **Short description:** Start with what matters. Keep a correctable record. Turn
 reviewed evidence into a concrete next step.
@@ -43,6 +43,9 @@ They are engineering review assets, not proof of directory availability or a liv
 ChatGPT session. Replace fixture captures with consented/redacted live ChatGPT
 captures before submission. Check current portal size/file requirements; 512px and
 these viewport captures are proposed assets, not a verified submission specification.
+
+**Intended contact:** `hayden@corgi-verse.com`, mailbox activation/delivery pending.
+Selected processors: Auth0 + Render. Specific publisher grant: [PUBLISHER-GRANT.md](PUBLISHER-GRANT.md).
 
 **Manual listing fields still required:** owner-approved HTTPS homepage, `/privacy`
 policy URL, support/contact address, any required terms URL, publisher/account/domain

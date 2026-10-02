@@ -14,6 +14,6 @@ NOT_APPLICABLE against these IDs, exact source and environment.
 | C7 | Unknown and measured zero distinct; low placement remains visible; incompatible/small samples cannot produce percentile; compatible opt-in samples and individual withdrawal tested. |
 | C8 | Project basis immutable; checklist does not improve placement; accepted project evidence can satisfy target; revocation reopens; comparator withdrawal invalidates person target. |
 | C9 | No fixture participants in runtime; no unsupported provider calls, scraping, telemetry, private resource leakage or token logging; hostile text rendered literally. |
-| C10 | Docs/assets/privacy/publisher/license/release/handoff files complete; review branch pushed and draft PR linked; no deployment/submission/agreement/spend. |
+| C10 | Docs/assets/privacy/publisher/license/release/handoff files complete; review branch pushed and draft PR linked. Historical build-only action holds are superseded by the continuation authorization; report actual deployment/agreement/spend status. |
 | LIVE | Actual ChatGPT developer-mode install, real OAuth account and embedded sandbox journeys tested after approved setup. NOT_RUN until setup exists. |
-| PUBLICATION | Owner personally reviews and approves exact source, license/publisher/privacy and destination before publication. NOT_RUN until explicit approval. |
+| PUBLICATION | Preserve the owner’s current requested stopping point: personal test before general-use submission. Record exact source, live evidence, DBA grant and operational privacy. General action permission is already given; do not substitute it for an unperformed personal test. |

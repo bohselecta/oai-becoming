@@ -1,9 +1,18 @@
-# Becoming data & privacy — review draft
+# Becoming data & privacy — private pilot disclosure
 
-Publisher requested: Corgi-Verse Software. Author: Hayden Lindley. This integration
-has not been deployed or published. Publisher identity, contact address, governing
-jurisdiction, retention operations and legal wording require owner approval.
-Do not represent this review draft as an approved production privacy policy.
+Controller/operator intended for this pilot: **Hayden Lindley, doing business as
+Corgi-Verse Software**. Intended privacy/support contact:
+**hayden@corgi-verse.com**. The owner is setting up that mailbox; delivery has not
+been verified. Until it works, the owner-only pilot is coordinated in the existing
+Codex chat. This is a private-test disclosure, not a general-use publication policy.
+
+Selected processors: **Auth0** for identity and **Render** for the service and
+private persistent disk in Oregon, United States. Accounts are still being
+configured; actual deployment, infrastructure logs/snapshot retention and deletion
+have not been verified. Access is restricted to exact invited adult accounts by
+the hosted pilot configuration. No public registration or general regional release
+is represented. The pilot creates no operator-managed database backups; any
+platform-managed snapshots remain subject to verified provider retention/deletion.
 
 Becoming stores only answers you choose to record: interests, concrete examples,
 actions, chosen direction/reward, constraints/accommodations, next steps, reflections
@@ -63,12 +72,15 @@ identifier; the target then becomes unavailable. A name already disclosed cannot
 be recalled from chats. Tombstones persist until controlled operator key rotation.
 Identity-provider data, ChatGPT conversations, downloaded exports and recipients'
 copies require separate deletion. Database snapshots, proxy logs and review exports
-are NOT automatically deleted by this code; before production the operator must
-approve a backup deletion/expiry procedure and communicate its exact window. No
+are NOT automatically deleted by this code; before general-use publication the operator must
+verify a backup deletion/expiry procedure and communicate its exact window. No
 production backup/retention promise is made before that procedure exists.
 
 Access tokens and account sessions are limited to at most one hour. Login flows
 expire in ten minutes. Expired temporary rows are purged on startup and access.
-Review the data-controller identity, privacy/support contacts, processors, rights
-requests, age eligibility, geographical availability, security response and backup
-retention before publishing this policy at the owner-approved HTTPS URL.
+The intended controller/contact/providers above are owner-selected. Verify mailbox
+delivery, controller details required by the publisher portal, rights-request and
+incident handling, general-use eligibility and actual infrastructure retention
+before publishing a general-use policy. Becoming cannot erase Auth0 or ChatGPT
+data; use their separate account controls. Do not restore erased records from an
+older platform snapshot.

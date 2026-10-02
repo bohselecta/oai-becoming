@@ -10,6 +10,7 @@ MCP**, with executed tools and an embedded widget, rather than a retired ChatGPT
 plugin manifest. **Codex is the builder; ChatGPT is the user-facing host.**
 The original Becoming 0.3.1 static app remains intact and independently runnable.
 
+- [Start your private ChatGPT test — direct account/setup links](docs/SETUP-NOW.md)
 - [Frozen implementation contract](CONTRACT.md) and [acceptance checklist](ACCEPTANCE.md)
 - [Install and configure](INSTALL.md)
 - [Architecture and tool/data contracts](docs/ARCHITECTURE.md)
@@ -62,6 +63,8 @@ honestly unavailable. Human-reviewed evidence can be populated by consenting rea
 participants after setup; the server ships with zero participants and reviewers.
 
 Existing licenses are preserved. The current OpenAI-only grant does **not**
-automatically authorize an independent Corgi-Verse publisher. Resolve that decision
-with the owner before hosting/distribution; see [publisher requirements](docs/PUBLISHER.md).
-No deployment, agreement acceptance, spending or submission is authorized here.
+automatically authorize an independent publisher. The continuation records the
+owner-selected DBA relationship and [specific publisher grant](docs/PUBLISHER-GRANT.md),
+preserving the root and earlier MIT licenses. Auth0 + Render setup/deployment and
+agreement authority is now given. No live deployment/agreement/submission is claimed;
+the requested current destination is the owner’s test before general-use submission.

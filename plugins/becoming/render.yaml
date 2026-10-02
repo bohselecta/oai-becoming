@@ -1,0 +1,44 @@
+# Render Blueprint; the repository root is required for ../../../src/journey.js.
+# Import with Blueprint Path plugins/becoming/render.yaml. No fixture is deployed.
+services:
+  - type: web
+    name: becoming-pilot
+    runtime: node
+    repo: https://github.com/bohselecta/oai-becoming
+    branch: codex/becoming-chatgpt-app
+    plan: starter
+    region: oregon
+    numInstances: 1
+    autoDeploy: false
+    buildCommand: cd plugins/becoming && npm ci --ignore-scripts --omit=dev
+    startCommand: cd plugins/becoming && npm start
+    healthCheckPath: /health
+    disk:
+      name: becoming-private-records
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: NODE_ENV
+        value: production
+      - key: BIND_ADDRESS
+        value: 0.0.0.0
+      - key: DATABASE_PATH
+        value: /var/data/becoming/private.sqlite
+      - key: PILOT_MODE
+        value: "true"
+      - key: APP_ORIGIN
+        sync: false
+      - key: OIDC_ISSUER
+        sync: false
+      - key: OIDC_CLIENT_ID
+        sync: false
+      - key: OIDC_CLIENT_SECRET
+        sync: false
+      - key: DATA_KEY
+        sync: false
+      - key: PILOT_SUBJECTS
+        sync: false
+# REVIEWER_SUBJECTS is deliberately absent: add a separate real reviewer only
+# when authorized. No default reviewer, test IdP or test participant is included.

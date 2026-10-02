@@ -124,7 +124,11 @@ export async function createApp(input) {
         });
       }
       if (url.pathname === "/health")
-        return json({ status: "ok", app: "Becoming", version: "0.1.0" });
+        return json({
+          status: "ok", app: "Becoming", version: "0.1.0",
+          sourceRevision: config.sourceRevision || null,
+          access: config.pilotMode ? "invite-only-pilot" : "configured-accounts",
+        });
       if (url.pathname === "/mcp") {
         requireThat(
           ["POST", "GET", "DELETE"].includes(req.method),
@@ -191,7 +195,7 @@ export async function createApp(input) {
       if (url.pathname === "/legal" && req.method === "GET")
         return render(
           "Licenses",
-          `<pre>${esc(readFileSync(new URL("../../../LICENSE", import.meta.url), "utf8"))}</pre><pre>${esc(readFileSync(new URL("../../../licenses/MIT-legacy.txt", import.meta.url), "utf8"))}</pre>`,
+          `<pre>${esc(readFileSync(new URL("../../../LICENSE", import.meta.url), "utf8"))}</pre><pre>${esc(readFileSync(new URL("../../../licenses/MIT-legacy.txt", import.meta.url), "utf8"))}</pre><pre>${esc(readFileSync(new URL("../docs/PUBLISHER-GRANT.md", import.meta.url), "utf8"))}</pre>`,
         );
       if (url.pathname === "/auth/login" && req.method === "GET") {
         const login = auth.startLogin();
@@ -227,6 +231,20 @@ export async function createApp(input) {
           401,
         );
       }
+      requireThat(
+        !config.pilotMode ||
+          [...config.pilotSubjects, ...config.reviewerSubjects].some(
+            (subject) => store.identity(config.issuer, subject) === session.id,
+          ),
+        "PILOT_ACCESS",
+        "This Becoming pilot is available only to invited accounts.",
+        403,
+      );
+      // Re-evaluate operator permissions; retained sessions cannot preserve an
+      // invitation or reviewer role removed from the current configuration.
+      session.reviewer = config.reviewerSubjects.some(
+        (subject) => store.identity(config.issuer, subject) === session.id,
+      );
       const state = store.read(session.id);
       if (req.method === "GET" && ["/", "/account"].includes(url.pathname)) {
         const fields = headerInputs(session, state);

@@ -45,3 +45,22 @@ Never follow the example README's suggestion to disable browser local-network
 security flags. All tests here use permitted local origins and unchanged policies.
 Public profile APIs are not implemented: profile statistics remain unavailable,
 rather than scraping or substituting invented counts/people.
+
+## Continuation source check — October 1, 2026 (America/Chicago)
+
+The official OpenAI examples HEAD still resolves to
+`18cc38e78a968712c357bacdc3c79fead5bfc6b4`. Its
+[authenticated Auth0 setup](https://github.com/openai/openai-apps-sdk-examples/blob/18cc38e78a968712c357bacdc3c79fead5bfc6b4/authenticated_server_python/README.md)
+was fetched and read again: an exact API identifier, Auth0 JWT profile/RS256 and
+**tenant Default Audience** are needed to bridge MCP resource indicators and
+Auth0's audience behavior. A dedicated tenant avoids changing other clients.
+The example describes DCR; the pilot guide prefers pre-registration when the
+actual ChatGPT account supports it. Neither route is claimed live-verified.
+
+Direct requests to Apps SDK auth guidance, Render blueprint specification and
+Auth0 access-token documentation returned proxy CONNECT **403** under the current
+managed environment's enforced restricted policy. No policy was changed or bypassed.
+The prepared Render blueprint is subject to validation in the owner's Render UI;
+no current authenticated platform/terms/submission requirements have been verified.
+The owner has now selected providers and granted action authority; this changes
+permission, not access or verification evidence.
