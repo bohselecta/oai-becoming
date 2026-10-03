@@ -1,5 +1,23 @@
 # Becoming in ChatGPT — implementation contract
 
+## Current finish-pass authority — October 3, 2026
+
+This instruction supersedes earlier broad setup/cost/submission authority in this
+repository. Continue the existing Auth0 + Render pilot with **no new spending**.
+Do not create paid resources, upgrade plans, accept new paid commitments, configure
+credentials for ongoing access, or expand security permissions without explicit
+approval. Secrets belong only in approved provider secret storage, never chat,
+Git, screenshots or logs. Existing account access permits inspection, not an
+unlimited grant to change access. Coordinate Mac browser/account work through the
+parent task; this cloud checkout cannot control that Mac.
+
+Verified source changes may be merged under repository protections and main CI
+must be checked. **Do not submit or publicly publish the app before Hayden's
+final review and approval.** OpenAI acceptance is a separate external milestone.
+Personal testing needs no recruited comparison cohort: unknown placement with an
+empty real sample is correct. Thirty references apply only to an aggregate
+percentile claim. No fabricated people, rankings, screenshots or review evidence.
+
 Contract `becoming-chatgpt/1`, frozen before implementation, October 1, 2026.
 Publisher requested by owner: **Corgi-Verse Software**. Author and existing
 copyright/licensing remain Hayden Lindley. Codex builds; ChatGPT hosts the user

@@ -1,3 +1,6 @@
+<!-- Current plugin continuation: plugins/becoming/HANDOFF.md. October 3 finish
+pass narrows earlier spending/submission authority and repairs in-flight account
+writes across erasure/withdrawal. Live Auth0/ChatGPT acceptance remains unverified. -->
 # ChatGPT app integration — review branch, separate from 0.3.1
 
 The October 1 owner request adds a real Apps SDK/MCP integration in

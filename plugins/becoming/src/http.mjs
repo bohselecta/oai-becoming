@@ -215,7 +215,7 @@ export async function createApp(input) {
         return redirect("/account");
       }
       const sessionToken = cookie(req, "becoming_session");
-      const session = store.transient("session", sessionToken);
+      let session = store.transient("session", sessionToken);
       if (!session) {
         if (
           req.method === "GET" &&
@@ -245,7 +245,7 @@ export async function createApp(input) {
       session.reviewer = config.reviewerSubjects.some(
         (subject) => store.identity(config.issuer, subject) === session.id,
       );
-      const state = store.read(session.id);
+      let state = store.read(session.id);
       if (req.method === "GET" && ["/", "/account"].includes(url.pathname)) {
         const fields = headerInputs(session, state);
         return render(
@@ -317,6 +317,21 @@ export async function createApp(input) {
         415,
       );
       const form = new URLSearchParams(await body(req));
+      // Reading a streaming request yields to logout, erase and consent changes.
+      // Re-authorize at the mutation boundary; no await occurs after this check.
+      session = store.transient("session", sessionToken);
+      requireThat(session, "SESSION_REQUIRED", "Sign in to your account first.", 401);
+      requireThat(
+        !config.pilotMode ||
+          [...config.pilotSubjects, ...config.reviewerSubjects].some(
+            (subject) => store.identity(config.issuer, subject) === session.id,
+          ),
+        "PILOT_ACCESS", "This Becoming pilot is available only to invited accounts.", 403,
+      );
+      session.reviewer = config.reviewerSubjects.some(
+        (subject) => store.identity(config.issuer, subject) === session.id,
+      );
+      state = store.read(session.id);
       requireThat(
         form.get("csrf") === session.csrf,
         "CSRF",

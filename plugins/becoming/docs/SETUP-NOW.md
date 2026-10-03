@@ -1,5 +1,23 @@
 # Becoming: get to your private ChatGPT test
 
+## Current finish-pass authority — October 3, 2026
+
+This instruction supersedes earlier broad setup/cost/submission authority in this
+repository. Continue the existing Auth0 + Render pilot with **no new spending**.
+Do not create paid resources, upgrade plans, accept new paid commitments, configure
+credentials for ongoing access, or expand security permissions without explicit
+approval. Secrets belong only in approved provider secret storage, never chat,
+Git, screenshots or logs. Existing account access permits inspection, not an
+unlimited grant to change access. Coordinate Mac browser/account work through the
+parent task; this cloud checkout cannot control that Mac.
+
+Verified source changes may be merged under repository protections and main CI
+must be checked. **Do not submit or publicly publish the app before Hayden's
+final review and approval.** OpenAI acceptance is a separate external milestone.
+Personal testing needs no recruited comparison cohort: unknown placement with an
+empty real sample is correct. Thirty references apply only to an aggregate
+percentile claim. No fabricated people, rankings, screenshots or review evidence.
+
 Selected by Hayden Lindley on October 1, 2026: **Auth0 + Render**; publisher
 **Corgi-Verse Software**, his DBA; intended contact **hayden@corgi-verse.com**.
 The mailbox still needs to be created and tested. Deployment/agreement authority
@@ -29,8 +47,8 @@ Do not paste passwords, client secrets or tokens into this chat.
 | Later | [OpenAI publisher dashboard](https://platform.openai.com/) | Verify the publisher and prepare the submission only after your test. Navigate to the current Apps submission area; this is not a claim that a listing exists. |
 
 Only account registration/authorization and these account-owned settings require
-manual work. No OpenAI API key is needed. You already authorized service costs;
-Render's current displayed plan/disk price applies. The owner entered payment in Render; actual charges have not been independently observed.
+manual work. No OpenAI API key is needed. No new service costs are authorized by this finish pass. Inspect the existing
+service first; do not run a provisioning blueprint or change plan/disk settings. The owner entered payment in Render; actual charges have not been independently observed.
 
 ## 1. Auth0: sign-in and exact token audience
 
@@ -111,14 +129,14 @@ No secret needs to be copied through chat, Git or a local terminal. Existing
 self-hosted `DATA_KEY` base64 configurations still work; never configure both key
 inputs at once or switch an existing database's key without a migration.
 
-Click **Deploy Blueprint**. The initial service should start and show **Becoming
+Only after explicit approval for any resource creation or cost, click **Deploy Blueprint**. The initial service should start and show **Becoming
 is being set up**; `/health` returns `setup-required` and the deployed commit.
 This stage creates no record database, sessions or OAuth/MCP service. Every private
 endpoint responds `503 SETUP_REQUIRED`. It is deployment preparation, not a working
 ChatGPT integration or a live-acceptance PASS.
 
-Copy the service's actual HTTPS URL and return it to this chat. Then finish Auth0
-step 1 and add these values at **Render → service → Environment**:
+Copy the service's actual HTTPS URL. After explicit approval for ongoing credential
+configuration, finish Auth0 step 1 and add these values at **Render → service → Environment**:
 
 | Variable | Value after Auth0 registration |
 |---|---|

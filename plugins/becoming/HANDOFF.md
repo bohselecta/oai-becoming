@@ -1,5 +1,23 @@
 # Becoming ChatGPT pilot — current continuation handoff
 
+## Current finish-pass authority — October 3, 2026
+
+This instruction supersedes earlier broad setup/cost/submission authority in this
+repository. Continue the existing Auth0 + Render pilot with **no new spending**.
+Do not create paid resources, upgrade plans, accept new paid commitments, configure
+credentials for ongoing access, or expand security permissions without explicit
+approval. Secrets belong only in approved provider secret storage, never chat,
+Git, screenshots or logs. Existing account access permits inspection, not an
+unlimited grant to change access. Coordinate Mac browser/account work through the
+parent task; this cloud checkout cannot control that Mac.
+
+Verified source changes may be merged under repository protections and main CI
+must be checked. **Do not submit or publicly publish the app before Hayden's
+final review and approval.** OpenAI acceptance is a separate external milestone.
+Personal testing needs no recruited comparison cohort: unknown placement with an
+empty real sample is correct. Thirty references apply only to an aggregate
+percentile claim. No fabricated people, rankings, screenshots or review evidence.
+
 Continue [draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6), branch
 `codex/becoming-chatgpt-app`, from the exact source in
 [latest setup receipt](docs/verification/setup-receipt.json). The preceding
@@ -103,3 +121,17 @@ session permission removal, source-bound preflight, actual setup-mode entrypoint
 boundaries and stable generated-secret derivation. The preceding receipt covers
 the earlier source; use the latest exact-head CI for this setup amendment. Fixture IdP/host
 execution remains explicitly **not live ChatGPT acceptance**.
+
+## October 3 finish pass
+
+Independent review reproduced an in-flight account-write race: a consent form
+started before erase could finish afterward and recreate storage consent. Account
+POSTs now re-read session, invitation/reviewer authority and current state after
+the streamed body completes, before any mutation. Regression tests cover erase,
+logout, session expiry and consent withdrawal during import. This is fixture
+security evidence, not a live-account test.
+
+Read [operations and safe recovery](docs/OPERATIONS.md) before enabling real records.
+[Live acceptance](docs/LIVE-TESTS.md) separates owner-only testing from optional
+reviewer/comparison validation. The parent coordinates Mac-only account inspection.
+The cloud network still blocks the reported Render origin with proxy CONNECT 403.

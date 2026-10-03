@@ -1,5 +1,23 @@
 # Live acceptance — selected Auth0/Render pilot
 
+## Current finish-pass authority — October 3, 2026
+
+This instruction supersedes earlier broad setup/cost/submission authority in this
+repository. Continue the existing Auth0 + Render pilot with **no new spending**.
+Do not create paid resources, upgrade plans, accept new paid commitments, configure
+credentials for ongoing access, or expand security permissions without explicit
+approval. Secrets belong only in approved provider secret storage, never chat,
+Git, screenshots or logs. Existing account access permits inspection, not an
+unlimited grant to change access. Coordinate Mac browser/account work through the
+parent task; this cloud checkout cannot control that Mac.
+
+Verified source changes may be merged under repository protections and main CI
+must be checked. **Do not submit or publicly publish the app before Hayden's
+final review and approval.** OpenAI acceptance is a separate external milestone.
+Personal testing needs no recruited comparison cohort: unknown placement with an
+empty real sample is correct. Thirty references apply only to an aggregate
+percentile claim. No fabricated people, rankings, screenshots or review evidence.
+
 Account setup links and configuration are in [SETUP-NOW.md](SETUP-NOW.md).
 Setup/deployment authority is already given; real account access is still needed.
 Current status **NOT_RUN** for every check below. Local fixture tests are separate
@@ -42,3 +60,17 @@ date, tool list and screenshots; never include passwords or tokens in receipts.
     for the requested personal test before general-use submission. General action
     permission is already given; do not claim that an unperformed personal test or
     publisher/legal verification is complete.
+
+## Personal pilot versus comparison release
+
+For Hayden's personal pilot, execute steps 1–3, 7–8 and record pending/unscored
+submission if desired. Mark reviewer, individual comparison and 30-person
+percentile paths **NOT_APPLICABLE_TO_OWNER_ONLY_PILOT**, rather than pretending
+that they passed or blocking the personal workflow on recruitment. Their release
+claims remain unavailable until tested with genuine authorized evidence.
+
+Capture results individually for login/cancel/expired token, uninvited denial,
+widget open, write-scope step-up, save, new-chat return, correction, export,
+confirmed discovery restore, consent withdrawal, erase and old-session rejection.
+Use exact source SHA and redact personal text. Local fixture screenshots remain
+labeled fixtures. Infrastructure recovery is governed by [OPERATIONS.md](OPERATIONS.md).
