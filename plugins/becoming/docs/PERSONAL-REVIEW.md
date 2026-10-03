@@ -18,9 +18,9 @@ Personal testing needs no recruited comparison cohort: unknown placement with an
 empty real sample is correct. Thirty references apply only to an aggregate
 percentile claim. No fabricated people, rankings, screenshots or review evidence.
 
-Review destination: [draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6).
+Merged source: [PR #6](https://github.com/bohselecta/oai-becoming/pull/6).
 Audited baseline: `3939daebe1e1c641835d732e4676645431f6b793`.
-Source-bound evidence: [continuation receipt](verification/continuation-receipt.json).
+Source-bound evidence: [finish receipt](verification/finish-receipt.json). Earlier receipts are historical.
 
 The original static app's source, tests, fixtures, assets, storage keys, builds,
 license and Vercel configuration match baseline `b044e6d` byte for byte. The

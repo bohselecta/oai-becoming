@@ -18,9 +18,10 @@ Personal testing needs no recruited comparison cohort: unknown placement with an
 empty real sample is correct. Thirty references apply only to an aggregate
 percentile claim. No fabricated people, rankings, screenshots or review evidence.
 
-Continue [draft PR #6](https://github.com/bohselecta/oai-becoming/pull/6), branch
-`codex/becoming-chatgpt-app`, from the exact source in
-[latest setup receipt](docs/verification/setup-receipt.json). The preceding
+Source implementation was merged in [PR #6](https://github.com/bohselecta/oai-becoming/pull/6), candidate `ee04a854e1fc1096696e0e3514907f7b872846ef`, merge
+`5c211e99d0d27e2bb4a9dc1a25b48d6f9141f9de`. Continue from current main.
+[Finish receipt](docs/verification/finish-receipt.json) records exact-source checks
+and independent review. [Setup receipt](docs/verification/setup-receipt.json) is historical. The preceding
 [continuation receipt](docs/verification/continuation-receipt.json) remains historical.
 Original static/portable app baseline:
 `b044e6dffab10ed9ae62158e71203a36a3510ed2`. Read Git/AGENTS,
@@ -28,9 +29,8 @@ Original static/portable app baseline:
 
 ## Owner direction and selected operations
 
-The owner explicitly permitted real setup, agreements, deployment and submission
-without further explicit approval. This supersedes the previous handoff/build-only
-holds. The current intended stopping point is **his personal test before submission
+Earlier owner direction permitted broad setup; the October 3 finish-pass
+authority above supersedes that permission for new spending/access/submission. The current intended stopping point is **his personal test before submission
 for general use**. Never infer an actual completed user test from broad permission.
 
 Selected providers: **Auth0 + Render**. Owner-confirmed publisher:
