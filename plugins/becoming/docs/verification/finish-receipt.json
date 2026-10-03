@@ -1,0 +1,51 @@
+{
+  "sourceRevision": "ee04a854e1fc1096696e0e3514907f7b872846ef",
+  "baseline": "3939daebe1e1c641835d732e4676645431f6b793",
+  "checkedAt": "2026-10-03",
+  "workingTree": "clean",
+  "rootTests": 152,
+  "integrationTests": 20,
+  "audit": "0 known vulnerabilities",
+  "browsers": {
+    "served-discovery": 297,
+    "served-comparison": 238,
+    "portable-discovery": 294,
+    "portable-comparison": 232,
+    "plugin": {
+      "assertions": 23,
+      "label": "TEST FIXTURE ONLY \u2014 NOT LIVE CHATGPT",
+      "sourceRevision": "ee04a854e1fc1096696e0e3514907f7b872846ef"
+    }
+  },
+  "independentReview": {
+    "sourceRevision": "ee04a854e1fc1096696e0e3514907f7b872846ef",
+    "result": "No remaining blocking finding in fix scope",
+    "regressions": "4/4 passed; erase/logout/expiry reject delayed consent with 401; withdrawal rejects delayed import with 400",
+    "limits": "Not a full security audit or real-provider acceptance"
+  },
+  "live": {
+    "origin": "https://becoming-pilot.onrender.com",
+    "deployedRevision": null,
+    "probe": "proxy CONNECT 403, not provider response",
+    "oauth": "NOT_RUN",
+    "chatgpt": "NOT_RUN",
+    "providerRetentionDeletion": "NOT_VERIFIED",
+    "mailbox": "NOT_VERIFIED",
+    "publisher": "NOT_VERIFIED"
+  },
+  "publication": "HELD_FOR_HAYDEN_FINAL_REVIEW",
+  "spending": "NONE_PERFORMED",
+  "sourceArchiveSha256": "c1edaa49f270f9fb1e77067bc6a01e37a81769605a5c7e036a9280d9e520c85c",
+  "mergedSourceRevision": "5c211e99d0d27e2bb4a9dc1a25b48d6f9141f9de",
+  "exactCandidateCI": [
+    {
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/37090259328",
+      "conclusion": "success"
+    },
+    {
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/37090259353",
+      "conclusion": "success"
+    }
+  ],
+  "note": "This receipt pins the tested implementation. Later documentation/main commits require their own exact-head CI; check GitHub. No live/provider acceptance is certified."
+}
