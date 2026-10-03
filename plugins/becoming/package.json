@@ -1,0 +1,22 @@
+{
+  "name": "becoming-chatgpt-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "SEE LICENSE IN ../../LICENSE",
+  "engines": {
+    "node": ">=24.13"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/main.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "check": "npm test",
+    "test:browser": "python tests/browser.py",
+    "preflight": "node scripts/preflight.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.31.0",
+    "jose": "6.2.12",
+    "zod": "4.6.5"
+  }
+}

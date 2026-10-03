@@ -1,0 +1,108 @@
+"""TEST FIXTURE: actual MCP/widget/account code; substitutes ChatGPT bridge + IdP."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import shutil
+from urllib.request import urlopen, Request
+from playwright.sync_api import sync_playwright
+ROOT = Path(__file__).resolve().parents[1]
+OUT = Path(os.environ.get('BECOMING_QA_OUTPUT', str(ROOT / 'qa-output')))
+OUT.mkdir(parents=True, exist_ok=True)
+checks=[]
+def check(condition, message):
+    assert condition, message
+    checks.append(message)
+harness = subprocess.Popen(['node','tests/harness.mjs'], cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+try:
+    info=json.loads(harness.stdout.readline())
+    with sync_playwright() as p:
+        browser=p.chromium.launch(**({"executable_path":shutil.which("chromium")} if shutil.which("chromium") else {}))
+        context=browser.new_context(viewport={'width':1280,'height':900},reduced_motion='reduce')
+        page=context.new_page(); errors=[]
+        page.on('pageerror', lambda e:errors.append(str(e)))
+        page.goto(info['harnessOrigin']); page.get_by_role('heading',name='Start with your choice').wait_for()
+        check('TEST FIXTURE' in page.locator('body').inner_text(),'fixture host label visible')
+        check('No browser-local record' not in page.locator('body').inner_text(),'widget keeps minimal consent explanation')
+        account=context.new_page();account.goto(info['appOrigin']+'/account');account.get_by_role('link',name='Sign in',exact=True).click()
+        account.get_by_role('heading',name='TEST FIXTURE — synthetic identities only').wait_for()
+        account.get_by_label('Fixture identity').select_option('alice');account.get_by_role('button',name='Sign in as test fixture').click()
+        account.get_by_role('heading',name='Your data, your choice').wait_for()
+        account.get_by_label('Allow Becoming to retain').check();account.get_by_label('Allow my chosen name').check()
+        account.get_by_label('Participant-chosen display name').fill('TEST FIXTURE Alice');account.get_by_role('button',name='Save consent choices').click()
+        check(account.get_by_label('Allow Becoming to retain').is_checked(),'actual OAuth/PKCE account sign-in and human consent')
+        page.get_by_role('button',name='Your record',exact=True).click();page.get_by_role('heading',name='What has your attention lately?').wait_for()
+        page.screenshot(path=str(OUT/'first-use-desktop.png'))
+        page.set_viewport_size({'width':390,'height':844});page.screenshot(path=str(OUT/'first-use-phone.png'))
+        page.set_viewport_size({'width':1280,'height':900})
+        def answer(label,value):
+            page.get_by_label(label,exact=True).fill(value);page.get_by_role('button',name='Save my answer and continue',exact=True).click()
+        answer('What has your attention lately?','<img src=x onerror=alert(1)> games')
+        answer('Describe one concrete example of what you did.','I coordinated a raid and checked our plan.')
+        page.get_by_label('coordination',exact=True).check();page.get_by_role('button',name='Save my answer and continue',exact=True).click()
+        answer('What would you like to try?','Write a clearer guide')
+        answer('What reward matters to you?','Help a friend')
+        answer('What needs to fit your circumstances?','Ten minutes with breaks')
+        answer('Choose one small step you want to take.','Write three clear steps')
+        page.get_by_label('What happened when you tried it?',exact=True).fill('My friend was still confused.')
+        page.get_by_label('What does it mean for your chosen direction?',exact=True).select_option('contradicts')
+        page.get_by_role('button',name='Record my reflection',exact=True).click();page.get_by_text('Your account: My friend was still confused. (contradicts)',exact=True).wait_for()
+        check(page.locator('img').count()==0,'hostile interest is literal text, never HTML')
+        page.reload();page.get_by_text('Your account: My friend was still confused. (contradicts)',exact=True).wait_for()
+        check(True,'returning widget loads saved contradictory reflection')
+        page.get_by_text('Choose another step',exact=True).click()
+        page.get_by_label('Choose a new step; preserve any completed attempt',exact=True).fill('Try one simpler example')
+        page.get_by_role('button',name='Start my next step',exact=True).click();page.get_by_text('Inspect and correct',exact=True).click();page.get_by_text('Earlier attempt',exact=False).first.wait_for()
+        page.get_by_label('Field',exact=True).select_option('story');page.get_by_label('Corrected text',exact=True).fill('I followed rather than coordinated the plan.')
+        page.get_by_role('button',name='Save this correction',exact=True).click();page.get_by_role('heading',name='Which actions did you actually use in that setting?').wait_for()
+        check(not page.get_by_label('coordination',exact=True).is_checked(),'story correction clears action confirmations')
+        page.get_by_role('button',name='Save my answer and continue',exact=True).click()
+        answer('What would you like to try?','Write a clearer guide');answer('What reward matters to you?','Help a friend');answer('What needs to fit your circumstances?','Ten minutes');answer('Choose one small step you want to take.','Try a smaller example')
+        page.get_by_text('Evidence — separate from your answers',exact=True).click()
+        for i in range(3):
+            page.get_by_label('Title',exact=True).fill('TEST FIXTURE research work '+str(i))
+            page.get_by_label('Distinct demonstration identifier',exact=True).fill('fixture-work-'+str(i))
+            page.get_by_label('What did you demonstrate?',exact=True).fill('TEST FIXTURE account of three independent sources and uncertainty.')
+            page.get_by_label('Criterion and actual work the reviewer can inspect',exact=True).fill('TEST FIXTURE reviewed demonstration matching the documented criterion.')
+            page.get_by_label('Observation date',exact=True).fill(__import__('datetime').date.today().isoformat())
+            page.get_by_label('Capability',exact=True).nth(0).select_option('research')
+            page.get_by_role('button',name='Submit pending evidence',exact=True).click()
+            page.get_by_text('TEST FIXTURE research work '+str(i)+' — pending',exact=True).wait_for()
+        page.get_by_text('Where does the evidence place me?',exact=True).click()
+        page.get_by_label('Capability',exact=True).nth(1).select_option('research');page.get_by_role('button',name='Inspect my observed placement').click()
+        page.get_by_text('Placement unknown.',exact=True).wait_for();check(True,'pending evidence never produces a score')
+        urlopen(Request(info['harnessOrigin']+'/review-all',data=b'',method='POST')).read()
+        page.get_by_role('button',name='Inspect my observed placement').click();page.get_by_text('Observed research: 750 / 1000. 3 accepted demonstrations. independent.',exact=True).wait_for()
+        check('Sample percentile unavailable (0 compatible reference participants).' in page.locator('body').inner_text(),'actual human reviewer boundary enables observed score; empty sample stays unavailable')
+        page.get_by_text('Concrete growth projects',exact=True).click()
+        page.get_by_label('Project name',exact=True).fill('TEST FIXTURE clearer research')
+        page.get_by_label('Next concrete action',exact=True).fill('Compare three sources')
+        page.get_by_label('What would count as a demonstration?',exact=True).fill('State the uncertainty and evidence that changes the decision')
+        page.get_by_label('Capability',exact=True).nth(2).select_option('research')
+        page.get_by_role('button',name='Freeze my project target',exact=True).click();page.get_by_text('TEST FIXTURE clearer research — open',exact=True).wait_for()
+        page.get_by_role('button',name='Mark practice done',exact=True).click();page.get_by_text('TEST FIXTURE clearer research — open',exact=True).wait_for()
+        check(True,'concrete project freezes and practice completion cannot award success')
+        page.get_by_role('button',name='Revoke this evidence',exact=True).first.click()
+        page.get_by_label('Capability',exact=True).nth(1).select_option('research');page.get_by_role('button',name='Inspect my observed placement').click();page.get_by_text('Placement unknown.',exact=True).wait_for()
+        check(True,'evidence revocation recomputes unknown placement')
+        page.get_by_role('button',name='Your record',exact=True).click();page.get_by_role('heading',name='Your next step').wait_for()
+        for width in [320,390,768,1280]:
+            page.set_viewport_size({'width':width,'height':900})
+            check(page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'),'no overflow at '+str(width))
+            check(page.get_by_role('button',name='Your record',exact=True).is_visible(),'navigation visible at '+str(width))
+        page.set_viewport_size({'width':1280,'height':900});page.screenshot(path=str(OUT/'widget-desktop.png'),full_page=True)
+        page.set_viewport_size({'width':390,'height':844});page.screenshot(path=str(OUT/'widget-phone.png'),full_page=True)
+        page.get_by_role('button',name='Your record',exact=True).focus();check(page.evaluate('document.activeElement.textContent')=='Your record','keyboard focus reaches navigation')
+        page.keyboard.press('Tab');check(page.evaluate('document.activeElement.textContent')=='Data & consent','keyboard navigation reaches consent')
+        account.reload();account.get_by_label('Allow Becoming to retain').uncheck();account.get_by_label('Allow my chosen name').uncheck();account.get_by_role('button',name='Save consent choices').click()
+        page.get_by_role('button',name='Your record',exact=True).click();page.get_by_role('heading',name='Start with your choice').wait_for();check(True,'human consent withdrawal immediately blocks private widget reads')
+        account.get_by_label('Type ERASE',exact=True).fill('ERASE');account.get_by_role('button',name='Erase my Becoming data',exact=True).click();account.get_by_role('heading',name='Becoming data erased').wait_for()
+        check(True,'explicit account erase invalidates session and retained data')
+        check(not errors,'no widget runtime errors: '+str(errors))
+        browser.close()
+    result={'status':'PASS','label':'TEST FIXTURE: actual MCP/widget/account; ChatGPT bridge and IdP are substitutes','assertions':len(checks),'checks':checks,'runtimeErrors':errors,'workingTree':subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip(),'source':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()}
+    (OUT/'browser-results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
+finally:
+    harness.terminate()
+    try:harness.wait(timeout=10)
+    except subprocess.TimeoutExpired:harness.kill()

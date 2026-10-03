@@ -1,0 +1,20 @@
+{
+  "verifiedCommit": "17d897664e8217bcd796b5eb75cf97beb9aba209",
+  "observedStatus": "PASS",
+  "workflows": [
+    {
+      "name": "Product verification",
+      "runId": 36944969439,
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/36944969439",
+      "conclusion": "success"
+    },
+    {
+      "name": "ChatGPT app verification",
+      "runId": 36944969417,
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/36944969417",
+      "conclusion": "success"
+    }
+  ],
+  "labels": "Integration verification uses test-only IdP, participants and ChatGPT bridge; actual MCP/server/widget code. No live ChatGPT test claimed.",
+  "note": "This receipt/handoff commit adds documentation only. Check PR current-head checks for later commits."
+}

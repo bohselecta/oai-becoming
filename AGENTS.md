@@ -1,3 +1,16 @@
+# ChatGPT integration amendment — October 1, 2026
+
+The owner requested a real ChatGPT Apps SDK/MCP integration published by
+Corgi-Verse Software. `plugins/becoming/CONTRACT.md` and `ACCEPTANCE.md` define
+that separate backend package. The prior static-only/no-backend constraints
+continue to apply to the original application; the owner's request authorizes
+necessary dependencies and persistence only in the integration package. Preserve
+all app behavior, keys, fixtures, licenses and the root static deployment path.
+Read `plugins/becoming/HANDOFF.md` for current evidence and manual/live gates.
+Run the original required checks below plus integration `npm test` and browser
+acceptance. No fixture identity/provider/participant may enter the live server.
+No paid account, agreement, deployment or publication without owner approval.
+
 # Becoming — frozen comparative product contract
 
 Contract: `becoming-product/2` · Release: `0.3.1` · September 30, 2026.

@@ -1,0 +1,57 @@
+{
+  "verifiedCommit": "af669abc6b71cd8405dd8484f1191855b9c0a62b",
+  "status": "PASS_FOR_SETUP_PREPARATION",
+  "workflows": [
+    {
+      "name": "ChatGPT app verification",
+      "runId": 36951414361,
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/36951414361",
+      "headSha": "af669abc6b71cd8405dd8484f1191855b9c0a62b",
+      "conclusion": "success"
+    },
+    {
+      "name": "Product verification",
+      "runId": 36951414416,
+      "url": "https://github.com/bohselecta/oai-becoming/actions/runs/36951414416",
+      "headSha": "af669abc6b71cd8405dd8484f1191855b9c0a62b",
+      "conclusion": "success"
+    }
+  ],
+  "counts": {
+    "originalNode": 152,
+    "originalBrowser": 1061,
+    "integrationNode": 16,
+    "integrationFixtureBrowser": 23
+  },
+  "scope": "Explicit SETUP_MODE=true first deploy; generated secret; provider-origin fallback. Setup liveness does not establish a real OAuth/ChatGPT service.",
+  "observations": {
+    "renderPayment": "Owner reports payment entered; actual charges not independently observed.",
+    "renderPreview": "Owner screenshot shows the preceding blueprint parsed and six requested inputs. New blueprint has one manual SETUP_MODE field; hosted creation not yet observed.",
+    "deployment": "NOT_RUN",
+    "realOAuth": "NOT_RUN",
+    "chatgptSandbox": "NOT_RUN"
+  },
+  "keyPolicy": "Existing base64 DATA_KEY inputs preserved. Render-generated DATA_KEY_SECRET uses domain-separated SHA-256 for a stable 32-byte key. Conflicting inputs fail. Never rotate/delete a key on an existing database without migration.",
+  "limits": [
+    "Local widget browser run passed with dirty tracked source at preceding HEAD; clean exact-source CI is the primary proof for this amendment.",
+    "Desktop browser sessions cannot be controlled from this executor.",
+    "No provider management credentials or permitted external provider HTTP destinations are configured.",
+    "Real provider agreements, retention and live acceptance remain unverified."
+  ],
+  "verifiedTree": "c77ce412a1787a6ae61ecd7cc89fb35701aba9f1",
+  "sourceSha256": {
+    "plugins/becoming/src/store.mjs": "a01bea1f4bf4b81c81c31967dc389a69e6d3372ab89920d207579bc5d4d089ed",
+    "plugins/becoming/src/setup.mjs": "fea68a6c2d4d6c8360c775b0f9024d7b7bda00dba108400493840f0daf727412",
+    "plugins/becoming/src/http.mjs": "a8f615f58b2cec157971b241608d92fa924453a881044113e4b840bf0c7106c9",
+    "plugins/becoming/src/main.mjs": "ad577fbc48c93b30833b7199747ee909d691266dda623b92b9a0795b5b88ff0a",
+    "plugins/becoming/src/auth.mjs": "2c795379100b4794306e45988c461a9d67a4e40f58ce6f7085ae568906f254fa",
+    "plugins/becoming/src/tools.mjs": "de8ef8ffe1a878ee62295d1459f4c362d9c307116532860cd03aa43fe8537ea0",
+    "plugins/becoming/src/runtime-config.mjs": "f41287b7ecd30dfcc2c8887505221309e18a1b297c521048a553ca097c06160f",
+    "plugins/becoming/src/measurement.mjs": "9d6bc25569e3582da9a082f17545f54c3837b49fb7575bbbb7c7a093625c93d2",
+    "plugins/becoming/render.yaml": "c02768568eb9c152b96137aecd64afcb0e5479a68334703f139fd2a22cfb6cf5",
+    "plugins/becoming/package-lock.json": "a0a25830a1a69223c8be8acd95f04067790e55e82769e9c403eee7e7a5b81781",
+    "src/journey.js": "e8f67275527eb319a15d7e368d63eef8fa7a815214f6e6ce17055eabb61f0b9e",
+    "LICENSE": "cf8b77be3e49bd46a919f664f98ca95abfbfb562b9720887eb0407902562c91b",
+    "licenses/MIT-legacy.txt": "588461c993e53b939b9be2e57f42c59c27cef0d3bd15920ef3baacf2dc73d181"
+  }
+}
